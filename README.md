@@ -1,26 +1,24 @@
 ```Disclaimer: The content mentioned here doesn't belongs to me by any means. Its just a collection and has been copy-pasted from various domains.```
 
-## 1. Information Security ?
+## 1. Information Security
 
-> Information security refers to the process that is used to protect the information in any form (physical or electronic) from unauthorized access, disclosure, and destruction.
+> Information security is the process employed to safeguard information in any form (physical or electronic) from unauthorized access, disclosure, and destruction.
 
+> According to NIST, it involves protecting information systems from unauthorized activities to ensure confidentiality, integrity, and availability.
 
->According to NIST, it is the protection of information systems from unauthorized activities in order to provide confidentiality, integrity, and availability.
+## 2. Cyber Security VS Information Security
 
+### Cyber Security
 
-## 2. Cyber Security VS Information Security ?
+> Cybersecurity focuses on safeguarding electronic data, preventing unauthorized access, disclosure, alteration, and destruction.
 
-```Cyber Security```
+> Its primary goal is to protect digital data and systems from unauthorized access, damage, or disruption.
 
->Cybersecurity refers to the process used to "protect electronic data" from unauthorized access, disclosure, alteration, and destruction.
+### Information Security
 
->Cyber security concentrates on protecting digital data and its systems from unauthorized access or being otherwise damaged or made inaccessible.
+> Information security is a broader discipline encompassing the protection of all types of assets, whether in hard copy or digital form.
 
-```Information Security```
-
->The primary objective of cybersecurity is to reduce the risk of cyber-attacks" and protect against the unauthorized exploitation of systems, networks, and technologies.
-
->Information security is a broader category that protects all types of assets, whether in hard copy or digital
+> The main objective of information security is to reduce the risk of cyber-attacks and protect against unauthorized exploitation of systems, networks, and technologies.
 
 
 ## 3. What is CIA Triad ?
