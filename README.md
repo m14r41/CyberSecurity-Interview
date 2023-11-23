@@ -1,6 +1,10 @@
+**Disclaimer:**
+The content presented here does not belong to me in any way. It is a compilation sourced from various domains, and due credit and respect are given to the original creators. I do not endorse or support any unethical activities, and this content is intended solely for educational purposes.
 
-```Disclaimer: The content mentioned here doesn't belongs to me by any means. Its just a collection and has been copy-pasted from various domains.```
+**Note:**
+Based on my personal experience, the following list comprises some commonly encountered interview questions. However, I cannot guarantee that interview questions will be 100% derived from this repository.
 
+### Awesome Interview Links:
 | S.N | Link                                                                                         | By    |
 |-----|----------------------------------------------------------------------------------------------|-------------|
 | 1   | [Cyber Security Interview Questions - Part 1](https://shifacyclewala.medium.com/cyber-security-interview-questions-part-1-ae00b96c5610) | [Shifa cyclewala](#) |
@@ -9,6 +13,9 @@
 | 4   | [Cyber Security Interview Questions - Part 4](https://shifacyclewala.medium.com/cyber-security-interview-questions-part-4-a28f8829d541) | [Shifa cyclewala](#) |
 | 5   | [Cyber Security Interview Questions - Part 5](https://shifacyclewala.medium.com/cyber-security-interview-questions-part-5-5be559408234) | [Shifa cyclewala](#) |
 
+
+# **Most common Question**:
+# **Asked in Cyber security Interview
 
 ## 1. Information Security
 
