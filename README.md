@@ -10,10 +10,6 @@
 | 5   | [Cyber Security Interview Questions - Part 5](https://shifacyclewala.medium.com/cyber-security-interview-questions-part-5-5be559408234) | [Shifa cyclewala](#) |
 
 
-Shifa cyclewala
-
-
-
 ## 1. Information Security
 
 > Information security is the process employed to safeguard information in any form (physical or electronic) from unauthorized access, disclosure, and destruction.
