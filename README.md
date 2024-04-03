@@ -14,20 +14,24 @@ Based on my personal experience, the following list comprises some commonly enco
 | 5   | [Cyber Security Interview Questions - Part 5](https://shifacyclewala.medium.com/cyber-security-interview-questions-part-5-5be559408234) | [Shifa cyclewala](#) |
 
 ### Top 100 Web application Vulnerability and Mitigation:
+
 | S.N | Link                                                                                         | By    |
 |-----|----------------------------------------------------------------------------------------------|-------------|
-| 1   | [Top 100 Web Application Vulnerability and Mitigation]((https://github.com/m14r41/Interview-CyberSecurity/blob/main/VAPT/Top%20100%20-%20Web%20Vulnerability%20and%20Mitigation.pdf)) | [Unkown](#) |
+| 1   | [Top 100 Web Application Vulnerability and Mitigation](https://github.com/m14r41/Interview-CyberSecurity/blob/main/VAPT/Top%20100%20-%20Web%20Vulnerability%20and%20Mitigation.pdf) | [Unknown](#) |
 
-# **Most common Question**:
-# **Asked in Cyber security Interview**
 
-## 1. Information Security
+## F
+
+## **Most common Question**:
+## **Asked in Cyber security Interview**
+
+### 1. Information Security
 
 > Information security is the process employed to safeguard information in any form (physical or electronic) from unauthorized access, disclosure, and destruction.
 
 > According to NIST, it involves protecting information systems from unauthorized activities to ensure confidentiality, integrity, and availability.
 
-## 2. Cyber Security VS Information Security
+### 2. Cyber Security VS Information Security
 
 ### Cyber Security
 
@@ -42,7 +46,7 @@ Based on my personal experience, the following list comprises some commonly enco
 > The main objective of information security is to reduce the risk of cyber-attacks and protect against unauthorized exploitation of systems, networks, and technologies.
 
 
-## 3. What is CIA Triad ?
+### 3. What is CIA Triad ?
 
 >CIA Triad an information security model meant to guide an organization’s security procedures and policies.
 
@@ -68,7 +72,7 @@ Based on my personal experience, the following list comprises some commonly enco
   
     For example, software or an application that has code vulnerable to a buffer or flow exploit.
   
-## 3. Explain **Vulnerabilty**, **Threats**, **Exploit** and **Risk**.
+### 3. Explain **Vulnerabilty**, **Threats**, **Exploit** and **Risk**.
 - ```Vulnerabilty```
   
   >A vulnerability is a flaw, loophole, oversight, or error that can be exploited to violate system security policy. 
@@ -91,7 +95,7 @@ Based on my personal experience, the following list comprises some commonly enco
     ```
     It is an situation involving exposure to dange.
     ```
-## 4. Define **Indentification**, **Authentication**, and **Authorization**?
+### 4. Define **Indentification**, **Authentication**, and **Authorization**?
 - ```Indentification```
   
   >Identification is the process in which the ability to identify uniquely a user of a system or an application that is running in the system.
@@ -105,7 +109,7 @@ Based on my personal experience, the following list comprises some commonly enco
   >What level of access someone have ,i.e process of granting access and defining the specific resources for a user's needs.
   
 
-## 5. What is 3 way handshake?
+### 5. What is 3 way handshake?
 
 >A three-way handshake is a method used in a TCP/IP network to create a connection between a local host/client and server.
 
@@ -126,7 +130,7 @@ Based on my personal experience, the following list comprises some commonly enco
     
   
   
- ## 6. What is SSL/TLS handshake? 
+ ### 6. What is SSL/TLS handshake? 
  
  >In nutshell, SSL is obsolete and TLS is new name of older SSL protocol as modern encryption standard using by everybody. Technically, TLS is more accurate, but everyone knows SSL.
  
@@ -139,7 +143,7 @@ SSL is a cryptographic protocol that uses explicit connections to establish secu
 Three versions of SSL have been released: SSL 1.0, 2.0, and 3.0. |	Four versions of TLS have been released: TLS 1.0, 1.1, 1.2, and 1.3.
 All versions of SSL have been found vulnerable, and they all have been deprecated. |	TLS 1.0 and 1.1 have been “broken” and are deprecated as of March 2020. TLS 1.2 is the most widely deployed protocol version.
 
-## 7. Accounting V/S Auditing.
+### 7. Accounting V/S Auditing.
 - ```Accounting```
     ```
     The Process of tracking and recording system activities and resource access.
@@ -150,7 +154,7 @@ All versions of SSL have been found vulnerable, and they all have been deprecate
         ```
 
 
-## 8. Give the name of few tools used in penetration testing.
+### 8. Give the name of few tools used in penetration testing.
 
 - ```BurpSuite```
     
@@ -244,7 +248,7 @@ All versions of SSL have been found vulnerable, and they all have been deprecate
        
 
 
-## **9. Encription VS encoding Vs Hashing** 
+### **9. Encription VS encoding Vs Hashing** 
 
 
 - ```Hashing:``` 
@@ -263,7 +267,7 @@ All versions of SSL have been found vulnerable, and they all have been deprecate
      >A conversion of data from one format to another format.
      
   
- > ## Encription vs Hashing
+ > ### Encription vs Hashing
 
  |```Encryption``` |	```Hashing``` |
 |----------- | ---------|
@@ -283,7 +287,7 @@ It is used when a large amount of data is required to transfer. | It is used to 
 It only provides confidentiality | It provides confidentiality, authenticity and non-repudiation.
 Examples: 3DES, AES, DES and RC4 | Examples: Diffie-Hellman, ECC, El Gamal, DSA and RSA 
 
-## 10. TCP vs UDP
+### 10. TCP vs UDP
 
 |```TCP``` | ```UDP``` |
 |---- | ------|
@@ -295,7 +299,7 @@ TCP is used by HTTP, HTTPs, FTP, SMTP and Telnet. | UDP is used by DNS, DHCP, TF
 UDP is used by DNS, DHCP, TFTP, SNMP, RIP, and VoIP. | There is no retransmission of lost packets in the User Datagram Protocol (UDP)
 Retransmission of lost packets is possible in TCP, but not in UDP. | There is no retransmission of lost packets in the User Datagram Protocol (UDP)
 
-## 11. What is OSI Model? 
+### 11. What is OSI Model? 
 
 >OSI stands for Open System Interconnection is a reference model that describes how information from a software application in one computer moves through a physical medium to the software application in another computer.
 ----------------------------------------
@@ -340,7 +344,7 @@ Retransmission of lost packets is possible in TCP, but not in UDP. | There is no
     >This layer controls the way unstructured, raw, bit -stream data is sent and received over a physical medium. This layer is composed of the electrical, optical, and physical components of the network.
     
 
-## 12. TCP/IP Model
+### 12. TCP/IP Model
 
 >TCP/IP model, it was designed and developed by Department of Defense (DoD) in 1960s and is based on standard protocols. It stands for Transmission Control Protocol/Internet Protocol. The TCP/IP model is a concise version of the OSI model. It contains four layers, unlike seven layers in the OSI model. The layers
 
@@ -349,7 +353,7 @@ Retransmission of lost packets is possible in TCP, but not in UDP. | There is no
 - >**3.Internet Layer** - [Network layer](#)
 - >**4.Network Access/Link Layer** - [Data Link Layer + Physical Layer](#)
 
-## 13. What is OWASP ?
+### 13. What is OWASP ?
 
 >OWASP Top 10 is an online document on OWASP’s website that provides ranking of and remediation guidance for the top 10 most critical web application security risks
 
@@ -367,7 +371,7 @@ Retransmission of lost packets is possible in TCP, but not in UDP. | There is no
 - >**A09:2021-Security Logging and Monitoring Failures**
 - >**A10:2021-Server-Side Request Forgery**
 
-## 14. What is pentesting and types of pentesting
+### 14. What is pentesting and types of pentesting
 
 
 >Penetration testing is also known as pen testing or ethical hacking. It describes the intentional launching of simulated cyberattacks that seek out exploitable vulnerabilities in computer systems, networks, websites, and applications.
@@ -391,13 +395,13 @@ Retransmission of lost packets is possible in TCP, but not in UDP. | There is no
     >In this type of testing, a tester usually provides partial or limited information about the internal details of the program of a system.
     
 
-## 15. What is ports and  most common network ports and services.
+### 15. What is ports and  most common network ports and services.
 
 >Protocol is a set of rule by definition in computer networking, Protocol is a standard way for computers to exchange information each protocol has a port number assigned to it
 
 >There are 65,535 ports in total
 
-## 16. What is functions of ports
+### 16. What is functions of ports
 - >**FTP — Port Number : 20,21 :**
     ```
     FTP : File Transfer Protocol
@@ -480,7 +484,7 @@ Retransmission of lost packets is possible in TCP, but not in UDP. | There is no
 194 |Internet Relay Chat (IRC)
 443 |HTTP Secure (HTTPS) HTTP over TLS/SSL
 
-## 14. **What is Bruteforce and how to prevent from it.**
+### 14. **What is Bruteforce and how to prevent from it.**
 
 A brute force attack (also known as brute force cracking), is a popular cracking method relies on guessing possible combinations of a targeted password until the correct password is discovered. The longer the password, the more combinations that will need to be tested. 
 
@@ -494,7 +498,7 @@ A brute force attack (also known as brute force cracking), is a popular cracking
 - URLs for logging in that are unique
 - Keep an eye on the server logs.
 
-## 17. DNS working
+### 17. DNS working
 
 1. When searching for a www.example.com,
    
@@ -525,7 +529,7 @@ A brute force attack (also known as brute force cracking), is a popular cracking
 		This entry is made in the memory of RNS and RNS goes back to the OS. OS then passes this
 		information to the browser.
 
-## 18.  SSL/TLS Handshake
+### 18.  SSL/TLS Handshake
    
 The above contains the highest SSL version supported
 Cipher suites supported
@@ -564,7 +568,7 @@ messages to inform that future
          		 - Source ( https://www.websecurity.digicert.com/security-topics/how-does-ssl-handshake-work )	
 
 
-## **19. SSH handshake**
+### **19. SSH handshake**
 - >**It happens in two steps-**
     ```
 	1. Server's identity is authenticated by the client 
@@ -596,7 +600,7 @@ messages to inform that future
 >HTTPS is HTTP-within-SSL/TLS.
 
 
-## 21. Some Basic Vulnerabilty and terms.
+### 21. Some Basic Vulnerabilty and terms.
 
 - >`Application Vulnerabilities`
     
