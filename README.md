@@ -16,7 +16,7 @@ Based on my personal experience, the following list comprises some commonly enco
 ### Top 100 Web application Vulnerability and Mitigation:
 | S.N | Link                                                                                         | By    |
 |-----|----------------------------------------------------------------------------------------------|-------------|
-| 1   | [Top 100 Web Application Vulnerability and Mitigation]([https://shifacyclewala.medium.com/cyber-security-interview-questions-part-1-ae00b96c5610](https://github.com/m14r41/Interview-CyberSecurity/blob/main/VAPT/Top%20100%20-%20Web%20Vulnerability%20and%20Mitigation.pdf)) | [ Unknown] |
+| 1   | [Top 100 Web Application Vulnerability and Mitigation]([https://shifacyclewala.medium.com/cyber-security-interview-questions-part-1-ae00b96c5610](https://github.com/m14r41/Interview-CyberSecurity/blob/main/VAPT/Top%20100%20-%20Web%20Vulnerability%20and%20Mitigation.pdf)) | [ Unknown] (#) |
 
 # **Most common Question**:
 # **Asked in Cyber security Interview
