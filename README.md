@@ -19,10 +19,8 @@ Based on my personal experience, the following list comprises some commonly enco
 |-----|----------------------------------------------------------------------------------------------|-------------|
 | 1   | [Top 100 Web Application Vulnerability and Mitigation](https://github.com/m14r41/Interview-CyberSecurity/blob/main/VAPT/Top%20100%20-%20Web%20Vulnerability%20and%20Mitigation.pdf) | [Unknown](#) |
 
-# Dedicated for Freshers, also asked with experianced condidates some questions.
-
-## **Most common Question**:
-## **Asked in Cyber security Interview**
+## Dedicated for Freshers, also asked with experianced condidates some questions.
+  **Top 20 from list are strongly recommended.**
 
 ### 1. Information Security
 
