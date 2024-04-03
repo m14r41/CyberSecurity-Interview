@@ -4,7 +4,7 @@ The content presented here does not belong to me in any way. It is a compilation
 **Note:**
 Based on my personal experience, the following list comprises some commonly encountered interview questions. However, I cannot guarantee that interview questions will be 100% derived from this repository.
 
-### Awesome Interview Links:
+### Awesome Interview Links: For (freshers)
 | S.N | Link                                                                                         | By    |
 |-----|----------------------------------------------------------------------------------------------|-------------|
 | 1   | [Cyber Security Interview Questions - Part 1](https://shifacyclewala.medium.com/cyber-security-interview-questions-part-1-ae00b96c5610) | [Shifa cyclewala](#) |
@@ -13,14 +13,13 @@ Based on my personal experience, the following list comprises some commonly enco
 | 4   | [Cyber Security Interview Questions - Part 4](https://shifacyclewala.medium.com/cyber-security-interview-questions-part-4-a28f8829d541) | [Shifa cyclewala](#) |
 | 5   | [Cyber Security Interview Questions - Part 5](https://shifacyclewala.medium.com/cyber-security-interview-questions-part-5-5be559408234) | [Shifa cyclewala](#) |
 
-### Top 100 Web application Vulnerability and Mitigation:
+### Top 100 Web application Vulnerability and Mitigation: ( Experianced)
 
 | S.N | Link                                                                                         | By    |
 |-----|----------------------------------------------------------------------------------------------|-------------|
 | 1   | [Top 100 Web Application Vulnerability and Mitigation](https://github.com/m14r41/Interview-CyberSecurity/blob/main/VAPT/Top%20100%20-%20Web%20Vulnerability%20and%20Mitigation.pdf) | [Unknown](#) |
 
-
-## F
+# Dedicated for Freshers, also asked with experianced condidates some questions.
 
 ## **Most common Question**:
 ## **Asked in Cyber security Interview**
