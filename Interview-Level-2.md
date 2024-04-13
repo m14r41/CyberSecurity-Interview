@@ -111,7 +111,7 @@ waitfor delay '00:00:05'
 | API9:2023 Improper Inventory Management                | DA9 - Using Components with Known Vulnerabilities  |
 | API10:2023 Unsafe Consumption of APIs                 | DA10 - Insufficient Logging & Monitoring           |
 
-
+<br><br>
 ### Most Common Ports and services
 
 | **Common Ports and Services**                | **Common Ports and Services**                      |
@@ -128,7 +128,8 @@ waitfor delay '00:00:05'
 | 161 - SNMP (Simple Network Management Protocol) | 27017 - MongoDB                                   |
 | 3306 - MySQL Database                      | 5432 - PostgreSQL Database                         | 
 
-
+<br><br>
+#### Common Missing Security Headers:
 | Security Header               | Description                                                                                                                                                                      | Vul vs Fix                                                                                                                   |
 |-------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|
 | **Content-Security-Policy**  | In simple terms, the purpose of the "Content Security Policy" (CSP) header is to help protect websites from malicious attacks, particularly Cross-Site Scripting (XSS).          | `Content-Security-Policy: script-src 'self' 'unsafe-inline' 'unsafe-eval';`<br>`Content-Security-Policy: default-src 'self'; script-src 'self' https://apis.google.com ;`<br><br> **Example 2:**<br>`Content-Security-Policy: default-src 'self' https://example.com;`<br>`Content-Security-Policy: default-src 'self'; script-src 'self' https://example.com;` |
@@ -137,7 +138,7 @@ waitfor delay '00:00:05'
 | **Referrer-Policy**          | In simpler terms, the purpose of the "Referrer Policy" header is to control how much information the browser shares when you click on a link and leave a webpage.                | **Vulnerable Example:**<br>`Referrer-Policy: unsafe-url`<br>This setting allows the full URL (including path and query parameters) to be sent in the Referer header, potentially exposing sensitive information.<br><br>**Fix Example:**<br>`Referrer-Policy: strict-origin`<br>This setting instructs the browser to include only the origin (scheme, host, and port) of the referring URL in the Referer header, enhancing user privacy and security. |
 | **Permissions-Policy**       | - **Purpose:** Controls which browser features and APIs can be used.<br>- **Vulnerable Example:** Permissions-Policy:accelerometer=*<br>This setting allows any origin to access the device's accelerometer API, potentially leading to unauthorized access or misuse of sensitive device capabilities.<br>- **Fix Example:** Permissions-Policy: accelerometer=()<br>This setting restricts access to the accelerometer API to the same origin only, preventing unauthorized access and reducing the risk of exploitation. | `Permissions-Policy: camera=*, geolocation=*, microphone=*`<br>This policy allows any origin to access the camera, geolocation, and microphone APIs, potentially leading to unauthorized access or misuse of sensitive device capabilities:<br>`Permissions-Policy: camera=(), geolocation=(), microphone=()`<br>This policy restricts access to the camera, geolocation, and microphone APIs to the same origin only, preventing unauthorized access and reducing the risk of exploitation. | 
 
-
+<br><br>
 ### Common Cookies and It’s values
 
 
@@ -150,6 +151,7 @@ waitfor delay '00:00:05'
 
 
 
+<br><br>
 ### Intruder attack Type:
 
 
@@ -574,10 +576,10 @@ frida - U - f com.package.test - l ssl-fridascript.js
 frida - U --codeshare dzonerzy/fridantiroot - f in.<package
 company>.<package name
 ```
-
+---
 ---
 # Source Code Analysis
-
+---
 ### > Vulnerable code Challenge:
 
 ## SQL Injection (SQLi)
