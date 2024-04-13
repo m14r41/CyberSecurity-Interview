@@ -5,7 +5,7 @@ The content presented here does not belong to me in any way. It is a compilation
 Based on my personal experience, the following list comprises some commonly encountered interview questions. However, I cannot guarantee that interview questions will be 100% derived from this repository.
 
 ---
-T**his is based my personal experiance:**
+**This is based my personal experiance:**
 
 | S.N | Profile | Level  | Description | Link |
 |-----|---------|--------|-------------|------|
@@ -451,6 +451,8 @@ Retransmission of lost packets is possible in TCP, but not in UDP. | There is no
     When a packet needs to be routed to a certain device, the switch looks up the IP address of the device in its ARP table to obtain the MAC address of the destination device. The ARP table includes both static and dynamic addresses.
     ```
 
+### 17. Common Ports and services
+
 | ```Ports``` | `Services`|
 | ---- | ----|
 |20 |File Transfer Protocol (FTP) Data Transfer
@@ -482,74 +484,37 @@ A brute force attack (also known as brute force cracking), is a popular cracking
 - URLs for logging in that are unique
 - Keep an eye on the server logs.
 
-### 17. DNS working
+### 18. DNS working
 
 1. When searching for a www.example.com,
    
-        we are actually searching for www.example.com. 
+        >we are actually searching for www.example.com. 
         The Browser and OS looks within the computer if the related IP address stored in the cache.
 
 
 2. If no record found then the Operating system queries the "Resolving Name Server" for the records.
    
-        The Resolving Name Server is configured within the computer automatically or manually.
+        >The Resolving Name Server is configured within the computer automatically or manually.
 
-        If no enteries in the cache, then the RNS will ask the ROOT Name Servers.
+        >If no enteries in the cache, then the RNS will ask the ROOT Name Servers.
 
 
 3. The ROOT Name Servers tells where to find the COM name servers or TLD Name Servers.
    
-        The RNS takes all this information, puts it in its cache and then goes to TLD Name Servers. 
+        >The RNS takes all this information, puts it in its cache and then goes to TLD Name Servers. 
 
 
 4. When the RNS queries COM TLD nameservers for www.example.com., TLS ns then tells the address
    
-		for example.com. Name Servers which are also called Authoriative Name Servers. The RNS puts all
+		>for example.com. Name Servers which are also called Authoriative Name Servers. The RNS puts all
 		this information in its cache and goes to example.com. Authoriative NS.
 
 
 5. The example.com. Authoriative Name Servers will tell the RNS the related IP address of www.example.com.
    
-		This entry is made in the memory of RNS and RNS goes back to the OS. OS then passes this
+		>This entry is made in the memory of RNS and RNS goes back to the OS. OS then passes this
 		information to the browser.
 
-### 18.  SSL/TLS Handshake
-   
-The above contains the highest SSL version supported
-Cipher suites supported
-Compresssion methods 
-Some random text that will be used in sym key generation
-
-
-Client	 	                                      Server
-
-1. Server Hello                                
-                                            
-                               1. SSL version,Cipher suite, hash that 
-                                  will be used, compression method 
-                                  to be used random string.
-   										
-											
-											
-2. Authentication and Pre-Master Secret.
-Client authenticates the server certificate.
-(e.g. Common Name / Date / Issuer) Client
-(depending on the cipher)creates the 
-pre-master secret for the session, Encrypts
-with the server's public key and sends
-the encryptedpre-master 
-secret to the server.
-												
-                     					4. Decryption and Master Secret
-      									 Server uses its private key to decrypt the pre-master secret.
-      									 Both Server and Client perform steps to generate the master 
-                                         secret with the agreed cipher.
-5. Encryption with Session Key.
-Both client and server exchange 
-messages to inform that future
- messages will be encrypted.
-		
-         		 - Source ( https://www.websecurity.digicert.com/security-topics/how-does-ssl-handshake-work )	
 
 
 ### **19. SSH handshake**
