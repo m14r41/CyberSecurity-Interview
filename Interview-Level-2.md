@@ -552,8 +552,8 @@ o Example: Opening a web page or sending an email.
 ### Common Tool for Static Analysis–
 
 - **Tool** :
-    o **Automation** : MobSF, BuprSuite, Frida, Drozer ...
-    o **Manual** : Burpsuite, apktool , jadx-gui, dex2jar, Ghidra
+    - **Automation** : MobSF, BuprSuite, Frida, Drozer ...
+    - **Manual** : Burpsuite, apktool , jadx-gui, dex2jar, Ghidra
 
 **dex2jar** is a command-line tool for converting Android DEX files (Dalvik Executable) to JAR files,
 which can then be decompiled using Java decompiles like JD-GUI
@@ -567,34 +567,24 @@ The Android Package (APK) file is a compressed archive file that contains all th
 an Android application on an Android device. The APK file is essentially a ZIP file that contains
 several components, including:
 
-#### 1. AndroidManifest.xml: This file contains information about the application, including its
-
-```
-package name, version number, required permissions, and components such as activities,
+##### 1. AndroidManifest.xml: 
+- This file contains information about the application, including its package name, version number, required permissions, and components such as activities,
 services, and broadcast receivers.
-```
-#### 2. Classes.dex: This file contains the compiled Java bytecode for the application’s classes,
 
-```
-which are executed by the Android Runtime (ART).
-```
+##### 2. Classes.dex: 
+- This file contains the compiled Java bytecode for the application’s classes, which are executed by the Android Runtime (ART).
 
-#### 3. Resources.arsc: This file contains compiled resources such as strings, images, and layouts
+###### 3. Resources.arsc:
+ - This file contains compiled resources such as strings, images, and layouts that are used by the application.
 
-```
-that are used by the application.
-```
-#### 4. lib/: This folder contains compiled native code libraries for specific device architectures,
-
-```
+##### 4. lib/:
+-  This folder contains compiled native code libraries for specific device architectures,
 such as ARM or x86.
-```
-#### 5. META-INF/: This folder contains the manifest file, the certificate of the APK signature, and a
 
-```
+##### 5. META-INF/:
+-  This folder contains the manifest file, the certificate of the APK signature, and a
 list of all the files in the APK, along with their checksums.
-```
-#### 6. assets/: This folder contains additional application data files, such as sound and video files,
+##### 6. assets/: This folder contains additional application data files, such as sound and video files,
 
 #### that are not compiled into the APK.
 
@@ -639,55 +629,46 @@ framework libraries, and system components that the application may use.
 ### Common Static Vulnerability –
 
 - Weak Cryptography
-
-```
-o Look for use of encryption algorithms and verify implementation correctness.
-o Check for hardcoded keys, weak encryption methods, or use of insecure cryptographic
+- Look for use of encryption algorithms and verify implementation correctness.
+- Check for hardcoded keys, weak encryption methods, or use of insecure cryptographic
 algorithms.
-```
 - Code Obfuscation:
-    o Check for obfuscation techniques used to hide code.
-    o Verify that obfuscation does not hide malicious code.
+    -  Check for obfuscation techniques used to hide code.
+    -  Verify that obfuscation does not hide malicious code.
 - API Usage:
-    o Verify absence of insecure or vulnerable APIs.
-    o Look for APIs allowing unauthorized access or data leakage.
+    - Verify absence of insecure or vulnerable APIs.
+    - Look for APIs allowing unauthorized access or data leakage.
 - Hardcoded Sensitive Information:
-
-#### o Look for insecure storage of sensitive data.
-
-```
-o Check for hardcoded database queries, passwords, keys, or URLs.
-```
+- Look for insecure storage of sensitive data.
+- Check for hardcoded database queries, passwords, keys, or URLs.
 - External Libraries:
-    o Verify absence of insecure or vulnerable third-party libraries.
+    - Verify absence of insecure or vulnerable third-party libraries.
+- **Integrity Checks:**
+    - Look for integrity checks to prevent tampering with code.
+- **Native Code:**
+    -  If present, verify secure compilation of native code.
+- **Web View Related Checks:**
 
+    -  setJavaScriptEnabled(): Ensure proper validation of input data to prevent
 
-- Integrity Checks:
-    o Look for integrity checks to prevent tampering with code.
-- Native Code:
-    o If present, verify secure compilation of native code.
-- Web View Related Checks:
+    - injection of malicious JavaScript code.
 
-#### o setJavaScriptEnabled(): Ensure proper validation of input data to prevent
+    - setAllowFileAccess(): Validate input data to prevent unauthorized
 
-#### injection of malicious JavaScript code.
+    - access/modification of local files.
 
-#### o setAllowFileAccess(): Validate input data to prevent unauthorized
+    - addJavascriptInterface(): Validate input data to prevent execution of
 
-#### access/modification of local files.
+    - arbitrary Java code.
 
-#### o addJavascriptInterface(): Validate input data to prevent execution of
-
-#### arbitrary Java code.
-
-#### o runtime.exec(): Prevent injection of malicious input data to avoid execution of
+    - runtime.exec(): Prevent injection of malicious input data to avoid execution of
 
 #### arbitrary shell commands.
 
 - Root Detection Implementation Details:
-    o Verify implementation details of root detection mechanisms.
+     - Verify implementation details of root detection mechanisms.
 - SSL Pinning Implementation Details:
-    o Review implementation details of SSL pinning to ensure secure communication.
+     - Review implementation details of SSL pinning to ensure secure communication.
 
 
 ## APK Dynamic Analysis
@@ -722,20 +703,20 @@ o Check for hardcoded database queries, passwords, keys, or URLs.
 
 - **Download any emulator** : Genymotion, NoxPlayer
 - **Proxy Configuration**
-    o Export burpsuite certificate
-    o Configured port and interface in burpsuite.
-    o Setup manual proxy in android device and enter the ip and port of burp config.
-    o Send Burpsuite certificate in android and install.
-    o Burp configuration done.
+    - Export burpsuite certificate
+    - Configured port and interface in burpsuite.
+    - Setup manual proxy in android device and enter the ip and port of burp config.
+    - Send Burpsuite certificate in android and install.
+    - Burp configuration done.
 - **Setup Frida with BuprSuite:**
-    o Check android architecture and download accordingly **Frida-server**
+    - Check android architecture and download accordingly **Frida-server**
        adb shell getprop ro.product.cpu.abi // Check architecture
-    o Download the burp certificate and renamed it as cert-der.crt
+    - Download the burp certificate and renamed it as cert-der.crt
 
 
 ```
-o Now send the Frida-server and burp certificate in android location /data/local/tmp
-o Done!
+- Now send the Frida-server and burp certificate in android location /data/local/tmp
+- Done!
 ```
 - **Check packages**
 
@@ -802,249 +783,148 @@ frida - U --codeshare dzonerzy/fridantiroot - f in.<package
 company>.<package name
 ```
 
-## Source Code Analysis
+---
+### Source Code Analysis
 
-### Vulnerable code Challenge in Python and flask:
+#### Vulnerable code Challenge in Python and Flask:
 
-- The SQL Injection vulnerability is fixed by using parameterized queries.
-- The SSRF vulnerability is fixed by validating the URL with filter_var() function.
-- The XSS vulnerability is fixed by using htmlspecialchars() to escape user input.
-- The CSRF vulnerability is addressed by including a CSRF token in the form.
-- The OS Command Injection vulnerability is mitigated by using escapeshellarg() to escape user input.
-- The LFI vulnerability is addressed by checking if the file exists before reading its content.
-- The RFI vulnerability is mitigated by validating the URL and handling HTTP errors properly.
+## SQL Injection (SQLi)
+- Vulnerable Code: Direct concatenation of user input into SQL query.
+- Fix: Use parameterized queries to separate data from commands.
 
-# SQL Injection (SQLi)
-# Vulnerable Code: Direct concatenation of user input into SQL query.
-# Fix: Use parameterized queries to separate data from commands.
-import sqlite
+```python
+import sqlite3
 
 def get_user(username):
-conn = sqlite3.connect('database.db')
-cursor = conn.cursor()
-cursor.execute("SELECT * FROM users WHERE username = '" + username +
-"'") # Vulnerable
-return cursor.fetchone()
+    conn = sqlite3.connect('database.db')
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM users WHERE username = '" + username + "'")  # Vulnerable
+    return cursor.fetchone() 
+```
 
-# Fixed Code
+ - **Fixed Code**
+```python
 def get_user(username):
-conn = sqlite3.connect('database.db')
-cursor = conn.cursor()
-cursor.execute("SELECT * FROM users WHERE username = ?", (username,)) #
-Fixed
-return cursor.fetchone()
+    conn = sqlite3.connect('database.db')
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM users WHERE username = ?", (username,))  # Fixed
+    return cursor.fetchone() 
+```
 
-# Server-Side Request Forgery (SSRF)
-# Vulnerable Code: Direct use of user-controlled input in HTTP requests.
-# Fix: Validate and restrict user-supplied URLs to prevent SSRF.
+## Server-Side Request Forgery (SSRF)
+- Vulnerable Code: Direct use of user-controlled input in HTTP requests.
+- Fix: Validate and restrict user-supplied URLs to prevent SSRF.
+```python
 import requests
 
 def fetch_url(url):
-response = requests.get(url) # Vulnerable
-return response.text
+    response = requests.get(url)  # Vulnerable
+    return response.text
+```
 
-# Fixed Code
+ -  **Fixed Code**
+```python
 def fetch_url(url):
+    if not url.startswith('http://') and not url.startswith('https://'):
+        raise ValueError('Invalid URL')
+    response = requests.get(url)
+    return response.text
+```
 
+## Cross-Site Scripting (XSS)
+- Vulnerable Code: Rendering user input without proper escaping.
+- Fix: Use escaping functions to prevent injection of malicious scripts.
 
-if not url.startswith('http://') and not url.startswith('https://'):
-raise ValueError('Invalid URL')
-response = requests.get(url)
-return response.text
-
-# Cross-Site Scripting (XSS)
-# Vulnerable Code: Rendering user input without proper escaping.
-# Fix: Use escaping functions to prevent injection of malicious scripts.
+```python
 from flask import Flask, request, render_template_string, escape
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-name = request.args.get('name', 'Guest')
-return render_template_string('<h1>Hello, {{ name }}</h1>', name=name) #
-Vulnerable
+    name = request.args.get('name', 'Guest')
+    return render_template_string('<h1>Hello, {{ name }}</h1>', name=name)  # Vulnerable
+```
 
-# Fixed Code
-@app.route('/')
-def index():
-name = request.args.get('name', 'Guest')
-return render_template_string('<h1>Hello, {{ name | safe }}</h1>',
-name=escape(name)) # Fixed
+- **Fixed Code**
 
-# Cross-Site Request Forgery (CSRF)
-# Vulnerable Code: Lack of CSRF token protection in forms.
-# Fix: Include CSRF tokens in<form action="/transfer" method="post">
-# <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
-# <input type="hidden" name="amount" value="1000">
-# <input type="submit" value="Transfer Money">
-# </form> forms and AJAX requests.
-# Fixed Code
+```python
+ @app.route('/')
+ def index():
+    name = request.args.get('name', 'Guest')
+    return render_template_string('<h1>Hello, {{ name | safe }}</h1>', name=escape(name))  # Fixed
+```
+
+
+## Cross-Site Request Forgery (CSRF)
+- Vulnerable Code: Lack of CSRF token protection in forms.
+- Fix: Include CSRF tokens in forms and AJAX requests.
+
+```python
 <form action="/transfer" method="post">
-<input type="hidden" name="csrf_token" value="{{ csrf_token }}">
-<input type="hidden" name="amount" value="1000">
-<input type="submit" value="Transfer Money">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+    <input type="hidden" name="amount" value="1000">
+    <input type="submit" value="Transfer Money">
 </form>
+```
 
-# OS Command Injection
-
-
-# Vulnerable Code: Direct use of user input in system commands without
-validation.
-# Fix: Use subprocess module with proper input validation and sanitization.
+## OS Command Injection
+- Vulnerable Code: Direct use of user input in system commands without validation.
+- Fix: Use subprocess module with proper input validation and sanitization.
+```python
 import subprocess
 
 def execute_command(command):
-result = subprocess.check_output(command, shell=True,
-stderr=subprocess.STDOUT) # Vulnerable
-return result.decode("utf-8")
+    result = subprocess.check_output(command, shell=True, stderr=subprocess.STDOUT)  # Vulnerable
+    return result.decode("utf-8")
+```
 
-# Fixed Code
+ - **Fixed Code**
+```py
 def execute_command(command):
-try:
-result = subprocess.check_output(command, shell=True,
-stderr=subprocess.STDOUT)
-return result.decode("utf-8")
-except subprocess.CalledProcessError as e:
-return f"Error: {e}"
+    try:
+        result = subprocess.check_output(command, shell=True, stderr=subprocess.STDOUT)
+        return result.decode("utf-8")
+    except subprocess.CalledProcessError as e:
+        return f"Error: {e}"
+```
 
-# Local File Inclusion (LFI)
-# Vulnerable Code: Directly opens a file without proper validation.
-# Fix: Check if the file exists before reading its content.
-
-# Vulnerable LFI Code
+## Local File Inclusion (LFI)
+- Vulnerable Code: Directly opens a file without proper validation.
+- Fix: Check if the file exists before reading its content.
+```python
 def read_file(file_path):
-with open(file_path, 'r') as file:
-content = file.read()
-return content
-
-# Fixed LFI Code
+    with open(file_path, 'r') as file:
+        content = file.read()
+    return content
+```
+ - **Fixed Code**
+```py
 def read_file_fixed(file_path):
-if not os.path.isfile(file_path):
-return "File not found"
-with open(file_path, 'r') as file:
-content = file.read()
-return content
+    if not os.path.isfile(file_path):
+        return "File not found"
+    with open(file_path, 'r') as file:
+        content = file.read()
+    return content
+```
 
-# Remote File Inclusion (RFI)
-# Vulnerable Code: Makes an HTTP request to a user-supplied URL without proper
-validation.
-# Fix: Check if the URL starts with 'http://' or 'https://' and handle HTTP
-errors properly.
-
-# Vulnerable RFI Code
+## Remote File Inclusion (RFI)
+- Vulnerable Code: Makes an HTTP request to a user-supplied URL without proper validation.
+- Fix: Check if the URL starts with 'http://' or 'https://' and handle HTTP errors properly.
+```python
 def fetch_remote_file(url):
-response = requests.get(url)
+    if not filter_var($url, FILTER_VALIDATE_URL):
+        throw new Exception('Invalid URL')
+    return file_get_contents($url)
+```
+  - **Fixed Code**
+```py
+def fetch_remote_file(url):
+    if not url.startswith(('http://', 'https://')):
+        return "Invalid URL"
+    response = requests.get(url)
+    if response.status_code != 200:
+        return "Failed to fetch remote file"
+    return response.text
 
-
-return response.text
-
-# Fixed RFI Code
-def fetch_remote_file_fixed(url):
-if not url.startswith(('http://', 'https://')):
-return "Invalid URL"
-response = requests.get(url)
-if response.status_code != 200 :
-return "Failed to fetch remote file"
-return response.text
-
-### Vulnerable code Challenge in PHP:
-
-<?php
-// SQL Injection (SQLi)
-// Vulnerable Code: Direct concatenation of user input into SQL query.
-// Fix: Use parameterized queries to separate data from commands.
-function get_user($username) {
-$conn = new SQLite3('database.db');
-$stmt = $conn->prepare('SELECT * FROM users WHERE username = :username');
-$stmt->bindValue(':username', $username, SQLITE3_TEXT);
-$result = $stmt->execute();
-return $result->fetchArray(SQLITE3_ASSOC);
-}
-
-// Server-Side Request Forgery (SSRF)
-// Vulnerable Code: Direct use of user-controlled input in HTTP requests.
-// Fix: Validate and restrict user-supplied URLs to prevent SSRF.
-function fetch_url($url) {
-if (!filter_var($url, FILTER_VALIDATE_URL)) {
-throw new Exception('Invalid URL');
-}
-return file_get_contents($url);
-}
-
-// Cross-Site Scripting (XSS)
-// Vulnerable Code: Rendering user input without proper escaping.
-// Fix: Use escaping functions to prevent injection of malicious scripts.
-$name = isset($_GET['name'])? $_GET['name'] : 'Guest';
-echo "<h1>Hello, ". htmlspecialchars($name). "</h1>";
-
-// Cross-Site Request Forgery (CSRF)
-// Vulnerable Code: Lack of CSRF token protection in forms.
-// Fix: Include CSRF tokens in forms and AJAX requests.
-?>
-<form action="/transfer" method="post">
-
-
-<input type="hidden" name="csrf_token" value="<?php echo
-$_SESSION['csrf_token']; ?>">
-<input type="hidden" name="amount" value="1000">
-<input type="submit" value="Transfer Money">
-</form>
-
-<?php
-// OS Command Injection
-// Vulnerable Code: Direct use of user input in system commands without
-validation.
-// Fix: Use escapeshellarg() function to properly escape user input.
-function execute_command($command) {
-return shell_exec('ls '. escapeshellarg($command));
-}
-
-// Local File Inclusion (LFI)
-// Vulnerable Code: Directly opens a file without proper validation.
-// Fix: Check if the file exists before reading its content.
-function read_file($file_path) {
-if (!file_exists($file_path)) {
-return "File not found";
-}
-return file_get_contents($file_path);
-}
-
-// Remote File Inclusion (RFI)
-// Vulnerable Code: Makes an HTTP request to a user-supplied URL without
-proper validation.
-// Fix: Check if the URL starts with 'http://' or 'https://' and handle HTTP
-errors properly.
-function fetch_remote_file($url) {
-if (!filter_var($url, FILTER_VALIDATE_URL)) {
-throw new Exception('Invalid URL');
-}
-return file_get_contents($url);
-}
-?>
-
-// Parameter Pollution
-// Vulnerable Code: Assumes a single value for a parameter, leading to
-ambiguity or unexpected behavior.
-// Fix: Validate and sanitize input, ensure consistent parameter usage
-throughout the application.
-
-// Vulnerable Function
-
-
-function process_input($param) {
-// Assuming $param is a single value
-// Vulnerable code may misinterpret or overwrite $param due to parameter
-pollution
-return $param;
-}
-
-// Fixed Function
-function process_input_fixed($param) {
-// Assuming $param is properly validated and sanitized
-// Fixed code ensures consistent and safe usage of $param throughout the
-application
-return $param;
-}
-
-
+```
