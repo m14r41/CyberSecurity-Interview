@@ -1,4 +1,20 @@
 
+
+Most Common Questions:
+
+- SQL injection and it's type
+- SSRF and bypass
+-  xml attack
+- -login page - scenario (authentication bypass by SQL injection, host header injection, url
+    redirection, username enumeration, rate limiting or brute force,
+- Billion laugh attack
+- Deserialization Vulnerability,
+- SSL key Pinning bypass
+- directory traversal,
+- LFI and RFI
+- How to connect proxy with mobile
+- SSRF exploit LFI, RFI, or command injection, port scan etc.
+
 # Web Application
 
 ### SQL injection and its type:
@@ -60,9 +76,8 @@ waitfor delay '00:00:05'
     execution of the payload occurs at a later time when certain conditions are met.
 
 ### OWASP TOP 10
-
+**Top 10 Web Application Security Risks 2021 Mobile Top 10 2024: Final Release Updates**
 ```
-Top 10 Web Application Security Risks 2021 Mobile Top 10 2024: Final Release Updates
 A01:2021-Broken Access Control M1: Improper Credential Usage
 A02:2021-Cryptographic Failures M2: Inadequate Supply Chain Security
 A03:2021-Injection M3: Insecure Authentication/Authorization
@@ -74,8 +89,9 @@ A08:2021-Software and Data Integrity Failures M8: Security Misconfiguration
 A09:2021-Security Logging and Monitoring Failures* M9: Insecure Data Storage
 A10:2021-Server-Side Request Forgery (SSRF)* M10: Insufficient Cryptography
 ```
+
+**OWASP Top 10 API Security Risks – 2023 OWASP Desktop App Security Top 10**
 ```
-OWASP Top 10 API Security Risks – 2023 OWASP Desktop App Security Top 10
 API1:2023 Broken Object Level Authorization DA1 - Injections
 API2:2023 Broken Authentication DA2 - Broken Authentication & Session Management
 API3:2023 Broken Object Property Level Authorization DA3 - Sensitive Data Exposure
@@ -87,82 +103,86 @@ API8:2023 Security Misconfiguration DA8 - Poor Code Quality
 API9:2023 Improper Inventory Management DA9 - Using Components with Known Vulnerabilities
 API10:2023 Unsafe Consumption of APIs DA10 - Insufficient Logging & Monitoring
 ```
-```
-Common Ports and services Common Ports and services
-20 - FTP (File Transfer Protocol) - Data 143 - IMAP (Internet Message Access Protocol)
-21 - FTP (File Transfer Protocol) - Control 161 - SNMP (Simple Network Management Protocol)
-22 - SSH (Secure Shell) 179 - BGP (Border Gateway Protocol)
-23 - Telnet 443 - HTTPS (Hypertext Transfer Protocol Secure)
-25 - SMTP (Simple Mail Transfer Protocol) 514 - Syslog
-53 - DNS (Domain Name System) 587 - SMTP (Submission)
-67 - DHCP (Dynamic Host Configuration Protocol) -
-Server
-```
-```
-5900 - VNC (Virtual Network Computing)
-```
-```
-68 - DHCP (Dynamic Host Configuration Protocol) -
-Client
-```
-```
-3389 - RDP (Remote Desktop Protocol)
-```
-```
-80 - HTTP (Hypertext Transfer Protocol) 27017 - MongoDB - Default port for MongoDB database
-```
+**Common Ports and services Common Ports and services**
+20   -  FTP (File Transfer Protocol)
+21   -  FTP (File Transfer Protocol)
+22   -  SSH (Secure Shell) 179 - BGP (Border Gateway Protocol)
+23   -  Telnet 443 - HTTPS (Hypertext Transfer Protocol Secure)
+25   -  SMTP (Simple Mail Transfer Protocol)
+514   -  Syslog
+53   -  DNS (Domain Name System) 587 - SMTP (Submission)
+67   -  DHCP (Dynamic Host Configuration Protocol) -Server
+5900 -  VNC (Virtual Network Computing)
+68   -  DHCP (Dynamic Host Configuration Protocol) - Client
+3389 -  RDP (Remote Desktop Protocol)
+80   -  HTTP (Hypertext Transfer Protocol)
+110  -  POP3 (Post Office Protocol version 3) 
+115  -  SFTP (Simple File Transfer Protocol) 
+119  -  NNTP (Network News Transfer Protocol) 
+123  -  NTP (Network Time Protocol) 
+143  -  IMAP (Internet Message Access Protocol)
+161  -  SNMP (Simple Network Management Protocol)
+27017-  MongoDB - Default port for MongoDB database
+3306 -  MySQL Database - Database server
+5432 -  PostgreSQL Database - Database server
+143  -  IMAP (Internet Message Access Protocol)
+161  -  SNMP (Simple Network Management Protocol)
 
-110 - POP3 (Post Office Protocol version 3) 3306 - MySQL Database - Database server
-115 - SFTP (Simple File Transfer Protocol) 5432 - PostgreSQL Database - Database server
-119 - NNTP (Network News Transfer Protocol) 143 - IMAP (Internet Message Access Protocol)
-123 - NTP (Network Time Protocol) 161 - SNMP (Simple Network Management Protocol)
+### Common Security Missing Headers
 
-### Common Missing Security Headers
+**Content-Security-Policy**
 
-```
-Content-Security-Policy
-```
-```
 In simple terms, the purpose of the "Content Security Policy" (CSP) header is to help
 protect website from malicious attacks, particularly Cross-Site Scripting (XSS).
-```
-```
+
 It works by specifying which sources of content are approved, like scripts, stylesheets,
 or images. By allowing only trusted sources, CSP prevents unauthorized content from
 being loaded onto your site, making it more secure against cyber threats.
-```
-```
-'none' - blocks the use of this type of resource.
-'self' - matches the current origin (but not subdomains).
-'unsafe-inline' - allows the use of inline JS and CSS.
-'unsafe-eval' - allows the use of mechanisms like eval().
-Vul vs Fix
-```
-```
-o Content-Security-Policy: script-src 'self' 'unsafe-
-inline' 'unsafe-eval';
-```
-- Content-Security-Policy: default-src 'self'; script-
-    src 'self' https://apis.google.com ;
 
-```
-o Content-Security-Policy: default-src 'self'
-https://example.com;
-```
-- Content-Security-Policy: default-src 'self'; script-
-    src 'self' https://example.com;
+    - 'none' - blocks the use of this type of resource.
+    - 'self' - matches the current origin (but not subdomains).
+    - 'unsafe-inline' - allows the use of inline JS and CSS.
+    - 'unsafe-eval' - allows the use of mechanisms like eval().
+**Vul vs Fix**
 
-(^)
+```bash
+Content-Security-Policy: script-src 'self' 'unsafe-inline' 'unsafe-eval';
+```
+
+```bash
+Content-Security-Policy: default-src 'self'; script-src 'self' https://apis.google.com ;
+```
+
+**Example 2:**
+
+```bash
+ Content-Security-Policy: default-src 'self' https://example.com;
+```
+```bash
+Content-Security-Policy: default-src 'self'; script-src 'self' https://example.com;
+```
+
+
 **X-Frame-Options**
+
 X-Frame-Options : Tell the browser whether you want to allow your site to be framed
 or not. By preventing a browser from framing your site you can defend against attacks
-like clickjacking.
-"X-Frame-Options: SAMEORIGIN"
+like clickjacking. 
+
+```bash
+X-Frame-Options: SAMEORIGIN
+X-Frame-Options: Self
+```
+
 **X-Content-Type-Options**
+
 X-Content-Type-Options stops a browser from trying to MIME-sniff the content type
 and force it to stick with the declared content-type.
-"X-Content-Type-Options: no sniff".
+```bash
+X-Content-Type-Options: no sniff". 
+```
 **Referrer-Policy**
+
 In simpler terms, the purpose of the "Referrer Policy" header is to control how much
 information the browser shares when you click on a link and leave a webpage. It
 determines what details, such as the website you're coming from, are sent to the new
@@ -172,18 +192,13 @@ being unnecessarily shared with other websites.
 - **Purpose:** Controls how much information the browser includes with navigations
     away from a document.
 - **Vulnerable Example:** Referrer-Policy: unsafe-url
-    - This setting allows the full URL (including path and query parameters) to
-
-
-```
-be sent in the Referer header, potentially exposing sensitive information.
-```
+    - This setting allows the full URL (including path and query parameters) to be sent in the Referer header, potentially exposing sensitive information.
+  
 - **Fix Example:** Referrer-Policy: strict-origin
     - This setting instructs the browser to include only the origin (scheme, host,
        and port) of the referring URL in the Referer header, enhancing user
        privacy and security.
 
-(^)
 **Permissions-Policy**
 
 - **Purpose:** Controls which browser features and APIs can be used.
@@ -195,85 +210,87 @@ be sent in the Referer header, potentially exposing sensitive information.
     - This setting restricts access to the accelerometer API to the
        same origin only, preventing unauthorized access and reducing
        the risk of exploitation.
-- Permissions-Policy: camera=*, geolocation=*, microphone=*
-    ▪ This policy allows any origin to access the camera, geolocation, and
-       microphone APIs, potentially leading to unauthorized access or misuse of
-       sensitive device capabilities:
-- Permissions-Policy: camera=(), geolocation=(), microphone=()
 
-```
-▪ This policy restricts access to the camera, geolocation, and microphone APIs
-to the same origin only, preventing unauthorized access and reducing the risk
-of exploitation.
-```
+        ```bash
+        Permissions-Policy: camera=*, geolocation=*, microphone=*
+        ```
+    - This policy allows any origin to access the camera, geolocation, and microphone APIs, potentially leading to unauthorized access or misuse of sensitive device capabilities:
+        ```bash
+        Permissions-Policy: camera=(), geolocation=(), microphone=()
+        ```
+    - This policy restricts access to the camera, geolocation, and microphone APIs to the same origin only, preventing unauthorized access and reducing the risk of exploitation.
+
 ### Common Cookies and It’s values
 
 **1. Secure:**
-    - **_Value_** : Secure
-    - **_Mitigate_** : Man In the middle Attack.
-    - **_Explanation_** : By setting the secure attribute, the cookie will only be sent over HTTPS
-       connect 8 ions, reducing the risk of interception by attackers.
+- **_Value_** : Secure
+- **_Mitigate_** : Man In the middle Attack.
+- **_Explanation_** : By setting the secure attribute, the cookie will only be sent over HTTPS connect ions, reducing the risk of interception by attackers.
+
+
 **2. HttpOnly:**
-    - **_Value_** : HttpOnly
-    - **_Mitigate_** : XSS
-    - **_Explanation_** : When a cookie has the HttpOnly attribute set, JavaScript cannot access
+- **_Value_** : HttpOnly
+- **_Mitigate_** : XSS
+- **_Explanation_** : When a cookie has the HttpOnly attribute set, JavaScript cannot access
        it, which helps mitigate certain types of XSS attacks.
+
+
 **3. SameSite:**
-    **_Values_** : Strict, Lax, or None
-    **_Explanation_** : The SameSite attribute defines when cookies should be sent along with
+- **_Values_** : Strict, Lax, or None
+-  **_Explanation_** : The SameSite attribute defines when cookies should be sent along with
     cross-site requests.
 
+    - a) Strict : The cookie will only be sent in a first-party context, which
+provides a high level of protection against CSRF attacks.<br><br>
 
-```
-a) Strict : The cookie will only be sent in a first-party context, which
-provides a high level of protection against CSRF attacks.
-b) Lax : The cookie will be sent in a first-party context and in cross-origin
-POST requests initiated by top-level navigations.
-c) None : The cookie will be sent in all contexts, including cross-origin
+    - b) Lax : The cookie will be sent in a first-party context and in cross-origin
+POST requests initiated by top-level navigations.<br><br>
+
+    - c) None : The cookie will be sent in all contexts, including cross-origin
 requests. However, this requires the Secure attribute to be set as well.
-```
-```
+
 Let's say you have a website https://example.com and you want to set a
 cookie named session_id for user authentication. You want to ensure that
 the cookie is sent securely and protect against CSRF attacks.
-```
-1. **Strict** :
-    **Example** : **Set-Cookie: session_id=abc123; SameSite=Strict; Secure**
-    **Explanation** : With SameSite=Strict, the **session_id** cookie will only be sent in first-
-    party contexts. This means it will only be included in requests initiated by
-    **example.com** , such as when the user navigates directly to pages on **example.com**. It
-    won't be sent in cross-origin requests, even if they're initiated by **example.com**.
-    Adding **Secure** ensures that the cookie is only sent over HTTPS connections.
-2. **Lax** :
-    - **Example** : **Set-Cookie: session_id=abc123; SameSite=Lax; Secure**
-    - **Explanation** : With SameSite=Lax, the **session_id** cookie will be sent in first-
-       party contexts as well as in cross-origin POST requests initiated by top-level
-       navigations. For example, if a form on **example.com** submits data to another
-       origin via POST, the **session_id** cookie will be included. Again, **Secure** ensures
-       that the cookie is only sent over HTTPS connections.
-3. **None** :
-    - **Example** : **Set-Cookie: session_id=abc123; SameSite=None; Secure**
-    - **Explanation** : SameSite=None allows the **session_id** cookie to be sent in all
-       contexts, including cross-origin requests. However, it requires the **Secure**
-       attribute to be set, meaning the cookie will only be sent over HTTPS connections.
-       This is commonly used for scenarios like Single Sign-On (SSO), where the cookie
-       needs to be included in cross-origin requests, such as when accessing resources
-       on different domains.
 
-### JWT Tokens
+-  **Strict** :
+       **Example** : Set-Cookie: session_id=abc123; SameSite=Strict; Secure
+       **Explanation** : With SameSite=Strict, the **session_id** cookie will only be sent in first-
+       party contexts. This means it will only be included in requests initiated by
+       **example.com** , such as when the user navigates directly to pages on **example.com**. It
+       won't be sent in cross-origin requests, even if they're initiated by **example.com**.
+       Adding **Secure** ensures that the cookie is only sent over HTTPS connections.<br><br>
 
-A JWT, which stands for JSON Web Token, is like a small, safe package for sending information
-between two parties over the internet. It's often used to show that a user is logged in and to share
-details about them securely.
+-  **Lax** :
+       - **Example** : **Set-Cookie: session_id=abc123; SameSite=Lax; Secure**
+       - **Explanation** : With SameSite=Lax, the **session_id** cookie will be sent in first-
+          party contexts as well as in cross-origin POST requests initiated by top-level
+          navigations. For example, if a form on **example.com** submits data to another
+          origin via POST, the **session_id** cookie will be included. Again, **Secure** ensures
+          that the cookie is only sent over HTTPS connections.<br><br>
+   -  **None** :
+       - **Example** : **Set-Cookie: session_id=abc123; SameSite=None; Secure**
+       - **Explanation** : SameSite=None allows the **session_id** cookie to be sent in all
+          contexts, including cross-origin requests. However, it requires the **Secure**
+          attribute to be set, meaning the cookie will only be sent over HTTPS connections.
+          This is commonly used for scenarios like Single Sign-On (SSO), where the cookie
+          needs to be included in cross-origin requests, such as when accessing resources
+          on different domains.
 
-- **Header** : Contains metadata about the token, such as the algorithm used for signing.
-    _Example_ : {"alg": "HS256", "typ": "JWT"}
-- **Payload** : Contains claims, which are statements about an entity (e.g., user information) and
-    additional data.
-    _Example_ : {"sub": "john.doe@example.com", "name": "John Doe", "exp": 1678303200}
-- **Signature** : Created by encoding the header and payload, then signing them with a secret
-    key. It verifies the sender's identity and ensures the integrity of the message.
-    _Example_ : gDlQmk8bg3JgrAytXn_FfRy6zSrLJQk-VvENiUcGG2Y
+   ### JWT Tokens
+
+   A JWT, which stands for JSON Web Token, is like a small, safe package for sending information
+   between two parties over the internet. It's often used to show that a user is logged in and to share
+   details about them securely.
+
+   - **Header** : Contains metadata about the token, such as the algorithm used for signing.
+       _Example_ : {"alg": "HS256", "typ": "JWT"}
+   - **Payload** : Contains claims, which are statements about an entity (e.g., user information) and
+       additional data.
+       _Example_ : {"sub": "john.doe@example.com", "name": "John Doe", "exp": 1678303200}
+   - **Signature** : Created by encoding the header and payload, then signing them with a secret
+       key. It verifies the sender's identity and ensures the integrity of the message.
+       _Example_ : gDlQmk8bg3JgrAytXn_FfRy6zSrLJQk-VvENiUcGG2Y
 
 
 ### CORS vs SOAP
@@ -306,69 +323,59 @@ allowed.
 ### CORS Misconfiguration
 
 **1. Reflected Origins:** Domains get reflected in the response header.
-    a. **Impact High – Access-Control-Allow-Credentials = True**
-    b. **Impact Low - Access-Control-Allow-Credentials = False**
-    c. **Exploitable** : Yes
+
+        - Impact High – Access-Control-Allow-Credentials = True
+        - Impact Low - Access-Control-Allow-Credentials = False
+        - Exploitable : Yes
+
 **2. Modified Origins** : If no checks are in place CORS Policy can be bypassed. For example,
     adding a prefix or suffix to the **abc.com** domain would be something like
     **attackerabc.com** or **abc.com.attack.com**.
-       a. **Impact High – Access-Control-Allow-Credentials = True**
-       b. **Impact Low - Access-Control-Allow-Credentials = False**
-       c. **Exploitable:** Yes
+
+       - Impact High – Access-Control-Allow-Credentials = True
+       - Impact Low - Access-Control-Allow-Credentials = False
+       - Exploitable: Yes
 **3. Trusted subdomains with Insecure Protocol.** Set the Origin header to an existing subdomain
     and see if it accepts it. If it does, it means the domain trusts all its subdomains. This is not a
     good idea because if one of the subdomains has a Cross-Site Scripting (XSS) vulnerability, it
     will allow the attacker to inject a malicious JS payload and perform unauthorized actions.
-       a. **Impact High** : If domain accepts subdomains with an insecure protocol like http
-       b. **Impact Low:** Otherwise, it will not be exploitable and would be only a poor CORS
-          implementation.
 
+        - Impact High : If domain accepts subdomains with an insecure protocol like http
+        - Impact Low: Otherwise, it will not be exploitable and would be only a poor CORS implementation.
 
 **4. Null Origin:** Set the Origin header to the null value — **Origin: null** , and see if the
     application sets **the Access-Control-Allow-Origin** header to null. If it does, it means
     that null origins are whitelisted.
-       a. **Impact High:** if the domain allows for authenticated requests with the **Access-**
-          **Control-Allow-Credentials** header set to **true.**
-       b. **Impact Low and not exploitable:** If the case is not above then low impact and not
+    
+       - Impact High: if the domain allows for authenticated requests with the Access-
+          Control-Allow-Credentials header set to true.
+
+       - Impact Low and not exploitable: If the case is not above then low impact and not
           exploitable.
 **5.** Unexplainable Case **: Wild Card (*) –** but its misconfiguration and not exploitable.
 
 ### Intruder attack Type:
 
 **1. Sniper:**
-    - Work on single payload set.
-    - If 3 positions are selected then one by one position are set with payload to run. It
-       work set payload in first position and rest two values will as it is. Now same goes of
-       rest two positions.
-    - It means sniper handles single position at time.
+ - Work on single payload set.
+ -  If 3 positions are selected then one by one position are set with payload to run. It work set payload in first position and rest two values will as it is. Now same goes of rest two positions.
+- It means sniper handles single position at time.
+
 **2. Battering RAM**
-    - Work on single payload set.
-    - Payload set at all position simultaneously.
+- Work on single payload set.
+- Payload set at all position simultaneously.
+
 **3. Pitchfork**
-    - Work on multiple set of payload.
+- Work on multiple set of payload.
+-  Work on the minimum number of payloads.
+-  If two payloads contain number like 6 and 4, then will generate 4 payloads only.
+-   To run this at all position one payload is needed.
 
-
-- Work on the minimum number of payloads.
-- If two payloads contain number like 6 and 4, then will generate 4 payloads only.
-- To run this at all position one payload is needed.
 **4. Cluster Bomb**
 - Work on multiple set of payload.
 - All the permutation and combination of payloads generates.
 - Suppose if the payload set is 2 and position also two then works as shown in image.
 
-
-- billion laugh attack
-- SSRF and bypass
-- Deserialization Vulnerability,
-- xml attack,
-- SSL key Pinning bypass
-- login page - scenario (authentication bypass by SQL injection, host header injection, url
-    redirection, username enumeration, rate limiting or brute force,
-- directory traversal,
-- LFI and RFI
-- How to connect proxy with mobile
-- By SSRF exploit LFI, RFI, or command injection
-- SQL injection and it's type
 
 **LFI vs RFI**
 LFI stand for local file inclusion, which means an attacker can access files on server through a
@@ -398,9 +405,13 @@ should be permitted.
 - **URL Normalization** : Normalize URLs before processing to remove any obfuscation
 techniques or redundant encoding. Tools like the url-normalize library can help in this
 regard.
+--
 
 
+
+---
 # Android Application
+---
 
 Android architecture contains different number of components to support any android device
 needs. Android software contains an open-source Linux Kernel having collection of number of C/C++
@@ -496,58 +507,58 @@ etc.
 
 1. **Activity** :
 
-```
-o Represents a single screen with a user interface in an Android application.
-o Entry point for user interaction.
-o Potential security issues: insecure data storage, input validation, authentication
+- Represents a single screen with a user interface in an Android application.
+- Entry point for user interaction.
+- Potential security issues: insecure data storage, input validation, authentication
 flaws.
-```
+
 - **Broadcast Receiver** :
-    o Listens for system-wide broadcast messages or intents.
-    o Responds to system events.
-    o Potential security issues: insecure broadcast handling, privilege escalation.
+    - Listens for system-wide broadcast messages or intents.
+    - Responds to system events.
+    - Potential security issues: insecure broadcast handling, privilege escalation.
+
 - **Intent** :
-    o Messaging object used to communicate between components.
-    o Starts Activities, Services, delivers broadcasts, or passes data between components.
-    o Potential security issues: intent spoofing, intent injection, insecure data passing.
+    -  Messaging object used to communicate between components.
+    -  Starts Activities, Services, delivers broadcasts, or passes data between components.
+    -  Potential security issues: intent spoofing, intent injection, insecure data passing.
 
-```
-➢ Explicit Intents :
-o Used to start a specific component within the same application.
-o Requires specifying the target component's class or package name.
-o Example: Starting a new Activity within the app.
-➢ Implicit Intents :
-o Used to trigger actions based on an action string.
-o Does not specify the target component's name but defines an action to
-be performed.
-o Android system resolves the intent based on available components
+
+- **Explicit Intents :**
+
+    -  Used to start a specific component within the same application.
+    -  Requires specifying the target component's class or package name.
+    -  Example: Starting a new Activity within the app.
+  
+- **Implicit Intents :**
+
+    - Used to trigger actions based on an action string.
+    - Does not specify the target component's name but defines an action to be performed.
+    - Android system resolves the intent based on available components
 capable of handling the action.
-```
+    - Example: Opening a web page or sending an email.
 
-```
-o Example: Opening a web page or sending an email.
-```
+
 - **Service** :
-    o Background component that performs long-running operations.
-    o Runs tasks asynchronously without a user interface.
-    o Potential security issues: insufficient authentication, denial of service (DoS), data
+    -  Background component that performs long-running operations.
+    -  Runs tasks asynchronously without a user interface.
+    -  Potential security issues: insufficient authentication, denial of service (DoS), data
        leakage.
 - **Content Provider** :
-    o Manages shared application data accessible by other applications or components.
-    o Provides a standardized interface for accessing and manipulating data.
-    o Potential security issues: insecure data exposure, insufficient access controls.
+    - Manages shared application data accessible by other applications or components.
+    - Provides a standardized interface for accessing and manipulating data.
+    - Potential security issues: insecure data exposure, insufficient access controls.
 - **Manifest File (AndroidManifest.xml)** :
-    o Configuration file containing essential information about the application.
-    o Declares components, permissions, and hardware requirements.
-    o Potential security issues: excessive permissions, missing security controls.
+    -  Configuration file containing essential information about the application.
+    -  Declares components, permissions, and hardware requirements.
+    -  Potential security issues: excessive permissions, missing security controls.
 - **WebView** :
-    o Embeds web content within an application.
-    o Can execute JavaScript, load remote URLs, and interact with the DOM.
-    o Potential security issues: JavaScript injection, XSS attacks, insecure communication.
+    - Embeds web content within an application.
+    - Can execute JavaScript, load remote URLs, and interact with the DOM.
+    - Potential security issues: JavaScript injection, XSS attacks, insecure communication.
 - **Activity Manager**
-    o Manages the lifecycle of application activities.
-    o Controls the creation, starting, pausing, and stopping of activities.
-    o Handles activity stacking and navigation within the application.
+    -  Manages the lifecycle of application activities.
+    -  Controls the creation, starting, pausing, and stopping of activities.
+    -  Handles activity stacking and navigation within the application.
 
 ### Common Tool for Static Analysis–
 
@@ -663,7 +674,7 @@ algorithms.
 
     - runtime.exec(): Prevent injection of malicious input data to avoid execution of
 
-#### arbitrary shell commands.
+#### Arbitrary shell commands.
 
 - Root Detection Implementation Details:
      - Verify implementation details of root detection mechanisms.
@@ -713,11 +724,9 @@ algorithms.
        adb shell getprop ro.product.cpu.abi // Check architecture
     - Download the burp certificate and renamed it as cert-der.crt
 
-
-```
 - Now send the Frida-server and burp certificate in android location /data/local/tmp
 - Done!
-```
+- 
 - **Check packages**
 
 ```
@@ -757,24 +766,22 @@ frida-ps - Ua // list running applications pkg
 # Run Command Frida for bypass
 frida - U - f com.package.test - l ssl-fridascript.js
 ```
-```
-# Frida command explain
-```
+**Frida command explain**
+
 - f: Specifies the target application package name ('com.userapp.test') to attach to.
 - l: Specifies the Frida script file (`fridascript.js`) to load and execute.
 - U: Specifies that the target device is connected over USB.
 - **SSL Unpinning using Exposed-Module**
 
-```
-# SSL Unpinning Bypass using Expose Module
-git clone https://github.com/ac-pm/SSLUnpinning_Xposed.git
-cd /SSLUnpinning_Xposed
-```
+##### SSL Unpinning Bypass using Expose Module
+    
+    git clone https://github.com/ac-pm/SSLUnpinning_Xposed.git
+    cd /SSLUnpinning_Xposed
 
-```
-adb install mobi.acpm.sslunpinning_latest.apk
-Open in android and check for SSL unpinning
-```
+    adb install mobi.acpm.sslunpinning_latest.apk
+    
+    Open in android and check for SSL unpinning
+
 - **Root Detection Bypass Using Frida**
 
 ```
@@ -784,9 +791,9 @@ company>.<package name
 ```
 
 ---
-### Source Code Analysis
+# Source Code Analysis
 
-#### Vulnerable code Challenge in Python and Flask:
+### > Vulnerable code Challenge:
 
 ## SQL Injection (SQLi)
 - Vulnerable Code: Direct concatenation of user input into SQL query.
