@@ -1,11 +1,15 @@
 
 
-Most Common Questions:
+
+# Web Application
+---
+
+**Most Common Questions:**
 
 - SQL injection and it's type
 - SSRF and bypass
 -  xml attack
-- -login page - scenario (authentication bypass by SQL injection, host header injection, url
+- login page - scenario (authentication bypass by SQL injection, host header injection, url
     redirection, username enumeration, rate limiting or brute force,
 - Billion laugh attack
 - Deserialization Vulnerability,
@@ -14,8 +18,7 @@ Most Common Questions:
 - LFI and RFI
 - How to connect proxy with mobile
 - SSRF exploit LFI, RFI, or command injection, port scan etc.
-
-# Web Application
+>
 
 ### SQL injection and its type:
 
@@ -75,306 +78,88 @@ waitfor delay '00:00:05'
     is a type of SQL injection attack where the malicious payload is stored within the application's database, and the
     execution of the payload occurs at a later time when certain conditions are met.
 
-### OWASP TOP 10
-**Top 10 Web Application Security Risks 2021 Mobile Top 10 2024: Final Release Updates**
-```
-A01:2021-Broken Access Control M1: Improper Credential Usage
-A02:2021-Cryptographic Failures M2: Inadequate Supply Chain Security
-A03:2021-Injection M3: Insecure Authentication/Authorization
-A04:2021-Insecure Design M4: Insufficient Input/Output Validation
-A05:2021-Security Misconfiguration M5: Insecure Communication
-A06:2021-Vulnerable and Outdated Components M6: Inadequate Privacy Controls
-A07:2021-Identification and Authentication Failures M7: Insufficient Binary Protections
-A08:2021-Software and Data Integrity Failures M8: Security Misconfiguration
-A09:2021-Security Logging and Monitoring Failures* M9: Insecure Data Storage
-A10:2021-Server-Side Request Forgery (SSRF)* M10: Insufficient Cryptography
-```
-
-**OWASP Top 10 API Security Risks – 2023 OWASP Desktop App Security Top 10**
-```
-API1:2023 Broken Object Level Authorization DA1 - Injections
-API2:2023 Broken Authentication DA2 - Broken Authentication & Session Management
-API3:2023 Broken Object Property Level Authorization DA3 - Sensitive Data Exposure
-API4:2023 Unrestricted Resource Consumption DA4 - Improper Cryptography Usage
-API5:2023 Broken Function Level Authorization DA5 - Improper Authorization
-API6:2023 Unrestricted Access to Sensitive Business Flows DA6 - Security Misconfiguration
-API7:2023 Server Side Request Forgery DA7 - Insecure Communication
-API8:2023 Security Misconfiguration DA8 - Poor Code Quality
-API9:2023 Improper Inventory Management DA9 - Using Components with Known Vulnerabilities
-API10:2023 Unsafe Consumption of APIs DA10 - Insufficient Logging & Monitoring
-```
-**Common Ports and services Common Ports and services**
-20   -  FTP (File Transfer Protocol)
-21   -  FTP (File Transfer Protocol)
-22   -  SSH (Secure Shell) 179 - BGP (Border Gateway Protocol)
-23   -  Telnet 443 - HTTPS (Hypertext Transfer Protocol Secure)
-25   -  SMTP (Simple Mail Transfer Protocol)
-514   -  Syslog
-53   -  DNS (Domain Name System) 587 - SMTP (Submission)
-67   -  DHCP (Dynamic Host Configuration Protocol) -Server
-5900 -  VNC (Virtual Network Computing)
-68   -  DHCP (Dynamic Host Configuration Protocol) - Client
-3389 -  RDP (Remote Desktop Protocol)
-80   -  HTTP (Hypertext Transfer Protocol)
-110  -  POP3 (Post Office Protocol version 3) 
-115  -  SFTP (Simple File Transfer Protocol) 
-119  -  NNTP (Network News Transfer Protocol) 
-123  -  NTP (Network Time Protocol) 
-143  -  IMAP (Internet Message Access Protocol)
-161  -  SNMP (Simple Network Management Protocol)
-27017-  MongoDB - Default port for MongoDB database
-3306 -  MySQL Database - Database server
-5432 -  PostgreSQL Database - Database server
-143  -  IMAP (Internet Message Access Protocol)
-161  -  SNMP (Simple Network Management Protocol)
-
-### Common Security Missing Headers
-
-**Content-Security-Policy**
-
-In simple terms, the purpose of the "Content Security Policy" (CSP) header is to help
-protect website from malicious attacks, particularly Cross-Site Scripting (XSS).
-
-It works by specifying which sources of content are approved, like scripts, stylesheets,
-or images. By allowing only trusted sources, CSP prevents unauthorized content from
-being loaded onto your site, making it more secure against cyber threats.
-
-    - 'none' - blocks the use of this type of resource.
-    - 'self' - matches the current origin (but not subdomains).
-    - 'unsafe-inline' - allows the use of inline JS and CSS.
-    - 'unsafe-eval' - allows the use of mechanisms like eval().
-**Vul vs Fix**
-
-```bash
-Content-Security-Policy: script-src 'self' 'unsafe-inline' 'unsafe-eval';
-```
-
-```bash
-Content-Security-Policy: default-src 'self'; script-src 'self' https://apis.google.com ;
-```
-
-**Example 2:**
-
-```bash
- Content-Security-Policy: default-src 'self' https://example.com;
-```
-```bash
-Content-Security-Policy: default-src 'self'; script-src 'self' https://example.com;
-```
 
 
-**X-Frame-Options**
+#### OWASP TOP 10: Web and Mobile:
+| **2021 Web Top 10**                            | **2021 Mobile Top 10 2024**             |
+|-----------------------------------------------|------------------------------------------|
+| A01:2021-Broken Access Control                | M1: Improper Credential Usage            |
+| A02:2021-Cryptographic Failures               | M2: Inadequate Supply Chain Security     |
+| A03:2021-Injection                            | M3: Insecure Authentication/Authorization|
+| A04:2021-Insecure Design                      | M4: Insufficient Input/Output Validation|
+| A05:2021-Security Misconfiguration           | M5: Insecure Communication               |
+| A06:2021-Vulnerable and Outdated Components  | M6: Inadequate Privacy Controls          |
+| A07:2021-Identification and Authentication Failures| M7: Insufficient Binary Protections |
+| A08:2021-Software and Data Integrity Failures | M8: Security Misconfiguration           |
+| A09:2021-Security Logging and Monitoring Failures| M9: Insecure Data Storage            |
+| A10:2021-Server-Side Request Forgery (SSRF)*  | M10: Insufficient Cryptography          |
 
-X-Frame-Options : Tell the browser whether you want to allow your site to be framed
-or not. By preventing a browser from framing your site you can defend against attacks
-like clickjacking. 
+<br>
 
-```bash
-X-Frame-Options: SAMEORIGIN
-X-Frame-Options: Self
-```
+#### OWASP top : API and Thick Client
 
-**X-Content-Type-Options**
+| **OWASP Top 10 API Security Risks**                     | **2023 OWASP Desktop App Security Top 10**          |
+|--------------------------------------------------------|-----------------------------------------------------|
+| API1:2023 Broken Object Level Authorization            | DA1 - Injections                                    |
+| API2:2023 Broken Authentication                        | DA2 - Broken Authentication & Session Management    |
+| API3:2023 Broken Object Property Level Authorization   | DA3 - Sensitive Data Exposure                      |
+| API4:2023 Unrestricted Resource Consumption           | DA4 - Improper Cryptography Usage                  |
+| API5:2023 Broken Function Level Authorization         | DA5 - Improper Authorization                       |
+| API6:2023 Unrestricted Access to Sensitive Business Flows | DA6 - Security Misconfiguration                |
+| API7:2023 Server Side Request Forgery                  | DA7 - Insecure Communication                       |
+| API8:2023 Security Misconfiguration                    | DA8 - Poor Code Quality                            |
+| API9:2023 Improper Inventory Management                | DA9 - Using Components with Known Vulnerabilities  |
+| API10:2023 Unsafe Consumption of APIs                 | DA10 - Insufficient Logging & Monitoring           |
 
-X-Content-Type-Options stops a browser from trying to MIME-sniff the content type
-and force it to stick with the declared content-type.
-```bash
-X-Content-Type-Options: no sniff". 
-```
-**Referrer-Policy**
 
-In simpler terms, the purpose of the "Referrer Policy" header is to control how much
-information the browser shares when you click on a link and leave a webpage. It
-determines what details, such as the website you're coming from, are sent to the new
-page you're visiting. This helps protect your privacy and sensitive information from
-being unnecessarily shared with other websites.
+### Most Common Ports and services
 
-- **Purpose:** Controls how much information the browser includes with navigations
-    away from a document.
-- **Vulnerable Example:** Referrer-Policy: unsafe-url
-    - This setting allows the full URL (including path and query parameters) to be sent in the Referer header, potentially exposing sensitive information.
-  
-- **Fix Example:** Referrer-Policy: strict-origin
-    - This setting instructs the browser to include only the origin (scheme, host,
-       and port) of the referring URL in the Referer header, enhancing user
-       privacy and security.
+| **Common Ports and Services**                | **Common Ports and Services**                      |
+|---------------------------------------------|----------------------------------------------------|
+| 20 - FTP (File Transfer Protocol)          | 514 - Syslog                                       |
+| 21 - FTP (File Transfer Protocol)          | 53 - DNS (Domain Name System)                      |
+| 22 - SSH (Secure Shell)                    | 587 - SMTP (Submission)                            |
+| 23 - Telnet                                | 67 - DHCP (Dynamic Host Configuration Protocol) - Server |
+| 25 - SMTP (Simple Mail Transfer Protocol)  | 5900 - VNC (Virtual Network Computing)             |
+| 68 - DHCP (Dynamic Host Configuration Protocol) - Client | 3389 - RDP (Remote Desktop Protocol)       |
+| 80 - HTTP (Hypertext Transfer Protocol)    | 110 - POP3 (Post Office Protocol version 3)        |
+| 115 - SFTP (Simple File Transfer Protocol) | 119 - NNTP (Network News Transfer Protocol)        |
+| 123 - NTP (Network Time Protocol)          | 143 - IMAP (Internet Message Access Protocol)      |
+| 161 - SNMP (Simple Network Management Protocol) | 27017 - MongoDB                                   |
+| 3306 - MySQL Database                      | 5432 - PostgreSQL Database                         | 
 
-**Permissions-Policy**
 
-- **Purpose:** Controls which browser features and APIs can be used.
-- **Vulnerable Example:** Permissions-Policy:accelerometer=*
-    - This setting allows any origin to access the device's
-       accelerometer API, potentially leading to unauthorized access
-       or misuse of sensitive device capabilities.
-- **Fix Example:** Permissions-Policy: accelerometer=()
-    - This setting restricts access to the accelerometer API to the
-       same origin only, preventing unauthorized access and reducing
-       the risk of exploitation.
+| Security Header               | Description                                                                                                                                                                      | Vul vs Fix                                                                                                                   |
+|-------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|
+| **Content-Security-Policy**  | In simple terms, the purpose of the "Content Security Policy" (CSP) header is to help protect websites from malicious attacks, particularly Cross-Site Scripting (XSS).          | `Content-Security-Policy: script-src 'self' 'unsafe-inline' 'unsafe-eval';`<br>`Content-Security-Policy: default-src 'self'; script-src 'self' https://apis.google.com ;`<br><br> **Example 2:**<br>`Content-Security-Policy: default-src 'self' https://example.com;`<br>`Content-Security-Policy: default-src 'self'; script-src 'self' https://example.com;` |
+| **X-Frame-Options**          | X-Frame-Options : Tell the browser whether you want to allow your site to be framed or not. By preventing a browser from framing your site you can defend against attacks like clickjacking. | `X-Frame-Options: SAMEORIGIN`<br>`X-Frame-Options: Self`                                                                                                                                 |
+| **X-Content-Type-Options**   | X-Content-Type-Options stops a browser from trying to MIME-sniff the content type and force it to stick with the declared content-type.                                             | `X-Content-Type-Options: no sniff"`                                                                                                                                                      |
+| **Referrer-Policy**          | In simpler terms, the purpose of the "Referrer Policy" header is to control how much information the browser shares when you click on a link and leave a webpage.                | **Vulnerable Example:**<br>`Referrer-Policy: unsafe-url`<br>This setting allows the full URL (including path and query parameters) to be sent in the Referer header, potentially exposing sensitive information.<br><br>**Fix Example:**<br>`Referrer-Policy: strict-origin`<br>This setting instructs the browser to include only the origin (scheme, host, and port) of the referring URL in the Referer header, enhancing user privacy and security. |
+| **Permissions-Policy**       | - **Purpose:** Controls which browser features and APIs can be used.<br>- **Vulnerable Example:** Permissions-Policy:accelerometer=*<br>This setting allows any origin to access the device's accelerometer API, potentially leading to unauthorized access or misuse of sensitive device capabilities.<br>- **Fix Example:** Permissions-Policy: accelerometer=()<br>This setting restricts access to the accelerometer API to the same origin only, preventing unauthorized access and reducing the risk of exploitation. | `Permissions-Policy: camera=*, geolocation=*, microphone=*`<br>This policy allows any origin to access the camera, geolocation, and microphone APIs, potentially leading to unauthorized access or misuse of sensitive device capabilities:<br>`Permissions-Policy: camera=(), geolocation=(), microphone=()`<br>This policy restricts access to the camera, geolocation, and microphone APIs to the same origin only, preventing unauthorized access and reducing the risk of exploitation. | 
 
-        ```bash
-        Permissions-Policy: camera=*, geolocation=*, microphone=*
-        ```
-    - This policy allows any origin to access the camera, geolocation, and microphone APIs, potentially leading to unauthorized access or misuse of sensitive device capabilities:
-        ```bash
-        Permissions-Policy: camera=(), geolocation=(), microphone=()
-        ```
-    - This policy restricts access to the camera, geolocation, and microphone APIs to the same origin only, preventing unauthorized access and reducing the risk of exploitation.
 
 ### Common Cookies and It’s values
 
-**1. Secure:**
-- **_Value_** : Secure
-- **_Mitigate_** : Man In the middle Attack.
-- **_Explanation_** : By setting the secure attribute, the cookie will only be sent over HTTPS connect ions, reducing the risk of interception by attackers.
+
+| Cookies         | Values             | Description                                                                                                                                                                   | Vulnerable Example                                  | Fix Example                                                                                                       |
+|-----------------|--------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------|--------------------------------------------------------------------------------------------------------------------|
+| Secure          | Secure             | By setting the secure attribute, the cookie will only be sent over HTTPS connections, reducing the risk of interception by attackers.                                       | `Set-Cookie: session_id=abc123;`                   | `Set-Cookie: session_id=abc123; Secure`                                                                           |
+| HttpOnly        | HttpOnly           | When a cookie has the HttpOnly attribute set, JavaScript cannot access it, which helps mitigate certain types of XSS attacks.                                                | `Set-Cookie: session_id=abc123;`                   | `Set-Cookie: session_id=abc123; HttpOnly`                                                                         |
+| SameSite        | Strict, Lax, None | The SameSite attribute defines when cookies should be sent along with cross-site requests.                                                                                    | `Set-Cookie: session_id=abc123; SameSite=None`     | `Set-Cookie: session_id=abc123; SameSite=Strict; Secure`                                                           |
 
 
-**2. HttpOnly:**
-- **_Value_** : HttpOnly
-- **_Mitigate_** : XSS
-- **_Explanation_** : When a cookie has the HttpOnly attribute set, JavaScript cannot access
-       it, which helps mitigate certain types of XSS attacks.
 
-
-**3. SameSite:**
-- **_Values_** : Strict, Lax, or None
--  **_Explanation_** : The SameSite attribute defines when cookies should be sent along with
-    cross-site requests.
-
-    - a) Strict : The cookie will only be sent in a first-party context, which
-provides a high level of protection against CSRF attacks.<br><br>
-
-    - b) Lax : The cookie will be sent in a first-party context and in cross-origin
-POST requests initiated by top-level navigations.<br><br>
-
-    - c) None : The cookie will be sent in all contexts, including cross-origin
-requests. However, this requires the Secure attribute to be set as well.
-
-Let's say you have a website https://example.com and you want to set a
-cookie named session_id for user authentication. You want to ensure that
-the cookie is sent securely and protect against CSRF attacks.
-
--  **Strict** :
-       **Example** : Set-Cookie: session_id=abc123; SameSite=Strict; Secure
-       **Explanation** : With SameSite=Strict, the **session_id** cookie will only be sent in first-
-       party contexts. This means it will only be included in requests initiated by
-       **example.com** , such as when the user navigates directly to pages on **example.com**. It
-       won't be sent in cross-origin requests, even if they're initiated by **example.com**.
-       Adding **Secure** ensures that the cookie is only sent over HTTPS connections.<br><br>
-
--  **Lax** :
-       - **Example** : **Set-Cookie: session_id=abc123; SameSite=Lax; Secure**
-       - **Explanation** : With SameSite=Lax, the **session_id** cookie will be sent in first-
-          party contexts as well as in cross-origin POST requests initiated by top-level
-          navigations. For example, if a form on **example.com** submits data to another
-          origin via POST, the **session_id** cookie will be included. Again, **Secure** ensures
-          that the cookie is only sent over HTTPS connections.<br><br>
-   -  **None** :
-       - **Example** : **Set-Cookie: session_id=abc123; SameSite=None; Secure**
-       - **Explanation** : SameSite=None allows the **session_id** cookie to be sent in all
-          contexts, including cross-origin requests. However, it requires the **Secure**
-          attribute to be set, meaning the cookie will only be sent over HTTPS connections.
-          This is commonly used for scenarios like Single Sign-On (SSO), where the cookie
-          needs to be included in cross-origin requests, such as when accessing resources
-          on different domains.
-
-   ### JWT Tokens
-
-   A JWT, which stands for JSON Web Token, is like a small, safe package for sending information
-   between two parties over the internet. It's often used to show that a user is logged in and to share
-   details about them securely.
-
-   - **Header** : Contains metadata about the token, such as the algorithm used for signing.
-       _Example_ : {"alg": "HS256", "typ": "JWT"}
-   - **Payload** : Contains claims, which are statements about an entity (e.g., user information) and
-       additional data.
-       _Example_ : {"sub": "john.doe@example.com", "name": "John Doe", "exp": 1678303200}
-   - **Signature** : Created by encoding the header and payload, then signing them with a secret
-       key. It verifies the sender's identity and ensures the integrity of the message.
-       _Example_ : gDlQmk8bg3JgrAytXn_FfRy6zSrLJQk-VvENiUcGG2Y
-
-
-### CORS vs SOAP
-
-**SOAP** : The SOP policy helps protect users from malicious scripts that could access their sensitive
-data or perform **unauthorized actions on their behalf.**
-
-For example, if **business.com** tries to make an HTTP request to **metrics.com** , the browser, by
-default, will block the request because it comes from a different domain.
-
-**CORS** is a security feature created to selectively relax the SOP restrictions and enable controlled
-access to resources from different domains. CORS rules allow domains to specify which domains can
-request information from them by adding specific HTTP headers in the response
-
-```
-Access-Control-Allow-Origin: This header specifies the allowed domains to read the
-response contents. The value can be either a wildcard character (*) , which indicates all
-domains are allowed, or a comma-separated list of domains.
-```
-```
-Access-Control-Allow-Credentials: This header determines whether the domain
-allows for passing credentials — such as cookies or authorization headers in the cross-origin
-requests.
-```
-```
-The value of the header is either True or False. If the header is set to “true,” the domain
-allows sending credentials. If it is set to “false,” or not included in the response, then it is not
-allowed.
-```
-### CORS Misconfiguration
-
-**1. Reflected Origins:** Domains get reflected in the response header.
-
-        - Impact High – Access-Control-Allow-Credentials = True
-        - Impact Low - Access-Control-Allow-Credentials = False
-        - Exploitable : Yes
-
-**2. Modified Origins** : If no checks are in place CORS Policy can be bypassed. For example,
-    adding a prefix or suffix to the **abc.com** domain would be something like
-    **attackerabc.com** or **abc.com.attack.com**.
-
-       - Impact High – Access-Control-Allow-Credentials = True
-       - Impact Low - Access-Control-Allow-Credentials = False
-       - Exploitable: Yes
-**3. Trusted subdomains with Insecure Protocol.** Set the Origin header to an existing subdomain
-    and see if it accepts it. If it does, it means the domain trusts all its subdomains. This is not a
-    good idea because if one of the subdomains has a Cross-Site Scripting (XSS) vulnerability, it
-    will allow the attacker to inject a malicious JS payload and perform unauthorized actions.
-
-        - Impact High : If domain accepts subdomains with an insecure protocol like http
-        - Impact Low: Otherwise, it will not be exploitable and would be only a poor CORS implementation.
-
-**4. Null Origin:** Set the Origin header to the null value — **Origin: null** , and see if the
-    application sets **the Access-Control-Allow-Origin** header to null. If it does, it means
-    that null origins are whitelisted.
-    
-       - Impact High: if the domain allows for authenticated requests with the Access-
-          Control-Allow-Credentials header set to true.
-
-       - Impact Low and not exploitable: If the case is not above then low impact and not
-          exploitable.
-**5.** Unexplainable Case **: Wild Card (*) –** but its misconfiguration and not exploitable.
 
 ### Intruder attack Type:
 
-**1. Sniper:**
- - Work on single payload set.
- -  If 3 positions are selected then one by one position are set with payload to run. It work set payload in first position and rest two values will as it is. Now same goes of rest two positions.
-- It means sniper handles single position at time.
 
-**2. Battering RAM**
-- Work on single payload set.
-- Payload set at all position simultaneously.
+| Attack Type    | Description                                                                                                                                                                   |
+|----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Sniper:**    | - Work on single payload set.<br>- If 3 positions are selected then one by one position are set with payload to run. It work set payload in first position and rest two values will as it is. Now same goes of rest two positions.<br>- It means sniper handles single position at a time. |
+| **Battering RAM** | - Work on single payload set.<br>- Payload set at all positions simultaneously.                                                                                                  |
+| **Pitchfork**  | - Work on multiple sets of payload.<br>- Work on the minimum number of payloads.<br>- If two payloads contain numbers like 6 and 4, then will generate 4 payloads only.<br>- To run this at all positions one payload is needed. |
+| **Cluster Bomb** | - Work on multiple sets of payload.<br>- All the permutation and combination of payloads are generated.<br>- Suppose if the payload set is 2 and position also two then works as shown in image. |
 
-**3. Pitchfork**
-- Work on multiple set of payload.
--  Work on the minimum number of payloads.
--  If two payloads contain number like 6 and 4, then will generate 4 payloads only.
--   To run this at all position one payload is needed.
-
-**4. Cluster Bomb**
-- Work on multiple set of payload.
-- All the permutation and combination of payloads generates.
-- Suppose if the payload set is 2 and position also two then works as shown in image.
 
 
 **LFI vs RFI**
@@ -408,7 +193,7 @@ regard.
 --
 
 
-
+---
 ---
 # Android Application
 ---
