@@ -5,7 +5,7 @@ The content presented here does not belong to me in any way. It is a compilation
 Based on my personal experience, the following list comprises some commonly encountered interview questions. However, I cannot guarantee that interview questions will be 100% derived from this repository.
 
 ---
-**This is based my personal experiance: **
+** This is based my personal experiance: **
 
 | S.N | Profile | Level  | Description | Link |
 |-----|---------|--------|-------------|------|
