@@ -14,6 +14,7 @@ Based on my personal experience, the following list comprises some commonly enco
 
 
 
+
 ---
 # **Level 1:** 
 ### Awesome Interview Links: For (freshers)
@@ -665,3 +666,7 @@ A brute force attack (also known as brute force cracking), is a popular cracking
 
 	>An attacker can potentially use CGI to send a malformed environment variable to a vulnerable Web server. Because the server uses Bash to interpret the variable, it will also run any malicious command tacked-on to it.
     
+---
+
+## Additional Tips
+![image](https://github.com/m14r41/CyberSecurity-Interview/assets/95265573/7095e6eb-f95f-4a94-939a-f503d7ef3631)
