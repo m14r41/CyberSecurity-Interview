@@ -328,6 +328,9 @@ Retransmission of lost packets is possible in TCP, but not in UDP. | There is no
 | 7   | Physical Layer     | **-** Controls the way unstructured, raw, bit-stream data is sent and received over a physical medium. <br> **-** Composed of the electrical, optical, and physical components of the network. <br> **-** Form **Bits** | Coax, Fiber, Wireless, RJ45, Bluetooth  |
 
 <img src="https://github.com/m14r41/CyberSecurity-Interview/assets/95265573/a219dfa7-a885-4064-a584-b3df253cffa5" alt="OSI model" width="600"/>
+<img src="https://github.com/m14r41/CyberSecurity-Interview/assets/95265573/6aebe188-a5b0-44b2-8799-90fe70ba7bed" alt="OSI model" width="600"/>
+
+
 
 
     
