@@ -83,7 +83,7 @@ Based on my personal experience, the following list comprises some commonly enco
   
     For example, software or an application that has code vulnerable to a buffer or flow exploit.
   
-### 3. Explain **Vulnerabilty**, **Threats**, **Exploit** and **Risk**.
+### 4. Explain **Vulnerabilty**, **Threats**, **Exploit** and **Risk**.
 - ```Vulnerabilty```
   
   >A vulnerability is a flaw, loophole, oversight, or error that can be exploited to violate system security policy. 
@@ -106,21 +106,25 @@ Based on my personal experience, the following list comprises some commonly enco
     ```
     It is an situation involving exposure to dange.
     ```
-### 4. Define **Indentification**, **Authentication**, and **Authorization**?
-- **```Indentification```**
-  
-  >Identification is the process in which the ability to identify uniquely a user of a system or an application that is running in the system.
-  
-- **```Authentication```**
-  
-  >Process of verifying the identity of the user who claims to be.
-  
-- **```Authorization```**
+### 5. Define **Indentification**, **Authentication**, and **Authorization**?
+
+### Identification
+
+    Identification is the process of recognizing and uniquely identifying a user within a system or application. It establishes who the user is.
+
+### Authentication
+
+    Authentication is the process of verifying the identity of the user who has been identified. It ensures that the user is indeed who they claim to be.
+
+### Authorization
+
+    Authorization is the process of determining the permissions and access levels granted to the authenticated user. It defines what resources and actions the user is allowed to access within the system.
+
   
   >What level of access someone have ,i.e process of granting access and defining the specific resources for a user's needs.
   
 
-### 5. What is 3 way handshake?
+### 6. What is 3 way handshake?
 
 >A three-way handshake is a method used in a TCP/IP network to create a connection between a local host/client and server.
 
@@ -141,7 +145,7 @@ Based on my personal experience, the following list comprises some commonly enco
     
   
   
- ### 6. What is SSL/TLS handshake? 
+ ### 7. What is SSL/TLS handshake? 
  
  >In nutshell, SSL is obsolete and TLS is new name of older SSL protocol as modern encryption standard using by everybody. Technically, TLS is more accurate, but everyone knows SSL.
  
@@ -154,7 +158,7 @@ SSL is a cryptographic protocol that uses explicit connections to establish secu
 Three versions of SSL have been released: SSL 1.0, 2.0, and 3.0. |	Four versions of TLS have been released: TLS 1.0, 1.1, 1.2, and 1.3.
 All versions of SSL have been found vulnerable, and they all have been deprecated. |	TLS 1.0 and 1.1 have been “broken” and are deprecated as of March 2020. TLS 1.2 is the most widely deployed protocol version.
 
-### 7. Accounting V/S Auditing.
+### 8. Accounting V/S Auditing.
 - **```Accounting```**
     ```
     The Process of tracking and recording system activities and resource access.
@@ -165,94 +169,7 @@ All versions of SSL have been found vulnerable, and they all have been deprecate
         ```
 
 
-### 8. Give the name of few tools used in penetration testing.
 
-- **```BurpSuite```**
-    
-    Burp or Burp Suite is a set of tools used for penetration testing of web applications. It is developed by the company named Portswigger, 
-    
-  -   **Proxy:**
-        
-        >proxy lets the user see and modify the contents of requests and responses while they are in transit.
-        -------------------------------------------
-        >It also allow to send the  request/response under monitoring to another relevant tool in BurpSuite, that avoids copy paste.
-        -------------------------------------------
-        >Also allow to configure the proxy.
-        
-     - **Intruder:**
-        
-        >Burp Intruder is a tool for automating customized attacks against web applications
-        -------------------------------------------
-        >Brute-force attacks on password forms, pin forms, and other such forms.
-        -------------------------------------------
-        >The dictionary attack on password forms, fields that are suspected of being vulnerable to XSS or SQL injection.
-        -------------------------------------------
-        >Testing and attacking rate limiting on the web-app.
-        
-     - **Intruder:**
-        
-        >Burp Repeater is a simple tool for manually manipulating and reissuing individual HTTP requests, and analyzing the application's responses.
-        -------------------------------------------
-       >Allow send a request to Repeater from anywhere within Burp, modify the request and issue it over and over again.
-        
-    - **Decoder**
-        
-        >Decoder lists the common encoding methods like URL, HTML, Base64, Hex, etc. This tool comes handy when looking for chunks of data in values of parameters or headers.
-        -----------------------------------------------
-        >Decoder lists the common encoding methods like URL, HTML, Base64, Hex, etc.
-        
-- **```Nessus```**
-    
-    >The Nessus vulnerability scanner is a remote security scanner from Tenable, Inc. 
-    
-
-    >Nessus scans a computer and then generates alerts if vulnerabilities are discovered.  Nessus runs over 1,000+ checks to see if vulnerabilities exist.
-    
-
-- **```Nikto```**
-    
-    >Nikto is an Open Source software written in Perl language that is used to scan a web-server for the vulnerability that can be exploited and can compromise the server. 
-    
-
-    >It can also check for outdated version details of 1200 server and can detect problems with specific version details of over 200 servers.
-    
-    
-    Example : **nikto -host www.example.com
-    
-- **```Nmap```**
-    
-    >Nmap is a free and open-source network scanner tool. Nmap is used to discover hosts and services on a computer network by sending packets and analyzing the  responses.
-    
-    >Nmap provides a number of features for provding computer networks, including host discovery and service and operating dedection.
-    
-
-   - **Ping Scan** Nmap discover host by using a ping scan without sending packets.
-      
-      ```
-      nmap -sp 192.100.1.1/24
-      ```
-      
-   - **Host Scan** responds to this packet with another ARP packet containing its status and MAC address.
-      ```
-      nmap -sp <target IP range>
-      ```
-   - **OS Scanning** sends TCP and UDP packets to a particular ports and compares this response to a database of 2600 O/S
-   
-      ```
-      nmap -O <target IP>
-      ```
-   - **Most Popular Ports** 
-      ```
-      nmap --top-ports 20 192.168.1.106
-      ```
-   - **Output to a File**
-      ```
-      -oN output.txt
-      ```
-      ```
-      -oX output.xml
-      ```
-       
 
 ### **9. Encription VS encoding Vs Hashing** 
 
@@ -266,29 +183,6 @@ All versions of SSL have been found vulnerable, and they all have been deprecate
 | **Hashing**    | Ensure data integrity by transforming data into a fixed-size string. | One-way process; original data cannot be recovered.      | MD5, SHA-1, SHA-256              | Password storage, data integrity checks, digital signatures.    |
 
  
-     
-  
-
- > ### Encription vs Hashing
-
- |```Encryption``` |	```Hashing``` |
-|----------- | ---------|
-|A two-way function that takes in plaintext data, and turns it into undecipherable ciphertext.| A one-way method of hiding sensitive data. Using a hashing algorithm, hashing turns a plaintext into a unique hash digest that cannot be reverted to the original plaintext, without considerable effort.|
-It is reversible | It is irreversible
-Variable Length | 	Fixed Length  
-Types :	Asymmetric and Symmetric |	Hashing
-Common Algorithms :	AES, RC4, DES, RSA, ECDSA |	SHA-1, SHA-2, MD5, CRC32, WHIRLPOOL
-
-
- > ## Encription vs Encoding
- 
-```symmetric Key Encryption```  | ```Asymmetric Key Encryption```
----------------- | -------------
-It only requires a single key for both encryption and decryption.l  |It requires two key one to encrypt and the other one to decrypt.
-The encryption process is very fast.  | The encryption process is slow.
-It is used when a large amount of data is required to transfer. | It is used to transfer small amount of data.
-It only provides confidentiality | It provides confidentiality, authenticity and non-repudiation.
-Examples: 3DES, AES, DES and RC4 | Examples: Diffie-Hellman, ECC, El Gamal, DSA and RSA 
 
 ### 10. TCP vs UDP
 
@@ -325,9 +219,6 @@ Retransmission of lost packets is possible in TCP, but not in UDP. | There is no
 <img src="https://github.com/m14r41/CyberSecurity-Interview/assets/95265573/a219dfa7-a885-4064-a584-b3df253cffa5" alt="OSI model" width="600"/>
 <img src="https://github.com/m14r41/CyberSecurity-Interview/assets/95265573/6aebe188-a5b0-44b2-8799-90fe70ba7bed" alt="OSI model" width="600"/>
 
-
-
-
     
 
 ### 12. TCP/IP Model
@@ -346,16 +237,6 @@ Retransmission of lost packets is possible in TCP, but not in UDP. | There is no
 
 >"Open Web Application Security Proect" is list of most common web application vulnerabilty. It was first updated in 2013 and now it's latest release is 2021.
 
-- >**A01:2021-Broken Access Control**
-- >**A02:2021-Cryptographic Failures**
-- >**A03:2021-Injection**
-- >**A04:2021-Insecure Design**
-- >**A05:2021-Security Misconfiguration**
-- >**A06:2021-Vulnerable and Outdated Components**
-- >**A07:2021-Identification and Authentication Failures**
-- >**A08:2021-Software and Data Integrity Failures**
-- >**A09:2021-Security Logging and Monitoring Failures**
-- >**A10:2021-Server-Side Request Forgery**
 
 ### 14. What is pentesting and types of pentesting
 
@@ -386,171 +267,118 @@ Retransmission of lost packets is possible in TCP, but not in UDP. | There is no
 
 >There are 65,535 ports in total
 
-### 16. What is functions of ports
-- >**FTP — Port Number : 20,21 :**
-    ```
-    FTP : File Transfer Protocol
-    Use : The purpose of FTP is to transfer files Upload and Download
-    ```
-- >**SSH — Port 22 :**
-    ```
-    SSH Secure Shell
-    Use : The SSH protocol uses encryption to secure the connection between a client and a server
-    It is used for remote login
-    ```
-- >**Telnet — Port 23 :**
-    ```
-    Use : Its main function is to establish a connection between a server and a remote computer.
-    It is used for remote login
-    NOTE: The key difference between Telnet and SSH is that SSH uses encryption,
-    which means that all data transmitted over a network is secure , from eavesdropping
-    ```
-- >**RDP — 3389 :**
-    ```
-    Remote Desktop Protocol
-    This port has been developed by Microsoft. It enables you to establish a connection with a remote computer
-    But this time we need a windows device at the other end.
-    ```
-- >**DNS — 53 :**
-    ```
-    Domain Name System
-    URL to IP Mapping.
-    SMTP — 25 :
-    Simple mail transfer protocol
-    Sending Emails.
-    ```
-- >**POP3 — 110 :**
-    ```
-    Post office protocol v3
-    Receiving emails.
-    ```
-- >**IMAP4 — 143:**
-    ```
-    Internet message access protocol v4
-    Receiving emails(new version).
-    ```
-- >**HTTP — 80 :**
-    ```
-    hypertext transfer protocol
-    Connect to the web pages on the internet
-    This is an application layer protocol
-    ```
-- >**HTTPS — 443 :**
-
-    ```
-    Hypertext transfer protocol secure.
-    HTTPS is a secure protocol which uses TLS/SSL certificate to ensure the authentication.
-    ```
-- >**ARP**
-    ```
-    ARP is a protocol used by the Internet Protocol (IP) [RFC826], to map IP network addresses to the hardware addresses used by a data link protocol
-
-    ARP is used to keep track of all devices that are directly connected IP subnets of the switch
-
-    The switch maintains an ARP table which is made of mapped IP addresses and MAC addresses. 
-    
-    When a packet needs to be routed to a certain device, the switch looks up the IP address of the device in its ARP table to obtain the MAC address of the destination device. The ARP table includes both static and dynamic addresses.
-    ```
-
-### 17. Common Ports and services
-
-| ```Ports``` | `Services`|
-| ---- | ----|
-|20 |File Transfer Protocol (FTP) Data Transfer
-21  | File Transfer Protocol (FTP) Command Control
-22  | Secure Shell (SSH)
-23  |Telnet - Remote login service, unencrypted text messages
-25  |Simple Mail Transfer Protocol (SMTP) E-mail Routing
-53 |Domain Name System (DNS) service
-80 | Hypertext Transfer Protocol (HTTP) used in World Wide Web
-110 |Post Office Protocol (POP3) used by e-mail clients to retrieve e-mail from a server
-119 |Network News Transfer Protocol (NNTP)
-123 |Network Time Protocol (NTP)
-143 |Internet Message Access Protocol (IMAP) Management of Digital Mail
-161 |Simple Network Management Protocol (SNMP)
-194 |Internet Relay Chat (IRC)
-443 |HTTP Secure (HTTPS) HTTP over TLS/SSL
-
-### 14. **What is Bruteforce and how to prevent from it.**
-
-A brute force attack (also known as brute force cracking), is a popular cracking method relies on guessing possible combinations of a targeted password until the correct password is discovered. The longer the password, the more combinations that will need to be tested. 
-
->### **How to prevent from this.**
-- Limit the number of failed login attempts.
-- By altering the sshd_config file, you can make the root user unreachable via SSH.
-- Instead of using the default port, change it in your sshd config file.
-- Make use of Captcha.
-- Limit logins to a certain IP address or range of IP addresses.
-- Authentication using two factors
-- URLs for logging in that are unique
-- Keep an eye on the server logs.
-
-### 18. DNS working
-
-1. When searching for a www.example.com,
-   
-        >we are actually searching for www.example.com. 
-        The Browser and OS looks within the computer if the related IP address stored in the cache.
 
 
-2. If no record found then the Operating system queries the "Resolving Name Server" for the records.
-   
-        >The Resolving Name Server is configured within the computer automatically or manually.
+### Functions of Ports
 
-        >If no enteries in the cache, then the RNS will ask the ROOT Name Servers.
-
-
-3. The ROOT Name Servers tells where to find the COM name servers or TLD Name Servers.
-   
-        >The RNS takes all this information, puts it in its cache and then goes to TLD Name Servers. 
-
-
-4. When the RNS queries COM TLD nameservers for www.example.com., TLS ns then tells the address
-   
-		>for example.com. Name Servers which are also called Authoriative Name Servers. The RNS puts all
-		this information in its cache and goes to example.com. Authoriative NS.
-
-
-5. The example.com. Authoriative Name Servers will tell the RNS the related IP address of www.example.com.
-   
-		>This entry is made in the memory of RNS and RNS goes back to the OS. OS then passes this
-		information to the browser.
+| **Service**        | **Port Number** | **Function**                                                                                       | **Service**        | **Port Number** | **Function**                                                                                      |
+|--------------------|-----------------|----------------------------------------------------------------------------------------------------|--------------------|-----------------|---------------------------------------------------------------------------------------------------|
+| **FTP**            | 20, 21          | File Transfer Protocol<br>**Use:** Transfer files (Upload and Download)                            | **MySQL**          | 3306            | MySQL Database<br>**Use:** Connects to MySQL databases                                            |
+| **SSH**            | 22              | Secure Shell<br>**Use:** Encrypts the connection for remote login                                  | **PostgreSQL**     | 5432            | PostgreSQL Database<br>**Use:** Connects to PostgreSQL databases                                 |
+| **Telnet**         | 23              | **Use:** Establishes a connection for remote login<br>**Note:** Does not encrypt data like SSH    | **Oracle**         | 1521            | Oracle Database<br>**Use:** Connects to Oracle databases                                         |
+| **RDP**            | 3389            | Remote Desktop Protocol<br>**Use:** Connects to remote Windows computers                          | **LDAP**           | 389             | Lightweight Directory Access Protocol<br>**Use:** Accesses directory services                     |
+| **DNS**            | 53              | Domain Name System<br>**Use:** Maps URLs to IP addresses                                         | **SMB**            | 445             | Server Message Block<br>**Use:** File sharing and network communication                          |
+| **SMTP**           | 25              | Simple Mail Transfer Protocol<br>**Use:** Sending emails                                         | **NetBIOS**        | 137, 138, 139   | Network Basic Input/Output System<br>**Use:** Network file sharing and service discovery            |
+| **POP3**           | 110             | Post Office Protocol v3<br>**Use:** Receiving emails                                             | **MSSQL**          | 1433            | Microsoft SQL Server<br>**Use:** Connects to Microsoft SQL Server databases                      |
+| **IMAP4**          | 143             | Internet Message Access Protocol v4<br>**Use:** Receiving emails (new version)                   | **VNC**            | 5900            | Virtual Network Computing<br>**Use:** Remote desktop access                                      |
+| **HTTP**           | 80              | Hypertext Transfer Protocol<br>**Use:** Connects to web pages on the internet                     | **Syslog**         | 514             | System Logging Protocol<br>**Use:** Sends system log or event messages to a logging server        |
+| **HTTPS**          | 443             | Hypertext Transfer Protocol Secure<br>**Use:** Secure protocol using TLS/SSL certificates          | **SNMP**           | 161             | Simple Network Management Protocol<br>**Use:** Network device management and monitoring           |
+| **ARP**            | N/A             | Address Resolution Protocol<br>**Use:** Maps IP addresses to MAC addresses for routing in IP subnets |                   |                 |                                                                                                   |
 
 
+####  Common Ports and services
 
-### **19. SSH handshake**
-- >**It happens in two steps-**
-    ```
-	1. Server's identity is authenticated by the client 
-   
-
-	2. Client's identity is authenticated by the server
-    ```
-
-## 20. **SSL versus TLS**
-
-
->SSL Versions 			TLS Versions
-
-- SSLv1					-TLS1.0
-- SSLv2					-TLS1.1
-- SSLv3(POODLE)			-TLS1.2
-- SSLv3.1				-TLS1.3  
-    
+| **Service**        | **Port Number** | **Service**        | **Port Number** |
+|--------------------|-----------------|--------------------|-----------------|
+| **FTP**            | 20, 21          | **SMTP**           | 25              |
+| **SSH**            | 22              | **POP3**           | 110             |
+| **Telnet**         | 23              | **IMAP4**          | 143             |
+| **RDP**            | 3389            | **HTTP**           | 80              |
+| **DNS**            | 53              | **HTTPS**          | 443             |
+| **ARP**            | N/A             | **MySQL**          | 3306            |
+| **PostgreSQL**     | 5432            | **Oracle**         | 1521            |
+| **LDAP**           | 389             | **SMB**            | 445             |
+| **NetBIOS**        | 137, 138, 139   | **MSSQL**          | 1433            |
+| **VNC**            | 5900            | **Syslog**         | 514             |
+| **SNMP**           | 161             |                    |                 |
 
 
->SSL 1.0 never publically release because of serious security flaws in the protocol. (Wikipedia - https://en.wikipedia.org/wiki/Transport_Layer_Security#SSL_1.0,_2.0,_and_3.0 )
+### 16. DNS Working
 
->Both SSL 2.0, 3.0, TLS 1.0, and 1.1 have been deprecated
+| **Step**           | **Description**                                                                                  |
+|--------------------|--------------------------------------------------------------------------------------------------|
+| **1. Initial Query**   | When searching for `www.example.com`, the browser and OS first check their local cache for the corresponding IP address. |
+| **2. Cache Miss**      | If no record is found, the OS queries the "Resolving Name Server" (RNS) for the IP address. The RNS checks its own cache. |
+| **3. Root Name Servers** | If the RNS does not have the record, it queries the Root Name Servers, which provide addresses of the TLD Name Servers for `.com`. |
+| **4. TLD Name Servers** | The RNS queries the `.com` TLD Name Servers, which provide the address of the Authoritative Name Servers for `example.com`. |
+| **5. Authoritative Name Servers** | The Authoritative Name Servers for `example.com` provide the IP address of `www.example.com`. The RNS caches this result and returns it to the OS. |
 
- 
->SSL is the predecessor to TLS - TLS is the new name for SSL
+### **17. SSH Handshake Process**
+
+| **Step**                 | **Description**                                                                                 |
+|--------------------------|-------------------------------------------------------------------------------------------------|
+| **1. Client Initiates**  | The SSH client initiates a connection to the SSH server by sending a connection request.       |
+| **2. Server Responds**   | The SSH server responds with its public key and a set of supported encryption algorithms.       |
+| **3. Key Exchange**      | The client and server exchange cryptographic keys to agree on a shared secret for encryption.    |
+| **4. Authentication**    | The client sends an authentication request (username and password, or key-based authentication). |
+| **5. Server Verifies**   | The server verifies the client's credentials. If valid, it sends an acknowledgment.             |
+| **6. Secure Connection** | Once authentication is successful, both the client and server establish an encrypted session.   |
 
 
->HTTPS is HTTP-within-SSL/TLS.
+### 18. SSH Handshake Process
+
+| **Step**                 | **Description**                                                                                 |
+|--------------------------|-------------------------------------------------------------------------------------------------|
+| **1. Client Initiates**  | The SSH client initiates a connection to the SSH server by sending a connection request.       |
+| **2. Server Responds**   | The SSH server responds with its public key and a set of supported encryption algorithms.       |
+| **3. Key Exchange**      | The client and server exchange cryptographic keys to agree on a shared secret for encryption.    |
+| **4. Authentication**    | The client sends an authentication request (username and password, or key-based authentication). |
+| **5. Server Verifies**   | The server verifies the client's credentials. If valid, it sends an acknowledgment.             |
+| **6. Secure Connection** | Once authentication is successful, both the client and server establish an encrypted session.   |
 
 
-### 21. Some Basic Vulnerabilty and terms.
+### 19. Give the name of few tools used in penetration testing.
+
+    BurSuite
+
+| **Tool**     | **Description**                                                                                                    | **Key Features**                                              |
+|--------------|--------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------|
+| **Proxy**    | Allows users to view and modify the contents of requests and responses while they are in transit.                | - View and modify requests/responses<br>- Forward to other tools<br>- Configurable proxy settings |
+| **Intruder** | Automates customized attacks against web applications.                                                           | - Brute-force attacks<br>- Dictionary attacks<br>- Rate limiting tests |
+| **Repeater** | Manually manipulates and reissues individual HTTP requests to analyze responses.                                  | - Send, modify, and reissue requests<br>- Detailed response analysis |
+| **Decoder**  | Decodes and encodes data using common methods like URL, HTML, Base64, and Hex.                                     | - Common encoding/decoding methods<br>- Analyzes data in parameters or headers |
+| **Scanner**  | Automatically scans web applications for vulnerabilities.                                                           | - Automated vulnerability scanning<br>- Detailed reports<br>- Customizable scan settings |
+| **Comparer** | Compares two sets of data to identify differences, useful for analyzing responses or request variations.          | - Compare requests/responses<br>- Highlight differences<br>- Useful for analyzing changes |
+| **Sequencer**| Analyzes the randomness of tokens and session identifiers to assess their strength and predictability.             | - Token randomness analysis<br>- Session identifier analysis<br>- Statistical reports |
+| **Extender** | Allows users to add custom functionality to Burp Suite through extensions and plugins.                             | - Add and manage extensions<br>- Customize Burp Suite’s capabilities<br>- Support for third-party plugins |
+
+
+## Common command of SQLMap and Nmap   
+
+    SQLmap and Nmap
+
+| **SQLmap**                           | **Command/Example**                                  | **Nmap**                            | **Command/Example**                     |
+|--------------------------------------|------------------------------------------------------|------------------------------------|----------------------------------------|
+| **Run on a Single URL**              | `sqlmap -u "http://example.com"`                    | **Ping Scan**                      | `nmap -sn <target>`                    |
+| **Run on a Single Parameter**        | `sqlmap -p <parameter> -u "http://example.com"`     | **Host Scan**                      | `nmap -sn <target IP range>`           |
+| **Enumerate Databases**               | `sqlmap -u "http://example.com?id=1" --dbs`        | **OS Scanning**                    | `nmap -O <target IP>`                  |
+| **Enumerate Tables**                 | `sqlmap -u "http://example.com?id=1" -D <db_name> --tables` | **Most Popular Ports**           | `nmap --top-ports 20 <target>`         |
+| **Enumerate Columns**                | `sqlmap -u "http://example.com?id=1" -D <db_name> -T <table_name> --columns` | **Output to a File**             | `nmap -oN output.txt`<br>`nmap -oX output.xml` |
+| **Dump Data**                        | `sqlmap -u "http://example.com?id=1" -D <db_name> -T <table_name> --dump` | **Service Version Detection**     | `nmap -sV <target>`                    |
+| **Use a Proxy**                      | `sqlmap -u "http://example.com" --proxy="http://proxy_ip:proxy_port"` | **Script Scanning**              | `nmap --script=<script_name> <target>` |
+| **Set User-Agent**                   | `sqlmap -u "http://example.com" --user-agent="CustomAgent"` | **TCP SYN Scan**                | `nmap -sS <target>`                    |
+| **Set Level**                        | `sqlmap -u "http://example.com" --level=<level>`    | **UDP Scan**                     | `nmap -sU <target>`                    |
+| **Set Threads**                      | `sqlmap -u "http://example.com" --threads=<num>`    | **Aggressive Scan**              | `nmap -A <target>`                    |
+| **WAF Bypass**                       | `sqlmap -u "http://example.com" --tamper=<script>`  | **Traceroute Scan**              | `nmap --traceroute <target>`           |
+| **Exit on Error**                    | `sqlmap -u "http://example.com" --ignore-errors`    | **Full TCP Connect Scan**        | `nmap -sT <target>`                    |
+| **WAF Bypass using Cookies**         | `sqlmap -u "http://example.com" --cookie="cookie_data"` | **Version Detection Scan**      | `nmap -sV --version-all <target>`      |
+| **WAF Bypass using User-Agent**      | `sqlmap -u "http://example.com" --user-agent="CustomAgent"` | **Idle Scan**                   | `nmap -sI <target>`                    |
+| **WAF Bypass using Referer Header**  | `sqlmap -u "http://example.com" --referer="http://referrer.com"` | **OS and Version Detection**    | `nmap -O -sV <target>`                |
+| **WAF Bypass with Delays**           | `sqlmap -u "http://example.com" --delay=5`          | **TCP ACK Scan**                 | `nmap -sA <target>`                    |
+| **WAF Bypass with Custom Payload**   | `sqlmap -u "http://example.com" --tamper="random_case"` | **IP Protocol Scan**             | `nmap -sO <target>`                    |
+
+
+### 20. Some Basic Vulnerabilty and terms.
 
 - >`Application Vulnerabilities`
     
