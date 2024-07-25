@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/dce73955-ecb2-45cb-b99f-f1e65ced2bdc)**Disclaimer:**
+**Disclaimer:**
 The content presented here does not belong to me in any way. It is a compilation sourced from various domains, and due credit and respect are given to the original creators. I do not endorse or support any unethical activities, and this content is intended solely for educational purposes.
 
 **Note:**
