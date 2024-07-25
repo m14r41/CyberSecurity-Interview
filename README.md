@@ -1,4 +1,4 @@
-**Disclaimer:**
+![image](https://github.com/user-attachments/assets/dce73955-ecb2-45cb-b99f-f1e65ced2bdc)**Disclaimer:**
 The content presented here does not belong to me in any way. It is a compilation sourced from various domains, and due credit and respect are given to the original creators. I do not endorse or support any unethical activities, and this content is intended solely for educational purposes.
 
 **Note:**
@@ -257,20 +257,15 @@ All versions of SSL have been found vulnerable, and they all have been deprecate
 ### **9. Encription VS encoding Vs Hashing** 
 
 
-- **```Hashing:```**
+- **```Encryption vs Encoding vs Hashing :```**
     
-    >A string of numbers generated to confirm the integrity of data through hashing algorithms.
-    
-    
-    >Hashing is a form of cryptographic security which differs from encryption. Whereas encryption is a two step process used to first encrypt and then decrypt a message, hashing condenses a message into an irreversible fixed-length value, or hash.
-    
-- **```Encryption:```**
-    
-    >A technique used to maintain the confidentiality of data by converting the data into an undecipherable format.
-    
-- **```Encoding:```**
-    
-     >A conversion of data from one format to another format.
+| **Concept**    | **Purpose**                                                         | **Reversibility**                                       | **Examples**                     | **Use Case**                                                   |
+|----------------|---------------------------------------------------------------------|---------------------------------------------------------|----------------------------------|----------------------------------------------------------------|
+| **Encryption** | Protect data confidentiality by transforming plaintext into ciphertext. | Reversible with the correct decryption key.              | AES, RSA                         | Securing sensitive information during transmission and storage. |
+| **Encoding**   | Transform data into a different format for proper interpretation by systems. | Reversible using a decoding scheme.                      | Base64, ASCII, URL encoding      | Data transmission, storage, and compatibility across platforms. |
+| **Hashing**    | Ensure data integrity by transforming data into a fixed-size string. | One-way process; original data cannot be recovered.      | MD5, SHA-1, SHA-256              | Password storage, data integrity checks, digital signatures.    |
+
+ 
      
   
 
