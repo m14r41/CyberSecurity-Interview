@@ -38,7 +38,7 @@
 
 
 #### OWASP TOP 10: Web and Mobile:
-| **2021 Web Top 10**                            | ** Mobile Top 10 2024**             |
+| **2021 Web Top 10**                            | **Mobile Top 10 2024**             |
 |-----------------------------------------------|------------------------------------------|
 | A01:2021-Broken Access Control                | M1: Improper Credential Usage            |
 | A02:2021-Cryptographic Failures               | M2: Inadequate Supply Chain Security     |
