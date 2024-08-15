@@ -211,114 +211,53 @@ which can then be decompiled using Java decompiles like JD-GUI
 **Ghidra** is powerful reverse engineering framework. It provides features for disassembly,
 decompilation, scripting, and collaborative reverse engineering, making it suitable for static analysis
 
-### APK Folder Components –
 
-The Android Package (APK) file is a compressed archive file that contains all the files needed to run
-an Android application on an Android device. The APK file is essentially a ZIP file that contains
-several components, including:
+### APK Folder Components
 
-##### 1. AndroidManifest.xml: 
-- This file contains information about the application, including its package name, version number, required permissions, and components such as activities,
-services, and broadcast receivers.
+| **Component**             | **Description**                                                                                     |
+|---------------------------|-----------------------------------------------------------------------------------------------------|
+| **AndroidManifest.xml**   | Contains information about the application, including its package name, version number, permissions, and components like activities, services, and broadcast receivers. |
+| **Classes.dex**           | Contains the compiled Java bytecode for the application's classes, executed by the Android Runtime (ART). |
+| **Resources.arsc**        | Contains compiled resources such as strings, images, and layouts used by the application.         |
+| **lib/**                  | Folder containing compiled native code libraries for specific device architectures, such as ARM or x86. |
+| **META-INF/**             | Contains the manifest file, the certificate of the APK signature, and a list of all files in the APK with their checksums. |
+| **assets/**               | Contains additional application data files, such as sound and video files, that are not compiled into the APK. |
+| **res/**                  | Folder containing application resources, such as layouts, strings, and images, in their original format before being compiled into Resources.arsc. |
+| **Android System Files**  | Contains system-level files like the Android runtime, framework libraries, and system components used by the application. |
 
-##### 2. Classes.dex: 
-- This file contains the compiled Java bytecode for the application’s classes, which are executed by the Android Runtime (ART).
 
-###### 3. Resources.arsc:
- - This file contains compiled resources such as strings, images, and layouts that are used by the application.
 
-##### 4. lib/:
--  This folder contains compiled native code libraries for specific device architectures,
-such as ARM or x86.
-
-##### 5. META-INF/:
--  This folder contains the manifest file, the certificate of the APK signature, and a
-list of all the files in the APK, along with their checksums.
-##### 6. assets/: This folder contains additional application data files, such as sound and video files,
-
-#### that are not compiled into the APK.
-
-#### 7. res/: This folder contains the application resources, such as layouts, strings, and images, in
-
-```
-their original format before being compiled into the Resources.arsc file.
-```
-#### 8. Android System Files: This folder contains system-level files such as the Android runtime,
-
-```
-framework libraries, and system components that the application may use.
-```
 
 ## APK Static Analysis
 
-- **Permissions:** Check if the application requests any sensitive permission like camera,
-    microphone, location, SMS, or call logs. If the app is requesting unnecessary permissions, it
-    could be a red flag for privacy violations or potential security risks.
-- **Components:** Android components like activities, services, receivers, and providers can be
-    exploited by attackers to gain unauthorized access or to launch attacks. Check if any of the
-    components are exposed to other applications or if they are exported with overly permissive
-    access.
-- **android:exported —** The default value of the attribute is true. (should be set to false)
-- **Intents:** Intents are messages used by different Android components to communicate with
-    each other. They can be used to launch activities, services, or broadcast messages. Check if
-    the app is using any implicit intents that could be intercepted or manipulated by attackers.
-- **Allow debugable: true —** Without a rooted phone it is possible to extract the data or run an
-    arbitrary code using application permission (Should be false) The default value is “false”
-- **Allow backup: true — The** default value of this attribute is true. This setting defines whether
-    application data can be backed up and restored by a user who has enabled usb
-    debugging.(Should be false)
-- **Application information:** Check if the application has any hard-coded credentials, sensitive
-    information, or debugging features that could be exploited by attackers.
-- **Malware signatures —** Check if the application has any malware signatures that could
-    indicate that the app is malicious or potentially harmful.
-- **Target SDK version —** Check if the app is targeting an older version of the Android SDK. If
-    the app is not targeting the latest version, it could be vulnerable to known security
+| **Aspect**                        | **Description**                                                                                                      |
+|-----------------------------------|----------------------------------------------------------------------------------------------------------------------|
+| **Permissions**                   | Check if the application requests sensitive permissions (camera, microphone, location, SMS, call logs). Unnecessary permissions may indicate privacy violations or security risks. |
+| **Components**                    | Evaluate Android components (activities, services, receivers, providers) for potential exploitation. Ensure components are not exposed with overly permissive access. |
+| **android:exported**              | This attribute should be set to `false` to prevent unauthorized access. The default value is `true`.                 |
+| **Intents**                       | Review the use of implicit intents to ensure they are not susceptible to interception or manipulation by attackers.  |
+| **Allow debugable**               | Should be `false`. If set to `true`, it can allow data extraction or arbitrary code execution without a rooted phone. The default value is `false`. |
+| **Allow backup**                 | Should be `false`. This setting controls whether application data can be backed up and restored via USB debugging. The default value is `true`. |
+| **Application information**       | Check for hard-coded credentials, sensitive information, or debugging features that could be exploited.             |
+| **Malware signatures**            | Analyze for any known malware signatures that could suggest the app is malicious or harmful.                        |
+| **Target SDK version**            | Verify if the app targets the latest Android SDK version. Older SDK versions might have known security vulnerabilities. |
 
-#### vulnerabilities.
 
-### Common Static Vulnerability –
 
-- Weak Cryptography
-- Look for use of encryption algorithms and verify implementation correctness.
-- Check for hardcoded keys, weak encryption methods, or use of insecure cryptographic
-algorithms.
-- Code Obfuscation:
-    -  Check for obfuscation techniques used to hide code.
-    -  Verify that obfuscation does not hide malicious code.
-- API Usage:
-    - Verify absence of insecure or vulnerable APIs.
-    - Look for APIs allowing unauthorized access or data leakage.
-- Hardcoded Sensitive Information:
-- Look for insecure storage of sensitive data.
-- Check for hardcoded database queries, passwords, keys, or URLs.
-- External Libraries:
-    - Verify absence of insecure or vulnerable third-party libraries.
-- **Integrity Checks:**
-    - Look for integrity checks to prevent tampering with code.
-- **Native Code:**
-    -  If present, verify secure compilation of native code.
-- **Web View Related Checks:**
+### Common Static Vulnerabilities
 
-    -  setJavaScriptEnabled(): Ensure proper validation of input data to prevent
-
-    - injection of malicious JavaScript code.
-
-    - setAllowFileAccess(): Validate input data to prevent unauthorized
-
-    - access/modification of local files.
-
-    - addJavascriptInterface(): Validate input data to prevent execution of
-
-    - arbitrary Java code.
-
-    - runtime.exec(): Prevent injection of malicious input data to avoid execution of
-
-#### Arbitrary shell commands.
-
-- Root Detection Implementation Details:
-     - Verify implementation details of root detection mechanisms.
-- SSL Pinning Implementation Details:
-     - Review implementation details of SSL pinning to ensure secure communication.
+| **Vulnerability**               | **Description**                                                                                                             |
+|---------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
+| **Weak Cryptography**           | Examine the use of encryption algorithms to ensure correct implementation. Check for hardcoded keys, weak methods, or insecure algorithms. |
+| **Code Obfuscation**            | Review obfuscation techniques to ensure they don't hide malicious code. Verify that obfuscation effectively protects against reverse engineering. |
+| **API Usage**                   | Ensure that no insecure or vulnerable APIs are used. Look for APIs that allow unauthorized access or data leakage.         |
+| **Hardcoded Sensitive Information** | Look for insecure storage of sensitive data. Check for hardcoded database queries, passwords, keys, or URLs.                |
+| **External Libraries**          | Verify that third-party libraries used are not insecure or vulnerable.                                                     |
+| **Integrity Checks**            | Check for mechanisms to ensure code integrity and prevent tampering.                                                         |
+| **Native Code**                 | If native code is present, verify it is securely compiled and free from vulnerabilities.                                     |
+| **Web View Related Checks**     | - **setJavaScriptEnabled()**: Ensure proper validation to prevent injection of malicious JavaScript code. <br> - **setAllowFileAccess()**: Validate input to prevent unauthorized file access/modification. <br> - **addJavascriptInterface()**: Validate input to prevent execution of arbitrary Java code. <br> - **runtime.exec()**: Prevent injection of malicious input to avoid execution of arbitrary shell commands. |
+| **Root Detection Implementation Details** | Verify the implementation of root detection mechanisms to ensure they are effective.                                         |
+| **SSL Pinning Implementation Details**     | Review SSL pinning implementation to ensure secure communication and prevent man-in-the-middle attacks.                      |
 
 
 ## APK Dynamic Analysis
@@ -351,7 +290,7 @@ algorithms.
 
 ### Lab Setup and perquisite for Dynamic Pretesting –
 
-- **Download any emulator** : Genymotion, NoxPlayer
+- **Download any emulator** : Android Studio, Genymotion, NoxPlayer
 - **Proxy Configuration**
     - Export burpsuite certificate
     - Configured port and interface in burpsuite.
@@ -365,69 +304,60 @@ algorithms.
 
 - Now send the Frida-server and burp certificate in android location /data/local/tmp
 - Done!
-- 
-- **Check packages**
 
-```
-adb shell pm list packages
-// List all installed packages
-```
-```
-adb shell pm list packages - f
-// List all installed packages with file paths
-```
-```
-adb shell pm list packages | Select-String "camera"
-// Filter packages containing "camera" for windows
-```
-```
-adb shell pm list packages | grep camera
-// Filter packages containing "camera"
-```
-**SSL Pinning Bypass command**
+### ADB Basics
 
-- **SSL Unpinning using Frida**
+| **Description** | **Command** |
+|-----------------|-------------|
+| **Install an APK** | `adb install <path_to_apk>` |
+| **Connect to a device over TCP/IP** | `adb tcpip <port>` |
+| **Connect to a device over TCP/IP (example)** | `adb connect <device_ip>:<port>` |
+| **List all installed packages** | `adb shell pm list packages` |
+| **List all installed packages with file paths** | `adb shell pm list packages -f` |
+| **Get detailed information about a specific package** | `adb shell dumpsys package <package_name>` |
+| **Uninstall a specific package** | `adb uninstall <package_name>` |
+| **Clear data of a specific package** | `adb shell pm clear <package_name>` |
+| **List all running processes** | `adb shell ps` |
+| **Backup the entire phone** | `adb backup -all -f backup.ab` |
+| **Backup a specific application’s data** | `adb backup -f app_backup.ab -apk -shared -all <package_name>` |
+| **Restore the entire phone from backup** | `adb restore backup.ab` |
+| **Restore a specific application’s data from backup** | `adb restore app_backup.ab` |
 
-```
-# Setup frida sever in android
-adb shell
-cd /local/data/tmp
-./frida-server
-```
-```
-# Identify Package name
-/data/local/tmp # ps -e | grep frida-server
-adb shell "pm list packages -f"
-frida-ps - Uai //get identifire
-frida-ps - Ua // list running applications pkg
-```
-```
-# Run Command Frida for bypass
-frida - U - f com.package.test - l ssl-fridascript.js
-```
-**Frida command explain**
 
-- f: Specifies the target application package name ('com.userapp.test') to attach to.
-- l: Specifies the Frida script file (`fridascript.js`) to load and execute.
-- U: Specifies that the target device is connected over USB.
-- **SSL Unpinning using Exposed-Module**
 
-##### SSL Unpinning Bypass using Expose Module
-    
-    git clone https://github.com/ac-pm/SSLUnpinning_Xposed.git
-    cd /SSLUnpinning_Xposed
 
-    adb install mobi.acpm.sslunpinning_latest.apk
-    
-    Open in android and check for SSL unpinning
 
-- **Root Detection Bypass Using Frida**
+## SSL Pinning Bypass
 
-```
-# Bypass anti-root detection mechanisms
-frida - U --codeshare dzonerzy/fridantiroot - f in.<package
-company>.<package name
-```
+| **Platform** | **Tool & Method**                                                        | **Command**                                                                                         | **Description**                                               |
+|--------------|--------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|---------------------------------------------------------------|
+| **Android**  | [Frida Method 1 (Online)](https://frida.re/)                             | `frida -U --codeshare pcipolloni/universal-android-ssl-pinning-bypass-with-frida -f <Binary-Identifier>` | Bypass SSL pinning on Android using an online Frida script.  |
+|              | **Frida Method 2 (Local)**                                               | `frida -U -L ssl-bypass-script.js -f <Binary-Identifier>`                                               | Bypass SSL pinning on Android using a locally stored Frida script. |
+|              | **Frida Method 3 (Package Specific)**                                    | `frida -U -f <Package-Name> -l ssl-fridascript.js`                                                  | Bypass SSL pinning on Android using a package-specific Frida script. |
+|              | **Exposed-Module Method**                                                | `adb install mobi.acpm.sslunpinning_latest.apk`<br>Open the app in Android and check for SSL unpinning. | Bypass SSL pinning on Android using the Exposed Module.       |
+|              | [Objection Method 1](https://github.com/ac-pm/SSLUnpinning_Xposed.git) | `objection -g <Binary-Identifier> explore`<br>`android sslpinning disable`                           | Disable SSL pinning on Android using Objection.              |
+|              | **Objection Method 2**                                                     | `objection -g <Binary-Identifier> explore -s "android sslpinning disable"`                          | Disable SSL pinning on Android using Objection at runtime.    |
+| **iOS**      | **Frida Method 1 (Online)**                                                | `frida -U --codeshare pcipolloni/universal-ios-ssl-pinning-bypass-with-frida -f <Binary-Identifier>`    | Bypass SSL pinning on iOS using an online Frida script.      |
+|              | **Frida Method 2 (Local)**                                                 | `frida -U -L ssl-bypass-script.js -f <Binary-Identifier>`                                               | Bypass SSL pinning on iOS using a locally stored Frida script. |
+|              | **Objection Method 1**                                                     | `objection -g <Binary-Identifier> explore`<br>`ios sslpinning disable`                              | Disable SSL pinning on iOS using Objection.                  |
+|              | **Objection Method 2**                                                     | `objection -g <Binary-Identifier> explore -s "ios sslpinning disable"`                              | Disable SSL pinning on iOS using Objection at runtime.        |
+
+## Root/Jailbreak Detection Bypass
+
+| **Platform** | **Tool & Method**                                                        | **Command**                                                                                         | **Description**                                               |
+|--------------|--------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|---------------------------------------------------------------|
+| **Android**  | **Frida Method 1 (Online)**                                              | `frida -U --codeshare incogbyte/android-root-bypass -f <Binary-Identifier>`                            | Bypass root detection on Android using an online Frida script. |
+|              | **Frida Method 2 (Local)**                                                | `frida -U -L root-bypass-script.js -f <Binary-Identifier>`                                               | Bypass root detection on Android using a locally stored Frida script. |
+|              | **Frida Method 3 (Anti-Root Detection)**                                  | `frida -U --codeshare dzonerzy/fridantiroot -f <Package-Name>`                                         | Bypass anti-root detection on Android using a Frida script.    |
+|              | **Objection Method 1**                                                     | `objection -g <Binary-Identifier> explore`<br>`android root disable`                                | Disable root detection on Android using Objection.           |
+|              | **Objection Method 2**                                                     | `objection -g <Binary-Identifier> explore -s "android root disable"`                                 | Disable root detection on Android using Objection at runtime. |
+| **iOS**      | **Frida Method 1 (Online)**                                                | `frida -U --codeshare incogbyte/ios-jailbreak-bypass -f <Binary-Identifier>`                           | Bypass jailbreak detection on iOS using an online Frida script. |
+|              | **Frida Method 2 (Local)**                                                 | `frida -U -L jailbreak-bypass-script.js -f <Binary-Identifier>`                                          | Bypass jailbreak detection on iOS using a locally stored Frida script. |
+|              | **Objection Method 1**                                                     | `objection -g <Binary-Identifier> explore`<br>`ios jailbreak disable`                               | Disable jailbreak detection on iOS using Objection.          |
+|              | **Objection Method 2**                                                     | `objection -g <Binary-Identifier> explore -s "ios jailbreak disable"`                               | Disable jailbreak detection on iOS using Objection at runtime. |
+
+
+
 ---
 ---
 # Source Code Analysis
