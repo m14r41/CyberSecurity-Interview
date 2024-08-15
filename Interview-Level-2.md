@@ -376,8 +376,7 @@ decompilation, scripting, and collaborative reverse engineering, making it suita
 
 
 
-## Android Penetration Testing Interview Questions
-## Android Penetration Testing Interview Questions
+### Android Penetration Testing Interview Questions
 
 | **Question**                                                                                                 | **Description**                                                                                                  | **Command/Payload**                                                                                      |
 |-------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
