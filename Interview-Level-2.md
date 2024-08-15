@@ -1,24 +1,14 @@
+### **Common Questions Asked:**
+
+| **Category**     | **Questions**                                                                                                                                                  |
+|------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Web**          | - Login page explain : Possible attack scenarios <br> >> e.g  Authentication bypass via SQL injection, host header injection, URL redirection, username enumeration, rate limiting, brute force, etc. <br> - SQL Injection and its types <br> - What is SSRF and common bypass techniques? <br> - What is XSS and its types? Expalain DOM XSS. <br> - XML External Entity (XXE) attacks <br> - What is Billion Laughs Attack? <br> - Expalin Deserialization Vulnerabilities <br> - Directory Traversal vs Directory Listing <br> - Local File Inclusion (LFI) vs Remote File Inclusion (RFI) <br> - SSRF Vulnerability and its bypass <br> - By SSRF attack how to command injection, port scanning, etc. <br> - What are common security headers and their values? <br> - What are the different types of cookie values? <br> - What is a JWT token and which part can an attacker exploit (HEADER, PAYLOAD, VERIFY SIGNATURE)? |
+| **Mobile**       | - What is ADB? <br> - What is an IPA/Manifest file? <br> - What are the most common components of Android (Activity, Intents, Content Providers)? <br> - How to perform mobile pentesting (static & dynamic) <br> - What are the tools used in mobile pentesting (MobSF, JDAX-GUI, APKTool, Burp Suite, Frida, Objection)? <br> - How to set up a proxy on Android/iOS <br> - What are common vulnerabilities in Android applications? <br> - What are the common components of iOS applications? <br> - How to perform iOS pentesting (static and dynamic) <br> - How to bypass SSL pinning on Android and iOS (Frida, Objection) <br> - How to bypass root/jailbreak detection <br> - How to exploit activities <br> - What are static vulnerabilities in Android? <br> - Root/Jailbreak Detection Bypass <br> - How to perform dynamic pentesting on Android and iOS |
+| **API**          | - What is an API and what are its common types (e.g., REST, SOAP, GraphQL)? <br> - What are the common tools used for API testing? <br> - What are the API authentication and authorization issues? <br> - What is Broken Object Level Authorization? <br> - Insecure Direct Object References <br> - Common misconfigurations in APIs <br> - What are JSON Web Token (JWT) vulnerabilities? <br> - What tests can be performed on a payment gateway API after checkout? |
+| **Thick Client** | - What is a thick client and a thin client? <br> - What are the common tools used for thick client testing? <br> - How will you perform thick client pentesting (static and dynamic)? <br> - What is DLL hijacking and how is it performed? <br> - How to intercept traffic (Burp Suite invisible proxying, EchoMirage, Fiddler, Wireshark) <br> - How to perform binary analysis and reverse engineering (dnSpy) <br> - Insecure Local Storage <br> - Memory dump (Process Hacker) <br> - Lack of Proper Authentication and Authorization <br> - Insufficient Encryption and Weak Session Management <br> - What to perform in registry-related attacks (RegShot) |
 
 
 
-# Web Application
----
-
-### **Most Common Questions:**
-
-- SQL injection and it's type
-- SSRF and bypass
--  xml attack
-- login page - scenario (authentication bypass by SQL injection, host header injection, url
-    redirection, username enumeration, rate limiting or brute force,
-- Billion laugh attack
-- Deserialization Vulnerability,
-- SSL key Pinning bypass
-- directory traversal,
-- LFI and RFI
-- How to connect proxy with mobile
-- SSRF exploit LFI, RFI, or command injection, port scan etc.
->
 
 
 ## Web Application Security Quick Revision
@@ -45,6 +35,18 @@
 | **BOLA vs IDOR**                 | **BOLA (Broken Object Level Authorization)**: Access control issues allowing unauthorized access to objects.<br>**IDOR (Insecure Direct Object References)**: Direct access to objects without proper authorization checks. | `?documentId=123`, `?fileId=456` |
 | **Methods of Privilege Escalation** | Techniques include exploiting vulnerabilities in user roles, accessing unauthorized resources, privilege misconfigurations, or bypassing role-based access controls. | `admin`, `role=superuser` |
 | **Login Page Testing**           | Tests include:<br>- **SQL Injection**: Inject SQL code into login fields.<br>- **Host Header Injection**: Manipulate headers to redirect or inject content.<br>- **URL Redirection**: Test for unauthorized redirection.<br>- **Username Enumeration**: Check if usernames are exposed.<br>- **Rate Limiting/Brute Force**: Attempt to bypass rate limits to perform brute force attacks. | `admin' OR '1'='1`, `http://example.com?redirect=http://malicious.com`, `admin@domain.com` |
+
+
+
+### **DOM XSS Overview in Details**
+
+| **Aspect**        | **Details**                                                                                                                                      |
+|-------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Definition**    | DOM-based Cross-Site Scripting (DOM XSS) is a type of XSS attack where the vulnerability exists in the client-side code (JavaScript) rather than in the server-side code. It occurs when an attacker can manipulate the DOM (Document Object Model) of a web page in such a way that malicious scripts are executed in the user's browser. |
+| **Conditions**    | - **Client-side JavaScript**: The attack relies on JavaScript code running in the user's browser. <br> - **Manipulated Input**: User input is improperly handled or sanitized, allowing script injection. <br> - **Dynamic Content**: Web pages dynamically update content based on user input or URL parameters. |
+| **Where Performed** | - **URL Parameters**: Injecting scripts through URL query parameters. <br> - **DOM Manipulation**: Exploiting JavaScript functions that update the DOM using user input (e.g., `document.write`, `innerHTML`). <br> - **User Input**: Malicious input in fields or data that is dynamically added to the page. |
+| **Examples**      | - **Example 1**: If a web application uses the following code to reflect a URL parameter into the page without proper validation: <br> `document.getElementById("output").innerHTML = location.hash.substring(1);` <br> An attacker can exploit this by visiting a URL like `http://example.com/#<script>alert('XSS')</script>`, causing the script to execute in the browser. <br><br> - **Example 2**: A web page that uses `document.location` to dynamically insert content into the page: <br> `document.getElementById("content").innerHTML = document.location.search.substring(1);` <br> If an attacker crafts a URL like `http://example.com/?<script>alert('XSS')</script>`, the script will execute on the page. <br><br> - **Example 3**: A site using `eval()` to execute JavaScript code from user input: <br> `eval(document.getElementById("codeInput").value);` <br> If an attacker inputs `<script>alert('XSS')</script>` into the `codeInput` field, it will be executed when `eval()` runs. |
+
 
 ### SQL Injection and Its Types
 
