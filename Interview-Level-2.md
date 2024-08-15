@@ -311,7 +311,6 @@ decompilation, scripting, and collaborative reverse engineering, making it suita
 | **Description** | **Command** |
 |-----------------|-------------|
 | **Install an APK** | `adb install <path_to_apk>` |
-| **Connect to a device over TCP/IP** | `adb tcpip <port>` |
 | **Connect to a device over TCP/IP (example)** | `adb connect <device_ip>:<port>` |
 | **List all installed packages** | `adb shell pm list packages` |
 | **List all installed packages with file paths** | `adb shell pm list packages -f` |
