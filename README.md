@@ -110,18 +110,18 @@ Based on my personal experience, the following list comprises some commonly enco
 
 ### Identification
 
-    Identification is the process of recognizing and uniquely identifying a user within a system or application. It establishes who the user is.
+   > Identification is the process of recognizing and uniquely identifying a user within a system or application. It establishes who the user is.
 
 ### Authentication
 
-    Authentication is the process of verifying the identity of the user who has been identified. It ensures that the user is indeed who they claim to be.
+   > Authentication is the process of verifying the identity of the user who has been identified. It ensures that the user is indeed who they claim to be.
 
 ### Authorization
 
-    Authorization is the process of determining the permissions and access levels granted to the authenticated user. It defines what resources and actions the user is allowed to access within the system.
+   > Authorization is the process of determining the permissions and access levels granted to the authenticated user. It defines what resources and actions the user is allowed to access within the system.
 
   
-  >What level of access someone have ,i.e process of granting access and defining the specific resources for a user's needs.
+   > What level of access someone have ,i.e process of granting access and defining the specific resources for a user's needs.
   
 
 ### 6. What is 3 way handshake?
