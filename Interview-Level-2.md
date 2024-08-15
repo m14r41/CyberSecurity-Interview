@@ -149,12 +149,6 @@
 
 
 
-**LFI vs RFI**
-LFI stand for local file inclusion, which means an attacker can access files on server through a
-vulnerable parameter or input. RFI stands for remote file inclusion, which means an attacker can
-include a file from a remote server and execute it on your server
-
-##### SSRF
 
 
 
@@ -413,6 +407,13 @@ decompilation, scripting, and collaborative reverse engineering, making it suita
 | What is jailbreak and how can it be bypassed in iOS applications?                                          | Jailbreaking provides elevated access to iOS devices. Bypassing jailbreak protections may involve using tools like Cydia or uncovering exploits that bypass restrictions. For testing, jailbroken devices can be used to access restricted areas or functions. | `Cydia` <br> `unc0ver` <br> `checkra1n` |
 | What is Code Injection and how can it be exploited in iOS apps?                                             | Code Injection involves inserting malicious code into an application to alter its behavior. Exploits can include modifying app binaries or injecting code at runtime using tools like Frida. | `frida -U -p <pid> -l code_injection.js` |
 | What is insecure direct object reference (IDOR) and how can it be exploited in iOS apps?                   | IDOR occurs when an app exposes internal objects (e.g., files or database entries) directly to users without proper authorization checks. Exploits can involve accessing or manipulating these objects via predictable URLs or parameters. | `curl -X GET 'https://api.example.com/data/123'` |
+
+
+
+
+
+
+
 
 
 
