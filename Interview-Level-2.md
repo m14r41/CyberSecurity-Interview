@@ -172,137 +172,32 @@ The main components of android architecture are following:-
 - Platform Libraries
 - Linux Kernel
 
-**Pictorial representation of android architecture with several main components and their sub
-components –**
+| **Component**              | **Description**                                                                                                   |
+|----------------------------|-------------------------------------------------------------------------------------------------------------------|
+| **Applications**           | Top layer where pre-installed and third-party applications reside. Runs within Android runtime using framework services. |
+| **Application Framework** | Provides essential classes for creating applications, including services like activity manager and notification manager. |
+| **Android Runtime**        | Contains core libraries and Dalvik Virtual Machine (DVM) that support application execution.                        |
+| **Dalvik Virtual Machine** | Optimized for Android, DVM manages multiple instances efficiently and relies on Linux kernel for low-level tasks.    |
+| **Platform Libraries**     | Includes C/C++ and Java libraries for media, graphics, and databases, among others.                                 |
+| **Linux Kernel**           | Core of Android architecture managing drivers, memory, power, and providing security, memory, and process management. |
 
 
-**Applications –**
+### Common Components :
 
-Applications are the top layer of android architecture. The pre-installed applications like home,
-contacts, camera, gallery etc. and third-party applications downloaded from the play store like chat
-applications, games etc. will be installed on this layer only.
-
-It runs within the Android run time with the help of the classes and services provided by the
-application framework.
-
-**Application framework –**
-
-Application Framework provides several important classes which are used to create an Android
-application. It provides a generic abstraction for hardware access and also helps in managing the
-user interface with application resources. Generally, it provides the services with the help of which
-we can create a particular class and make that class helpful for the Applications creation.
-
-It includes different types of services activity manager, notification manager, view system, package
-manager etc. which are helpful for the development of our application according to the prerequisite.
-
-**Application runtime –**
-
-Android Runtime environment is one of the most important parts of Android. It contains
-components like core libraries and the Dalvik virtual machine (DVM). Mainly, it provides the base for
-the application framework and powers our application with the help of the core libraries.
-
-Like Java Virtual Machine (JVM),
-
-**Dalvik Virtual Machine (DVM)**
-
-DVM is a register-based virtual machine and specially designed and optimized for android to ensure
-that a device can run multiple instances efficiently. It depends on the layer Linux kernel for threading
-and low-level memory management. The core libraries enable us to implement android applications
-using the standard JAVA or Katlin programming languages.
-
-**Platform libraries –**
-
-The Platform Libraries includes various C/C++ core libraries and Java based libraries such as Media,
-Graphics, Surface Manager, OpenGL etc. to provide a support for android development.
-
-- **Media** library provides support to play and record audio and video formats.
-- **Surface manager** responsible for managing access to the display subsystem.
-- **SGL** and **OpenGL** both cross-language, cross-platform application program interface (API) are
-    used for 2D and 3D computer graphics.
-- **SQLite** provides database support and **Free Type** provides font support.
-- **Web-Kit** This open source web browser engine provides all the functionality to display web
-    content and to simplify page loading.
-- **SSL (Secure Sockets Layer)** is security technology to establish an encrypted link between a
-    web server and a web browser.
+| **Component**                | **Description**                                                                                       | **Potential Security Issues**                                       |
+|------------------------------|-------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------|
+| **Activity**                 | Represents a single screen with a user interface in an Android application. Entry point for user interaction. | Insecure data storage, input validation, authentication flaws.      |
+| **Broadcast Receiver**       | Listens for system-wide broadcast messages or intents. Responds to system events.                      | Insecure broadcast handling, privilege escalation.                 |
+| **Intent**                   | Messaging object used to communicate between components. Starts Activities, Services, delivers broadcasts, or passes data. | Intent spoofing, intent injection, insecure data passing.           |
+| **Explicit Intents**         | Used to start a specific component within the same application. Requires specifying the target component's class or package name. | Example: Starting a new Activity within the app.                   |
+| **Implicit Intents**         | Used to trigger actions based on an action string. Does not specify the target component's name but defines an action to be performed. Android system resolves the intent based on available components capable of handling the action. | Example: Opening a web page or sending an email.                   |
+| **Service**                  | Background component that performs long-running operations. Runs tasks asynchronously without a user interface. | Insufficient authentication, denial of service (DoS), data leakage. |
+| **Content Provider**         | Manages shared application data accessible by other applications or components. Provides a standardized interface for accessing and manipulating data. | Insecure data exposure, insufficient access controls.              |
+| **Manifest File (AndroidManifest.xml)** | Configuration file containing essential information about the application. Declares components, permissions, and hardware requirements. | Excessive permissions, missing security controls.                   |
+| **WebView**                  | Embeds web content within an application. Can execute JavaScript, load remote URLs, and interact with the DOM. | JavaScript injection, XSS attacks, insecure communication.         |
+| **Activity Manager**         | Manages the lifecycle of application activities. Controls the creation, starting, pausing, and stopping of activities. Handles activity stacking and navigation within the application. | Potential for activity leakage, improper activity lifecycle handling leading to data leaks or crashes. |
 
 
-### Linux Kernel –
-
-Linux Kernel is heart of the android architecture. It manages all the available drivers such as display
-drivers, camera drivers, Bluetooth drivers, audio drivers, memory drivers, etc. which are required
-during the runtime.
-
-The Linux Kernel will provide an abstraction layer between the device hardware and the other
-components of android architecture. It is responsible for management of memory, power, devices
-etc.
-
-**The features of Linux kernel are:**
-
-- **Security:** The Linux kernel handles the security between the application and the system.
-- **Memory Management:** It efficiently handles the memory management thereby providing
-    the freedom to develop our apps.
-- **Process Management:** It manages the process well, allocates resources to processes
-    whenever they need them.
-- **Network Stack:** It effectively handles the network communication.
-- **Driver Model:** It ensures that the application works properly on the device and hardware
-    manufacturers responsible for building their drivers into the Linux build.
-
-### Common Components –
-
-1. **Activity** :
-
-- Represents a single screen with a user interface in an Android application.
-- Entry point for user interaction.
-- Potential security issues: insecure data storage, input validation, authentication
-flaws.
-
-- **Broadcast Receiver** :
-    - Listens for system-wide broadcast messages or intents.
-    - Responds to system events.
-    - Potential security issues: insecure broadcast handling, privilege escalation.
-
-- **Intent** :
-    -  Messaging object used to communicate between components.
-    -  Starts Activities, Services, delivers broadcasts, or passes data between components.
-    -  Potential security issues: intent spoofing, intent injection, insecure data passing.
-
-
-- **Explicit Intents :**
-
-    -  Used to start a specific component within the same application.
-    -  Requires specifying the target component's class or package name.
-    -  Example: Starting a new Activity within the app.
-  
-- **Implicit Intents :**
-
-    - Used to trigger actions based on an action string.
-    - Does not specify the target component's name but defines an action to be performed.
-    - Android system resolves the intent based on available components
-capable of handling the action.
-    - Example: Opening a web page or sending an email.
-
-
-- **Service** :
-    -  Background component that performs long-running operations.
-    -  Runs tasks asynchronously without a user interface.
-    -  Potential security issues: insufficient authentication, denial of service (DoS), data
-       leakage.
-- **Content Provider** :
-    - Manages shared application data accessible by other applications or components.
-    - Provides a standardized interface for accessing and manipulating data.
-    - Potential security issues: insecure data exposure, insufficient access controls.
-- **Manifest File (AndroidManifest.xml)** :
-    -  Configuration file containing essential information about the application.
-    -  Declares components, permissions, and hardware requirements.
-    -  Potential security issues: excessive permissions, missing security controls.
-- **WebView** :
-    - Embeds web content within an application.
-    - Can execute JavaScript, load remote URLs, and interact with the DOM.
-    - Potential security issues: JavaScript injection, XSS attacks, insecure communication.
-- **Activity Manager**
-    -  Manages the lifecycle of application activities.
-    -  Controls the creation, starting, pausing, and stopping of activities.
-    -  Handles activity stacking and navigation within the application.
 
 ### Common Tool for Static Analysis–
 
