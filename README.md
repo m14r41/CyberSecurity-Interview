@@ -1,21 +1,30 @@
-**Disclaimer:**
-The content presented here does not belong to me in any way. It is a compilation sourced from various domains, and due credit and respect are given to the original creators. I do not endorse or support any unethical activities, and this content is intended solely for educational purposes.
+### Disclaimer:
+>The content provided here is a compilation sourced from various creators, and I claim no ownership of it. All credit and respect go to the original authors. I do not endorse or condone any unethical activities; this material is shared solely for educational purposes.
 
-**Note:**
-Based on my personal experience, the following list comprises some commonly encountered interview questions. However, I cannot guarantee that interview questions will be 100% derived from this repository.
+### Note:
+
+> Based on my experience, the following list includes some frequently encountered interview questions.
+
+### Update:
+
+>This repository is actively maintained and updated to reflect the latest industry practices and trends.
 
 ---
-**This is based my personal experiance:**
+
+## VAPT Interview Preparation Resource:
 
 | S.N | Profile | Level  | Description | Link |
 |-----|---------|--------|-------------|------|
 | 1   | VAPT    | Level 1| **-** Owasp, Port and services, IP and Mac, Encription, Hashing, Common vulnerability <br> **-** For freshers and experiance | [Click Here](https://github.com/m14r41/CyberSecurity-Interview/tree/main) |
 | 2   | VAPT    | Level 2| **-** Dedicated for Experiance Pentester <br> **-** Web, Mobile, API, Thick Client, SAST etc | [Click Here](https://github.com/m14r41/CyberSecurity-Interview/blob/main/Interview-Level-2.md) |
+| 2   | VAPT    | Level 3| **-** Additional VAPT Question Collection <br> **-** Web, Mobile, API, Thick Client, SAST etc | [Click Here](https://github.com/m14r41/CyberSecurity-Interview/blob/main/VAPT-Interview.md) |
 
 
 
 
 ---
+---
+
 # **Level 1:** 
 ### Awesome Interview Links: For (freshers)
 
