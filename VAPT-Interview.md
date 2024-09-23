@@ -11,6 +11,7 @@ This section acknowledges and thanks the people whose content has been reference
 
 # Penetration Tester Interview Questions (Basic to Advanced)
 
+---
 ## 1. Basic Questions
 
 - **What are the primary phases of penetration testing?**
