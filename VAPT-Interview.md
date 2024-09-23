@@ -1,12 +1,11 @@
 
 # Acknowledgements & Credits
-This section acknowledges and thanks the people whose content has been referenced. Proper credit is given to honor their contributions and expertise
+This section acknowledges and thanks the people whose content has been referenced. Proper credit is given to honor their contributions and expertise.
 
 | **Credit**          | **Reference**                                |
 |---------------------|----------------------------------------------|
 | Aryaa Mathur     | [LinkedIn](https://www.linkedin.com/in/aryaacybersec/) |
 
-Here is the markdown version of the content from your file:
 
 ---
 
