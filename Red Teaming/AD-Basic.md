@@ -1,5 +1,5 @@
 
-### Active Directory (AD) - Basics Understanding
+# Active Directory (AD) - Basics Understanding
 
 #### Common Terms:
 - **Domain**: A logical group of network objects (users, computers, devices) that share a common directory database.
@@ -15,7 +15,9 @@
 - **Active Directory Lightweight Directory Services (AD LDS)**: A lighter version of AD DS, used for directory-enabled applications.
 - **Active Directory Federation Services (AD FS)**: Provides single sign-on and identity federation for users accessing applications across different organizations.
 
-### Domain Controller (DC)
+----
+
+# Domain Controller (DC)
 
 #### Common Terms:
 - **Primary Domain Controller (PDC)**: The main domain controller responsible for processing authentication requests and managing changes in a domain.
@@ -33,8 +35,9 @@
 - **Domain Controllers** are servers that implement AD services, handling user authentication and managing directory data. 
 
 
+---
 
-### Summarize the key concepts and components of Active Directory (AD) and Domain Controllers (DC):
+## Summarize the key concepts and components of Active Directory (AD) and Domain Controllers (DC):
 
 | **Concept**               | **Active Directory (AD)**                                   | **Domain Controller (DC)**                      |
 |---------------------------|------------------------------------------------------------|------------------------------------------------|
