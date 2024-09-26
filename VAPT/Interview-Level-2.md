@@ -1,3 +1,11 @@
+### Top 100 Web application Vulnerability and Mitigation:
+
+| S.N | Link                                                                                         | By    |
+|-----|----------------------------------------------------------------------------------------------|-------------|
+| 1   | [Top 100 Web Application Vulnerability and Mitigation](https://github.com/m14r41/CyberSecurity-Interview/blob/main/VAPT/VAPT%20Interview%20PDF%20Lists/Top%20100%20-%20Web%20Vulnerability%20and%20Mitigation.pdf) | [Unknown](#) |
+
+---
+
 ### **Common Questions Asked:**
 
 | **Category**     | **Questions**                                                                                                                                                  |
