@@ -1,5 +1,12 @@
+# Basic Active Directory Concept:
+| Description                                            | Link                                                                                              |
+|--------------------------------------------------------|---------------------------------------------------------------------------------------------------|
+| Basics Active Directory | [Click Here](https://github.com/m14r41/CyberSecurity-Interview/blob/main/Red%20Teaming/AD-Basic.md)                       |
 
-# Red Teaming
+
+---
+
+# Red Teaming Interview Question:
 > Interview questions related to Active Directory (AD) from a red teaming perspective:
 
 ### General Understanding of AD Security
