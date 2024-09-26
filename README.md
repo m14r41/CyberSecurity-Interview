@@ -23,7 +23,7 @@
 
 | S.N | Profile           | Level    | Description                                                                                           | Link                                                                                              |
 |-----|-------------------|----------|-------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|
-| 3   | Red Teaming       | Level *  |  Resources related to red teaming and advanced security topics for interviews                     | [Click Here](https://github.com/m14r41/CyberSecurity-Interview/tree/main/Red%20Teaming)            |
+| 3   | Red Teaming       | Level *  |  Resources related to red teaming and advanced security topics for interviews                     | [Click Here](https://github.com/m14r41/CyberSecurity-Interview/tree/main/VAPT)       |
 | 4   | Network Security  | Level *  | Network security topics and interview materials                                                  | [Click Here](https://github.com/m14r41/CyberSecurity-Interview/tree/main/Network%20Security)       |
 | 5   | SOC               | Level *  |  Security Operations Center topics and interview preparation                                      | [Click Here](https://github.com/m14r41/CyberSecurity-Interview/tree/main/SOC)                      |
 | 6   | Cloud Security    | Level *  | Cloud Security resources and interview preparation                                               | [Click Here](https://github.com/m14r41/CyberSecurity-Interview/tree/main/Cloud%20Security)         |
