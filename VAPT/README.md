@@ -1,6 +1,17 @@
 
-## Dedicated for Freshers, also asked with experianced condidates some questions.
-  **Top 20 from list are strongly recommended.**
+### Awesome Interview Links: For (freshers)
+
+| S.N | Link                                                                                         | By    |
+|-----|----------------------------------------------------------------------------------------------|-------------|
+| 1   | [Cyber Security Interview Questions - Part 1](https://shifacyclewala.medium.com/cyber-security-interview-questions-part-1-ae00b96c5610) | [Shifa cyclewala](#) |
+| 2   | [Cyber Security Interview Questions - Part 2](https://shifacyclewala.medium.com/cyber-security-interview-questions-part-2-13fbb38b9b46) | [Shifa cyclewala](#) |
+| 3   | [Cyber Security Interview Questions - Part 3](https://shifacyclewala.medium.com/cyber-security-interview-questions-part-3-2238f36cbe76) | [Shifa yclewala](#) |
+| 4   | [Cyber Security Interview Questions - Part 4](https://shifacyclewala.medium.com/cyber-security-interview-questions-part-4-a28f8829d541) | [Shifa cyclewala](#) |
+| 5   | [Cyber Security Interview Questions - Part 5](https://shifacyclewala.medium.com/cyber-security-interview-questions-part-5-5be559408234) | [Shifa cyclewala](#) |
+
+
+## Dedicated for Freshers, also asked experienced candidates some questions.
+  **Top 20 from the list are strongly recommended.**
 
 ### 1. Information Security
 
@@ -12,27 +23,27 @@
 
 ### Cyber Security
 
-> Cybersecurity focuses on safeguarding electronic data, preventing unauthorized access, disclosure, alteration, and destruction.
+> Cybersecurity focuses on safeguarding electronic data and preventing unauthorized access, disclosure, alteration, and destruction.
 
 > Its primary goal is to protect digital data and systems from unauthorized access, damage, or disruption.
 
 ### Information Security
 
-> Information security is a broader discipline encompassing the protection of all types of assets, whether in hard copy or digital form.
+> Information security is a broader discipline encompassing protecting all types of assets, whether in hard copy or digital form.
 
 > The main objective of information security is to reduce the risk of cyber-attacks and protect against unauthorized exploitation of systems, networks, and technologies.
 
 
 ### 3. What is CIA Triad ?
 
->CIA Triad an information security model meant to guide an organization’s security procedures and policies.
+>CIA Triad is an information security model meant to guide an organization’s security procedures and policies.
 
 >Confidentiality, Integrity, and Availability. These are the three core components of the CIA triad
 
 
 - ```Confidentiality```
   
-  >Confidentiality ensures  access to resources or data must be restricted to only authorized subjects or entities. Data encryption is a common method of ensuring confidentiality.
+  >Confidentiality ensures  access to resources or data, which must be restricted to only authorized subjects or entities. Data encryption is a common method of ensuring confidentiality.
   
   
 - ```Integrity```
@@ -45,7 +56,7 @@
 
 - ```availability```
 
-  A vulnerability is a flaw, loophole, oversight, or error that can be exploited to violate the system security policy.
+  A vulnerability is a flaw, loophole, oversight, or error that can be exploited to violate the system's security policy.
   
     For example, software or an application that has code vulnerable to a buffer or flow exploit.
   
@@ -70,7 +81,7 @@
   
 - **```Risk```**
     ```
-    It is an situation involving exposure to dange.
+    It is a situation involving exposure to danger.
     ```
 ### 5. Define **Indentification**, **Authentication**, and **Authorization**?
 
