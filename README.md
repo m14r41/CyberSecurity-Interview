@@ -1,5 +1,6 @@
 ### Content Disclaimer:
->The content shared here is a compilation sourced from various creators, apart from my contribution, and I claim no ownership of it. All credit and respect go to the original authors. I do not endorse or condone any unethical activities; this material is shared solely for educational purposes.
+
+>This content is a compilation sourced from various creators, in addition to my own contributions. I give full credit and respect to the original authors. I do not endorse or condone any unethical activities; this material is shared solely for educational purposes.
 
 ### Interview Questions Resource:
 
