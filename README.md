@@ -1,5 +1,5 @@
 ### Disclaimer:
->The content provided here is a compilation sourced from various creators, and I claim no ownership of it. All credit and respect go to the original authors. I do not endorse or condone any unethical activities; this material is shared solely for educational purposes.
+>The content shared here is a compilation sourced from various creators, and I claim no ownership of it. All credit and respect go to the original authors. I do not endorse or condone any unethical activities; this material is shared solely for educational purposes.
 
 ### Note:
 
