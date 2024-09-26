@@ -1,13 +1,13 @@
-### Disclaimer:
->The content shared here is a compilation sourced from various creators, and I claim no ownership of it. All credit and respect go to the original authors. I do not endorse or condone any unethical activities; this material is shared solely for educational purposes.
+### Content Disclaimer:
+>The content shared here is a compilation sourced from various creators, apart from my contribution, and I claim no ownership of it. All credit and respect go to the original authors. I do not endorse or condone any unethical activities; this material is shared solely for educational purposes.
 
-### Note:
+### Interview Questions Resource:
 
-> Based on my experience, the following list includes some frequently encountered interview questions.
+>Drawing from my experiences in cybersecurity, I have curated a list of commonly encountered interview questions aimed at helping candidates prepare effectively. This collection covers a range of roles within the cybersecurity field and provides practical insights, strategies, and tips for successful interview preparation.
 
-### Update:
+### Repository Maintenance Update:
 
->This repository is actively maintained and updated to reflect the latest industry practices and trends.
+>This repository is actively maintained and regularly updated to reflect the latest practices and trends in cybersecurity. It is continually improved based on user feedback, ongoing research, and new developments in the field, ensuring that the content remains relevant and useful for those starting their careers or looking to switch jobs
 
 
 ## VAPT Interview Preparation Resource:
