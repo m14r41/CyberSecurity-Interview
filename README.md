@@ -14,7 +14,7 @@
 
 | S.N | Profile | Level  | Description | Link |
 |-----|---------|--------|-------------|------|
-| 1   | VAPT    | Level 1| **-** Owasp, Port and services, IP and Mac, Encryption, Hashing, Common vulnerability <br> **-** For freshers and experiance | [Click Here](https://github.com/m14r41/CyberSecurity-Interview/tree/main) |
+| 1   | VAPT    | Level 1| **-** Owasp, Port and services, IP and Mac, Encryption, Hashing, Common vulnerability <br> **-** For freshers and experienced | [Click Here](https://github.com/m14r41/CyberSecurity-Interview/tree/main/VAPT)  |
 | 2   | VAPT    | Level 2| **-** Dedicated for Experience Pentester <br> **-** Web, Mobile, API, Thick Client, SAST etc | [Click Here](https://github.com/m14r41/CyberSecurity-Interview/blob/main/VAPT/Interview-Level-2.md)|
 | 2   | VAPT    | Level 2.0| **-** Additional VAPT Question Collection <br> - In Progress | [Click Here](https://github.com/m14r41/CyberSecurity-Interview/blob/main/VAPT/VAPT-Interview.md) |
 
@@ -23,7 +23,7 @@
 
 | S.N | Profile           | Level    | Description                                                                                           | Link                                                                                              |
 |-----|-------------------|----------|-------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|
-| 3   | Red Teaming       | Level *  |  Resources related to red teaming and advanced security topics for interviews                     | [Click Here](https://github.com/m14r41/CyberSecurity-Interview/tree/main/VAPT)       |
+| 3   | Red Teaming       | Level *  |  Resources related to red teaming and advanced security topics for interviews                     | [Click Here](https://github.com/m14r41/CyberSecurity-Interview/tree/main/Red%20Teaming)      |
 | 4   | Network Security  | Level *  | Network security topics and interview materials                                                  | [Click Here](https://github.com/m14r41/CyberSecurity-Interview/tree/main/Network%20Security)       |
 | 5   | SOC               | Level *  |  Security Operations Center topics and interview preparation                                      | [Click Here](https://github.com/m14r41/CyberSecurity-Interview/tree/main/SOC)                      |
 | 6   | Cloud Security    | Level *  | Cloud Security resources and interview preparation                                               | [Click Here](https://github.com/m14r41/CyberSecurity-Interview/tree/main/Cloud%20Security)         |
