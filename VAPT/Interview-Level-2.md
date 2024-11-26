@@ -466,6 +466,66 @@ decompilation, scripting, and collaborative reverse engineering, making it suita
 
 
 
+---
+---
+
+# API Pentestesting: Interview
+
+ ## Synchronous and Asynchronous APIs
+ 
+| **Aspect**                  | **Synchronous API**                                                                                 | **Asynchronous API**                                                                              |
+|-----------------------------|----------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
+| **Execution**              | Tasks are executed sequentially; the client waits for a response before proceeding.                | Tasks are executed independently; the client doesn't wait and can continue other operations.    |
+| **Communication**          | Blocking – the client is blocked until the server responds.                                        | Non-blocking – the client continues without waiting for the server's response.                  |
+| **Performance**            | Slower for long-running tasks as it waits for responses.                                           | Faster and more efficient for handling concurrent tasks.                                        |
+| **Use Case**               | Suitable for immediate-response tasks (e.g., login authentication).                               | Ideal for background or long-running tasks (e.g., sending emails, data processing).             |
+
+
+ ## API Architectural Styles or API Communication Protocols/Standards
+
+
+| **Type**       | **Description**                                                                 | **Key Features**                              |
+|----------------|---------------------------------------------------------------------------------|-----------------------------------------------|
+| **REST**       | Stateless and resource-based API using HTTP methods (GET, POST, etc.).          | Lightweight, supports multiple data formats.  |
+| **SOAP**       | Protocol-based API using XML for messaging with strict standards.               | Highly secure, supports complex transactions. |
+| **GraphQL**    | Query language for APIs that allows clients to request specific data.           | Flexible, reduces over-fetching of data.      |
+| **gRPC**       | High-performance RPC framework using HTTP/2 and Protocol Buffers.               | Fast, ideal for microservices.                |
+| **WebSockets** | Real-time communication protocol enabling two-way persistent connections.       | Best for live updates (e.g., chat, streaming).|
+| **RPC**        | Remote Procedure Call for executing functions on a remote server.               | Simple and direct, used in gRPC or XML-RPC.   |
+
+#  API penetration testing Tools
+
+| **Tool Name**          | **Description**                                                                 |
+|------------------------|---------------------------------------------------------------------------------|
+| **Burp Suite**         | A powerful web vulnerability scanner with specific tools for testing APIs, including fuzzing and attacking API endpoints. |
+| **OWASP ZAP**          | An open-source penetration testing tool for discovering vulnerabilities in RESTful and SOAP APIs. |
+| **Postman**            | Widely used for manual API testing, including sending requests and analyzing responses for security issues. |
+| **API5**               | A set of security risks related to APIs, which can be tested using tools like Burp Suite and OWASP ZAP. |
+| **SoapUI**             | A tool specifically for testing SOAP and REST APIs, capable of security testing and vulnerability scanning. |
+| **FuzzAPI**            | A fuzzing tool used to test APIs for input validation vulnerabilities.           |
+| **Kali Linux (tools like Burp, Nikto, and others)** | Includes various tools like Burp Suite, Nikto, and others, useful for scanning and attacking APIs. |
+| **Wfuzz**              | A tool for brute-forcing APIs to find hidden endpoints and test for vulnerabilities. |
+
+## Some additional question
+
+| **Question**                                          | **Answer**                                                                 |
+|-------------------------------------------------------|-----------------------------------------------------------------------------|
+| **What is the difference between REST and SOAP APIs in testing?** | **REST** is stateless and uses standard HTTP methods, while **SOAP** uses XML for messaging and has stricter standards for security and transactions. |
+| **How would you test for authentication flaws in an API?** | Test for **broken authentication** by checking for weak passwords, session management issues, and insecure API key handling. |
+| **What is the purpose of rate-limiting in API security?** | **Rate-limiting** prevents abuse by restricting the number of requests a user can make to an API, reducing risks like DoS attacks. |
+| **What are the most common API-related attack vectors?** | Common vectors include **SQL Injection**, **Cross-Site Scripting (XSS)**, **IDOR (Insecure Direct Object References)**, and **Man-in-the-Middle (MITM)** attacks. |
+| **How do you test for authorization flaws in an API?** | Check for **authorization bypass** by trying to access data or endpoints that should be restricted (e.g., **IDOR**, **Privilege Escalation**). |
+
+## Common test case for payment i.e transaction API
+
+| **Test Area**                     | **Reason for Testing (Context: Shopping Site Payment)**                                                        |
+|------------------------------------|-----------------------------------------------------------------------------------------------------------------|
+| **Authentication & Authorization** | To ensure only authenticated users can make payments, and unauthorized users cannot initiate transactions (e.g., login security, two-factor authentication). |
+| **Input Validation**               | To prevent users from submitting invalid payment details (e.g., incorrect credit card numbers, expiry dates, CVV) and ensure proper form validation to avoid errors. |
+| **Transaction Flow Testing**       | To confirm that once the user confirms their order, the payment gateway processes the transaction successfully, and appropriate error messages are shown for failed transactions (e.g., insufficient funds, expired card). |
+| **Security Testing**               | To prevent attackers from manipulating or stealing sensitive payment data, such as credit card details, via **SQL Injection**, **XSS**, **CSRF**, and to ensure all communication is encrypted (e.g., payment data over HTTPS). |
+| **Rate Limiting & DoS Prevention** | To ensure the payment gateway can handle high traffic loads during flash sales or holiday shopping periods without crashing or allowing Denial of Service attacks. |
+
 
 
 ---
