@@ -493,6 +493,13 @@ decompilation, scripting, and collaborative reverse engineering, making it suita
 | **WebSockets** | Real-time communication protocol enabling two-way persistent connections.       | Best for live updates (e.g., chat, streaming).|
 | **RPC**        | Remote Procedure Call for executing functions on a remote server.               | Simple and direct, used in gRPC or XML-RPC.   |
 
+
+## Why OAuth 2.0 is considered Secure
+
+| **Authentication Method**               | **Why it's Secure**                                                                                                                                 | **Use Case**                                                                                                    |
+|-----------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|
+| **OAuth 2.0 with Bearer Tokens**        | OAuth 2.0 allows for delegated access to resources, meaning users don’t need to share their credentials directly with third-party applications. Bearer tokens are used for authentication, and OAuth can be combined with additional security measures such as **PKCE** (Proof Key for Code Exchange) for mobile apps. | Typically used in modern web applications, APIs, and services where access delegation and permissions are needed (e.g., social media login, third-party service access). |
+
 #  API penetration testing Tools
 
 | **Tool Name**          | **Description**                                                                 |
@@ -503,8 +510,6 @@ decompilation, scripting, and collaborative reverse engineering, making it suita
 | **API5**               | A set of security risks related to APIs, which can be tested using tools like Burp Suite and OWASP ZAP. |
 | **SoapUI**             | A tool specifically for testing SOAP and REST APIs, capable of security testing and vulnerability scanning. |
 | **FuzzAPI**            | A fuzzing tool used to test APIs for input validation vulnerabilities.           |
-| **Kali Linux (tools like Burp, Nikto, and others)** | Includes various tools like Burp Suite, Nikto, and others, useful for scanning and attacking APIs. |
-| **Wfuzz**              | A tool for brute-forcing APIs to find hidden endpoints and test for vulnerabilities. |
 
 ## Some additional question
 
